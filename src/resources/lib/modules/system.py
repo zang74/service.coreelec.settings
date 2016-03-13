@@ -47,7 +47,7 @@ class system:
     UPDATE_DOWNLOAD_URL = None
     LOCAL_UPDATE_DIR = None
     XBMC_RESET_FILE = None
-    OPENELEC_RESET_FILE = None
+    LIBREELEC_RESET_FILE = None
     KEYBOARD_INFO = None
     UDEV_KEYBOARD_INFO = None
     NOX_KEYBOARD_INFO = None
@@ -545,7 +545,7 @@ class system:
                     if self.struct['update']['settings']['AutoUpdate']['value'] == 'manual' and force == True:
                         silent = False
                         xbmcDialog = xbmcgui.Dialog()
-                        answer = xbmcDialog.yesno('OpenELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + self.oe.VERSION,
+                        answer = xbmcDialog.yesno('LibreELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + self.oe.VERSION,
                                                   self.oe._(32187).encode('utf-8') + ':  ' + update_json['data']['update'].split('-'
                                                   )[-1].replace('.tar', '').encode('utf-8'), self.oe._(32180).encode('utf-8'))
                         xbmcDialog = None
@@ -622,9 +622,9 @@ class system:
     def reset_oe(self, listItem=None):
         try:
             self.oe.dbg_log('system::reset_oe', 'enter_function', 0)
-            if self.ask_sure_reset('OpenELEC') == 1:
+            if self.ask_sure_reset('LibreELEC') == 1:
                 self.oe.set_busy(1)
-                reset_file = open(self.OPENELEC_RESET_FILE, 'w')
+                reset_file = open(self.LIBREELEC_RESET_FILE, 'w')
                 reset_file.write('reset')
                 reset_file.close()
                 self.oe.winOeMain.close()
@@ -688,7 +688,7 @@ class system:
                     pass
                     
                 self.backup_dlg = xbmcgui.DialogProgress()
-                self.backup_dlg.create('OpenELEC', self.oe._(32375).encode('utf-8'), ' ', ' ')
+                self.backup_dlg.create('LibreELEC', self.oe._(32375).encode('utf-8'), ' ', ' ')
                 if not os.path.exists(self.BACKUP_DESTINATION):
                     os.makedirs(self.BACKUP_DESTINATION)
                 self.backup_file = self.oe.timestamp() + '.tar'

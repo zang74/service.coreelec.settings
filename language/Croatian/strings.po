@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Arhitektura:"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (OpenELEC) je minimalna Linux distribucija namijenjena Kodi medijskom centru. OpenELEC je dizajniran za brzo podizanje s procesom instalacije, jednostavno dovoljno za svakoga da pretvori prosječan HTPC u potpuno podešeni medijski stroj za samo 15 minuta."
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Open Embedded Linux Entertainment Center (LibreELEC) je minimalna Linux distribucija namijenjena Kodi medijskom centru. LibreELEC je dizajniran za brzo podizanje s procesom instalacije, jednostavno dovoljno za svakoga da pretvori prosječan HTPC u potpuno podešeni medijski stroj za samo 15 minuta."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Podrška:[/B][CR]Web stranica: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Društveni mediji:[/B][CR]IRC: #openelec na freenode.net (web-temeljeno čavrljanje je isto dostupno sa web stranice)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Podrška:[/B][CR]Web stranica: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Društveni mediji:[/B][CR]IRC: #libreelec na freenode.net (web-temeljeno čavrljanje je isto dostupno sa web stranice)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "OpenELEC projekt pokreće dobra volja, ljubav i vaše donacije. Ako želite pridonijeti projektu možete donirati koristeći PayPal, Flattr ili Bitcoin. Doniranje je lagano i traje samo nekoliko minuta. http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "LibreELEC projekt pokreće dobra volja, ljubav i vaše donacije. Ako želite pridonijeti projektu možete donirati koristeći PayPal, Flattr ili Bitcoin. Doniranje je lagano i traje samo nekoliko minuta. http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
@@ -586,7 +586,7 @@ msgstr "Hvala Vam"
 
 msgctxt "#32318"
 msgid "Your @DISTRONAME@ installation is now complete and you'll now enter Kodi when you can set up your media libraries. For help with this, there is a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a dedicated team of developers who work purely in their spare time. Even as a volunteer project, we still have to pay for our internet bandwidth and development resources so if you find @DISTRONAME@ useful, we will always appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using @DISTRONAME@ as much as we've enjoying building it. If you need any more help, you can find links to get help along with latest news at our website"
-msgstr "Vaša @DISTRONAME@ instalacija je sada završena i ući ćete u Kodi gdje možete postaviti vaše medijske zbirke. Ako vam je potrebna pomoć, postoje korisničke upute na wiki.kodi.tv[CR][CR]@DISTRONAME@ je razvio posvečeni tim razvijatelja koji su predano radili u svoje slobodno vrijeme. Čak i kao dobrovoljan projekt, moramo platiti naš Internet pristup i razvojne resurse stoga ako vam je @DISTRONAME@ koristan, uvijek ćemo cijeniti donaciju bilo kojeg iznosa.[CR][CR]Napakon, nadamo se da ste uživali koristeći @DISTRONAME@ isto tako kao i mi što uživamo razvijati ga. Ako trebate bilo kakvu pomoć, možete pronaći poveznice za dobivanje pomoći s najnovijim openelec.tv novostima"
+msgstr "Vaša @DISTRONAME@ instalacija je sada završena i ući ćete u Kodi gdje možete postaviti vaše medijske zbirke. Ako vam je potrebna pomoć, postoje korisničke upute na wiki.kodi.tv[CR][CR]@DISTRONAME@ je razvio posvečeni tim razvijatelja koji su predano radili u svoje slobodno vrijeme. Čak i kao dobrovoljan projekt, moramo platiti naš Internet pristup i razvojne resurse stoga ako vam je @DISTRONAME@ koristan, uvijek ćemo cijeniti donaciju bilo kojeg iznosa.[CR][CR]Napakon, nadamo se da ste uživali koristeći @DISTRONAME@ isto tako kao i mi što uživamo razvijati ga. Ako trebate bilo kakvu pomoć, možete pronaći poveznice za dobivanje pomoći s najnovijim libreelec.tv novostima"
 
 msgctxt "#32319"
 msgid "Cron"

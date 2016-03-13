@@ -41,7 +41,7 @@ USER_CONFIG = os.environ.get('USER_CONFIG', '/storage/.config')
 
 connman = {
     'CONNMAN_DAEMON': '/usr/sbin/connmand',
-    'WAIT_CONF_FILE': '%s/openelec/network_wait' % CONFIG_CACHE,
+    'WAIT_CONF_FILE': '%s/libreelec/network_wait' % CONFIG_CACHE,
     'ENABLED': lambda : (True if os.path.exists(connman['CONNMAN_DAEMON']) else False),
     }
 
@@ -66,8 +66,8 @@ services = {
     'SAMBA_NMDB': '/usr/bin/nmbd',
     'SAMBA_SMDB': '/usr/bin/smbd',
     'D_SAMBA_SECURE': '0',
-    'D_SAMBA_USERNAME': 'openelec',
-    'D_SAMBA_PASSWORD': 'openelec',
+    'D_SAMBA_USERNAME': 'libreelec',
+    'D_SAMBA_PASSWORD': 'libreelec',
     'D_SAMBA_AUTOSHARE': '1',
     'SSH_DAEMON': '/usr/sbin/sshd',
     'OPT_SSH_NOPASSWD': "-o 'PasswordAuthentication no'",
@@ -82,12 +82,12 @@ system = {
     'ENABLED': True,
     'KERNEL_CMD': '/proc/cmdline',
     'SET_CLOCK_CMD': '/sbin/hwclock --systohc --utc',
-    'UPDATE_REQUEST_URL': 'http://update.openelec.tv/updates.php',
-    'UPDATE_DOWNLOAD_URL': 'http://%s.openelec.tv/%s',
+    'UPDATE_REQUEST_URL': 'http://update.libreelec.tv/updates.php',
+    'UPDATE_DOWNLOAD_URL': 'http://%s.libreelec.tv/%s',
     'LOCAL_UPDATE_DIR': '/storage/.update/',
     'GET_CPU_FLAG': "cat /proc/cpuinfo | grep -q 'flags.* lm ' && echo '1' || echo '0'",
     'XBMC_RESET_FILE': '%s/reset_xbmc' % CONFIG_CACHE,
-    'OPENELEC_RESET_FILE': '%s/reset_oe' % CONFIG_CACHE,
+    'LIBREELEC_RESET_FILE': '%s/reset_oe' % CONFIG_CACHE,
     'KEYBOARD_INFO': '/usr/share/X11/xkb/rules/base.xml',
     'UDEV_KEYBOARD_INFO': '%s/xkb/layout' % CONFIG_CACHE,
     'NOX_KEYBOARD_INFO': '/usr/lib/keymaps',

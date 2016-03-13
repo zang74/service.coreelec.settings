@@ -318,17 +318,17 @@ class mainWindow(xbmcgui.WindowXMLDialog):
                         selectedItem.setProperty('value', xbmcKeyboard.getText())
                 elif strTyp == 'file':
                     xbmcDialog = xbmcgui.Dialog()
-                    returnValue = xbmcDialog.browse(1, 'OpenELEC.tv', 'files', '', False, False, '/')
+                    returnValue = xbmcDialog.browse(1, 'LibreELEC.tv', 'files', '', False, False, '/')
                     if returnValue != '' and returnValue != '/':
                         selectedItem.setProperty('value', unicode(returnValue))
                 elif strTyp == 'folder':
                     xbmcDialog = xbmcgui.Dialog()
-                    returnValue = xbmcDialog.browse(0, 'OpenELEC.tv', 'files', '', False, False, '/storage')
+                    returnValue = xbmcDialog.browse(0, 'LibreELEC.tv', 'files', '', False, False, '/storage')
                     if returnValue != '' and returnValue != '/':
                         selectedItem.setProperty('value', unicode(returnValue))
                 elif strTyp == 'ip':
                     xbmcDialog = xbmcgui.Dialog()
-                    returnValue = xbmcDialog.numeric(3, 'OpenELEC.tv', strValue)
+                    returnValue = xbmcDialog.numeric(3, 'LibreELEC.tv', strValue)
                     if returnValue != '':
                         if returnValue == '0.0.0.0':
                             selectedItem.setProperty('value', '')
@@ -338,7 +338,7 @@ class mainWindow(xbmcgui.WindowXMLDialog):
                     if strValue == 'None' or strValue == '':
                         strValue = '0'
                     xbmcDialog = xbmcgui.Dialog()
-                    returnValue = xbmcDialog.numeric(0, 'OpenELEC.tv', strValue)
+                    returnValue = xbmcDialog.numeric(0, 'LibreELEC.tv', strValue)
                     if returnValue == '':
                         returnValue = -1
                     if returnValue > -1:
@@ -653,7 +653,7 @@ class wizard(xbmcgui.WindowXMLDialog):
                             self.is_last_wizard = False
                             break
                 if self.is_last_wizard == True:
-                    self.oe.write_setting('openelec', 'wizard_completed', 'True')
+                    self.oe.write_setting('libreelec', 'wizard_completed', 'True')
                     self.close()
             self.oe.dbg_log('wizard::onClick(' + unicode(controlID) + ')', 'exit_function', 0)
         except Exception, e:

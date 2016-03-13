@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Architektura: "
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (OpenELEC) to minimalistyczna dystrybucja Linuxa stworzona specjalnie dla centrum multimediów Kodi. OpenELEC został zaprojektowany tak, aby szybko się uruchamiać, a proces instalacji był tak prosty, aby zamienić komputer w pełni skonfigurowaną maszynę multimedialną w mniej niż 15 minut."
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Open Embedded Linux Entertainment Center (LibreELEC) to minimalistyczna dystrybucja Linuxa stworzona specjalnie dla centrum multimediów Kodi. LibreELEC został zaprojektowany tak, aby szybko się uruchamiać, a proces instalacji był tak prosty, aby zamienić komputer w pełni skonfigurowaną maszynę multimedialną w mniej niż 15 minut."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Pomoc:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Media społeczne:[/B][CR]IRC: #openelec on freenode.net (chat jest również dostępny na stronie internetowej)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Pomoc:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Media społeczne:[/B][CR]IRC: #libreelec on freenode.net (chat jest również dostępny na stronie internetowej)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "Projekt OpenELEC działa dzięki wsparciu, ciężkiej pracy i entuzjazmowi tysięcy ludzi oraz Waszym darowiznom. Jeśli chcesz przyczynić się do dalszego rozwoju projektu, prześlij nam darowiznę za pośrednictwem systemu PayPal, Flattr lub Bitcoin. Dokonanie wpłaty jest proste i zajmuje tylko kilka minut. Dziękujemy za wsparcie.\nhttp://openelec.tv/donate "
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "Projekt LibreELEC działa dzięki wsparciu, ciężkiej pracy i entuzjazmowi tysięcy ludzi oraz Waszym darowiznom. Jeśli chcesz przyczynić się do dalszego rozwoju projektu, prześlij nam darowiznę za pośrednictwem systemu PayPal, Flattr lub Bitcoin. Dokonanie wpłaty jest proste i zajmuje tylko kilka minut. Dziękujemy za wsparcie.\nhttp://libreelec.tv/donate "
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

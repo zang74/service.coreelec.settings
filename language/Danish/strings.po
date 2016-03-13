@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,12 +53,12 @@ msgid "Architecture: "
 msgstr "Arkitektur:"
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Sociale Medier:[/B][CR]IRC: #openelec on freenode.net (web-baseret chat er også tilgængelig fra hjemmesiden)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Sociale Medier:[/B][CR]IRC: #libreelec on freenode.net (web-baseret chat er også tilgængelig fra hjemmesiden)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "OpenELEC-projektet kører på goodwill, kærlighed, og dine donationer. Hvis du gerne vil bidrage til projektet, kan du donere ved hjælp af PayPal, Flattr eller Bitcoin. Det er nemt at lave en donation og tager kun et par minutter. http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "LibreELEC-projektet kører på goodwill, kærlighed, og dine donationer. Hvis du gerne vil bidrage til projektet, kan du donere ved hjælp af PayPal, Flattr eller Bitcoin. Det er nemt at lave en donation og tager kun et par minutter. http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

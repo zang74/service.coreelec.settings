@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Kiến Trúc"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "OpenElec (Open Embedded Linux Entertainment Center) là một bản phân phối Linux nhỏ nhẹ , xây dựng cho trung tâm giải trí Kodi. OpenELEC được thiết kế để khởi động nhanh chóng và một quá trình cài đặt đơn giản, đủ cho bất cứ ai để chuyển đổi một HTPC thật sự một phương tiện giải trí với đầy đủ tính năng chỉ mất dưới 15 phút cài đặt"
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "OpenElec (Open Embedded Linux Entertainment Center) là một bản phân phối Linux nhỏ nhẹ , xây dựng cho trung tâm giải trí Kodi. LibreELEC được thiết kế để khởi động nhanh chóng và một quá trình cài đặt đơn giản, đủ cho bất cứ ai để chuyển đổi một HTPC thật sự một phương tiện giải trí với đầy đủ tính năng chỉ mất dưới 15 phút cài đặt"
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Hỗ trợ:[/B][CR]Trang Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec trên freenode.net (trò chuyện trên web cũng có sẵn từ trang web)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Hỗ trợ:[/B][CR]Trang Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec trên freenode.net (trò chuyện trên web cũng có sẵn từ trang web)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "Dự án OpenELEC Khởi chạy với sự thiện chí, tình yêu, và sự đóng góp của bạn. Nếu bạn muốn đóng góp cho dự án bạn có thể tặng cho chúng tôi sử dụng PayPal, Flattr hoặc Bitcoin. Việc đóng góp rất dễ dàng và chỉ mất một vài phút .http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "Dự án LibreELEC Khởi chạy với sự thiện chí, tình yêu, và sự đóng góp của bạn. Nếu bạn muốn đóng góp cho dự án bạn có thể tặng cho chúng tôi sử dụng PayPal, Flattr hoặc Bitcoin. Việc đóng góp rất dễ dàng và chỉ mất một vài phút .http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

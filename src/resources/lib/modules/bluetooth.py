@@ -132,7 +132,7 @@ class bluetooth:
                 self.oe.dbg_log('bluetooth::adapter_powered', 'set state (' + unicode(state) + ')', 0)
                 adapter_interface = dbus.Interface(self.oe.dbusSystemBus.get_object('org.bluez', adapter.object_path),
                                                    'org.freedesktop.DBus.Properties')
-                adapter_interface.Set('org.bluez.Adapter1', 'Alias', dbus.String(os.environ.get('HOSTNAME', 'openelec')))
+                adapter_interface.Set('org.bluez.Adapter1', 'Alias', dbus.String(os.environ.get('HOSTNAME', 'libreelec')))
                 adapter_interface.Set('org.bluez.Adapter1', 'Powered', dbus.Boolean(state))
             self.oe.dbg_log('bluetooth::adapter_powered', 'exit_function', 0)
         except Exception, e:
@@ -622,8 +622,8 @@ class bluetooth:
                 self.oe = oeMain
                 self.signal_receivers = []
                 self.NameOwnerWatch = None
-                self.btAgentPath = '/OpenELEC/bt_agent'
-                self.obAgentPath = '/OpenELEC/ob_agent'
+                self.btAgentPath = '/LibreELEC/bt_agent'
+                self.obAgentPath = '/LibreELEC/ob_agent'
                 self.parent = parent
                 self.oe.dbg_log('bluetooth::monitor::__init__', 'exit_function', 0)
             except Exception, e:
@@ -822,7 +822,7 @@ class bluetooth:
                     if interface['Status'] == 'active':
                         self.parent.download_start = time.time()
                         self.parent.download = xbmcgui.DialogProgress()
-                        self.parent.download.create('OpenELEC Bluetooth Filetransfer', '%s: %s' % (self.oe._(32181).encode('utf-8'),
+                        self.parent.download.create('LibreELEC Bluetooth Filetransfer', '%s: %s' % (self.oe._(32181).encode('utf-8'),
                                                     self.parent.download_file), '', '')
                     else:
                         if hasattr(self.parent, 'download'):
@@ -833,7 +833,7 @@ class bluetooth:
                             del self.parent.download_start
                         if interface['Status'] == 'complete':
                             xbmcDialog = xbmcgui.Dialog()
-                            answer = xbmcDialog.yesno('OpenELEC Bluetooth Filetransfer', self.oe._(32383).encode('utf-8'))
+                            answer = xbmcDialog.yesno('LibreELEC Bluetooth Filetransfer', self.oe._(32383).encode('utf-8'))
                             if answer == 1:
                                 fil = '%s/%s' % (self.oe.DOWNLOAD_DIR, self.parent.download_file)
                                 if 'image' in self.parent.download_type:
@@ -918,7 +918,7 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::AuthorizeService::uuid=', repr(uuid), 0)
             self.oe.dbg_log('bluetooth::btAgent::AuthorizeService', 'enter_function', 0)
             xbmcDialog = xbmcgui.Dialog()
-            answer = xbmcDialog.yesno('OpenELEC Bluetooth', 'AuthorizeService')
+            answer = xbmcDialog.yesno('LibreELEC Bluetooth', 'AuthorizeService')
             if answer == 1:
                 self.oe.dictModules['bluetooth'].trust_device(device)
                 return
@@ -999,7 +999,7 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::device=', device, 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::passkey=', repr(passkey), 0)
             xbmcDialog = xbmcgui.Dialog()
-            answer = xbmcDialog.yesno('OpenELEC Bluetooth', 'RequestConfirmation', unicode(passkey))
+            answer = xbmcDialog.yesno('LibreELEC Bluetooth', 'RequestConfirmation', unicode(passkey))
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::answer=', repr(answer), 0)
             if answer == 1:
                 self.oe.dictModules['bluetooth'].trust_device(device)
@@ -1014,7 +1014,7 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestAuthorization', 'enter_function', 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestAuthorization::device=', device, 0)
             xbmcDialog = xbmcgui.Dialog()
-            answer = xbmcDialog.yesno('OpenELEC Bluetooth', 'RequestAuthorization')
+            answer = xbmcDialog.yesno('LibreELEC Bluetooth', 'RequestAuthorization')
             if hasattr(self.parent, 'pinkey_window'):
                 if device == self.parent.pinkey_window.device:
                     self.parent.close_pinkey_window()
@@ -1048,7 +1048,7 @@ class obexAgent(dbus.service.Object):
             transfer = dbus.Interface(self.oe.dbusSystemBus.get_object('org.bluez.obex', path), 'org.freedesktop.DBus.Properties')
             properties = transfer.GetAll('org.bluez.obex.Transfer1')
             xbmcDialog = xbmcgui.Dialog()
-            answer = xbmcDialog.yesno('OpenELEC Bluetooth', self.oe._(32381), properties['Name'])
+            answer = xbmcDialog.yesno('LibreELEC Bluetooth', self.oe._(32381), properties['Name'])
             if answer != 1:
                 raise dbus.DBusException('org.bluez.obex.Error.Rejected: Not Authorized')
                 return

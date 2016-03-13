@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -49,8 +49,8 @@ msgid "Architecture: "
 msgstr "Arhitektuur:"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "OpenELEC projekt elab heast tahtest,  altruistlikust tööst ja Sinu annetustest. Kui soovid ka omalt poolt projekti finantsiliselt toetada, saad seda teha Paypal, Flattr või Bitcoin kaudu. Annetuse tegemine on lihtne ja võtab aega vaid mõne minuti.  http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "LibreELEC projekt elab heast tahtest,  altruistlikust tööst ja Sinu annetustest. Kui soovid ka omalt poolt projekti finantsiliselt toetada, saad seda teha Paypal, Flattr või Bitcoin kaudu. Annetuse tegemine on lihtne ja võtab aega vaid mõne minuti.  http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

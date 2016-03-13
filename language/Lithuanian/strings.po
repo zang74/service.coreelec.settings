@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Architektūra:"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (OpenELEC) yra minimali Linux distribucija, specialiai sukurta Kodi media centrui. OpenELEC sukurtas, kad greitai pasileistų su pakankamai paprastu diegimo procesu, tam kad kiekvienas galėtų pliką HTPC paversti pilnai sukonfigūruotu media centru per mažiau nei 15 minučių."
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Open Embedded Linux Entertainment Center (LibreELEC) yra minimali Linux distribucija, specialiai sukurta Kodi media centrui. LibreELEC sukurtas, kad greitai pasileistų su pakankamai paprastu diegimo procesu, tam kad kiekvienas galėtų pliką HTPC paversti pilnai sukonfigūruotu media centru per mažiau nei 15 minučių."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Palaikymas:[/B][CR]Žiniatinklis: http://openelec.tv[CR]Forumas: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Socialinė žiniasklaida:[/B][CR]IRC: #openelec on freenode.net (žiniatinklio tikralaikiai pokalbiai taip pat prieinami ir tinklapyje)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Palaikymas:[/B][CR]Žiniatinklis: http://libreelec.tv[CR]Forumas: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Socialinė žiniasklaida:[/B][CR]IRC: #libreelec on freenode.net (žiniatinklio tikralaikiai pokalbiai taip pat prieinami ir tinklapyje)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "OpenELEC projektas veikia palaikomas geros valios, meilės ir jūsų aukų. Jei norite prisidėti prie projekto, galite aukoti, naudodami PayPal, Flattr arba Bitcoin. Paaukoti labai paprasta ir užtruks pora minučių. http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "LibreELEC projektas veikia palaikomas geros valios, meilės ir jūsų aukų. Jei norite prisidėti prie projekto, galite aukoti, naudodami PayPal, Flattr arba Bitcoin. Paaukoti labai paprasta ir užtruks pora minučių. http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

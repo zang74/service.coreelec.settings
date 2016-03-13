@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Rendszer:"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (OpenELEC) egy minimalista Linux disztribúció ami az Kodi médiaközpont céljára készült. Az OpenELEC gyors indulásra lett optimalizálva és gyors telepítésre ami annyira egyszerű hogy bárki egy HTPC-t bekonfigurált médialejátszóvá alakíthat 15 perc alatt."
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Open Embedded Linux Entertainment Center (LibreELEC) egy minimalista Linux disztribúció ami az Kodi médiaközpont céljára készült. Az LibreELEC gyors indulásra lett optimalizálva és gyors telepítésre ami annyira egyszerű hogy bárki egy HTPC-t bekonfigurált médialejátszóvá alakíthat 15 perc alatt."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Támogatás:[/B][CR]Web: http://openelec.tv[CR]Fórum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Közzöségi oldalak:[/B][CR]IRC: #openelec on freenode.net (web alapú szintén elérhető a webes felületről)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Támogatás:[/B][CR]Web: http://libreelec.tv[CR]Fórum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Közzöségi oldalak:[/B][CR]IRC: #libreelec on freenode.net (web alapú szintén elérhető a webes felületről)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "Az OpenELEC projekt a jóakaraton, szereteten és az adományokon alapszik. Ha szeretne hozzájárulni a projekthez, ezt megteheti az alábbi formákba: PayPal, Flattr or Bitcoin. Az adakozás egyszerű és néhány perc alatt elvégezhető. http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "Az LibreELEC projekt a jóakaraton, szereteten és az adományokon alapszik. Ha szeretne hozzájárulni a projekthez, ezt megteheti az alábbi formákba: PayPal, Flattr or Bitcoin. Az adakozás egyszerű és néhány perc alatt elvégezhető. http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
@@ -90,7 +90,7 @@ msgstr "Hasznos információk úgymint verzióinformációk és a rendszer rész
 
 msgctxt "#710"
 msgid "Configure the Hostname of your @DISTRONAME@ system. This will be used for the HTPC \\\\hostname in Windows and SMB server name in the Mac OS Finder"
-msgstr "A @DISTRONAME@ nevű OpenELEC rendszer hosztneve. Ez használatos mint a HTPC \\\\számítógépnév Windowsban és az SMB szerver név a Mac OS Keresőben"
+msgstr "A @DISTRONAME@ nevű LibreELEC rendszer hosztneve. Ez használatos mint a HTPC \\\\számítógépnév Windowsban és az SMB szerver név a Mac OS Keresőben"
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
@@ -106,7 +106,7 @@ msgstr "Billentyűzet fizikai típus beállítása"
 
 msgctxt "#714"
 msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
-msgstr "A @DISTRONAME@ nevű OpenELEC beállítható automatikus vagy kézi frissítésre. Az automatikus frissítés a végleges változatok esetén elérhető. Az automatikus frissítés lehetősége a a béta és a fejlesztői változatokban letiltásra kerül."
+msgstr "A @DISTRONAME@ nevű LibreELEC beállítható automatikus vagy kézi frissítésre. Az automatikus frissítés a végleges változatok esetén elérhető. Az automatikus frissítés lehetősége a a béta és a fejlesztői változatokban letiltásra kerül."
 
 msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
@@ -114,7 +114,7 @@ msgstr "ON állásban a képernyőn megjelenik egy figyelmeztetés ha újabb vá
 
 msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
-msgstr "Kattintásra frissebb  @DISTRONAME@ változat keresése az OpenELEC szervereken."
+msgstr "Kattintásra frissebb  @DISTRONAME@ változat keresése az LibreELEC szervereken."
 
 msgctxt "#717"
 msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
