@@ -540,7 +540,7 @@ class connman:
                         'TetheringIdentifier': {
                             'order': 3,
                             'name': 32198,
-                            'value': 'OpenELEC-AP',
+                            'value': 'LibreELEC-AP',
                             'action': 'set_technologie',
                             'type': 'text',
                             'dbus': 'String',
@@ -554,7 +554,7 @@ class connman:
                         'TetheringPassphrase': {
                             'order': 4,
                             'name': 32107,
-                            'value': 'openelec',
+                            'value': 'libreelec',
                             'action': 'set_technologie',
                             'type': 'text',
                             'dbus': 'String',
@@ -1167,7 +1167,7 @@ class connman:
                 self.signal_receivers = []
                 self.NameOwnerWatch = None
                 self.parent = parent
-                self.wifiAgentPath = '/OpenELEC/agent_wifi'
+                self.wifiAgentPath = '/LibreELEC/agent_wifi'
                 self.oe.dbg_log('connman::monitor::__init__', 'exit_function', 0)
             except Exception, e:
                 self.oe.dbg_log('connman::monitor::__init__', 'ERROR: (' + repr(e) + ')')

@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -49,8 +49,8 @@ msgid "Architecture: "
 msgstr "아키텍쳐:"
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]지원:[/B][CR]웹: http://openelec.tv[CR]포럼: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]소셜 네트워크:[/B][CR]IRC: #openelec on freenode.net (웹사이트에서 웹기반 채팅을 할 수 있습니다)[CR]트위터: https://twitter.com/openelec[CR]페이스북: http://www.facebook.com/OpenELEC[CR]구글+: https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]지원:[/B][CR]웹: http://libreelec.tv[CR]포럼: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]소셜 네트워크:[/B][CR]IRC: #libreelec on freenode.net (웹사이트에서 웹기반 채팅을 할 수 있습니다)[CR]트위터: https://twitter.com/libreelec[CR]페이스북: http://www.facebook.com/LibreELEC[CR]구글+: https://plus.google.com/+libreelec"
 
 msgctxt "#701"
 msgid "Configure network startup options, NTP and VPNs"

@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "Architecture :"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (OpenELEC) est un système Linux minimal construit pour Kodi. OpenELEC a été pensé pour démarrer rapidement, avec un processus d'installation suffisamment simple pour que n'importe qui puisse convertir un ordinateur en machine multimédia en moins de 15 minutes."
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Open Embedded Linux Entertainment Center (LibreELEC) est un système Linux minimal construit pour Kodi. LibreELEC a été pensé pour démarrer rapidement, avec un processus d'installation suffisamment simple pour que n'importe qui puisse convertir un ordinateur en machine multimédia en moins de 15 minutes."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]Support :[/B][CR]Internet : http://openelec.tv[CR]Forum : http://openelec.tv/forum[CR]Wiki : http://wiki.openelec.tv[CR][CR][B]Médias sociaux :[/B][CR]IRC : #openelec sur freenode.net (client web aussi disponible sur le site)[CR]Twitter : https://twitter.com/openelec[CR]Facebook : http://www.facebook.com/OpenELEC[CR]Google+ : https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Support :[/B][CR]Internet : http://libreelec.tv[CR]Forum : http://libreelec.tv/forum[CR]Wiki : http://wiki.libreelec.tv[CR][CR][B]Médias sociaux :[/B][CR]IRC : #libreelec sur freenode.net (client web aussi disponible sur le site)[CR]Twitter : https://twitter.com/libreelec[CR]Facebook : http://www.facebook.com/LibreELEC[CR]Google+ : https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "Le projet OpenELEC s’appuie sur la bonne volonté, l'amour, et vos dons. Vous pouvez contribuer au projet via PayPal, Flattr ou Bitcoin. Faire un don est simple et ne prend que quelques minutes. http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "Le projet LibreELEC s’appuie sur la bonne volonté, l'amour, et vos dons. Vous pouvez contribuer au projet via PayPal, Flattr ou Bitcoin. Faire un don est simple et ne prend que quelques minutes. http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"

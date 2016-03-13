@@ -30,7 +30,7 @@
             <itemgap>5</itemgap>
             <control type="label">
                 <include>WindowTitleCommons</include>
-                <label>$ADDON[service.openelec.settings 600]</label>
+                <label>$ADDON[service.libreelec.settings 600]</label>
             </control>
         </control>
         <control type="group">
@@ -208,7 +208,7 @@
                 <width>740</width>
                 <height>30</height>
                 <font>font16caps</font>
-                <label>$ADDON[service.openelec.settings 600]</label>
+                <label>$ADDON[service.libreelec.settings 600]</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>white</textcolor>
@@ -256,7 +256,7 @@
                         <textcolor>blue</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$ADDON[service.openelec.settings 606]</label>
+                        <label>$ADDON[service.libreelec.settings 606]</label>
                     </control>	
                     <control type="label">
                         <left>140</left>
@@ -278,7 +278,7 @@
                         <textcolor>blue</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$ADDON[service.openelec.settings 607]</label>
+                        <label>$ADDON[service.libreelec.settings 607]</label>
                     </control>	
                     <control type="label">
                         <left>140</left>
@@ -300,7 +300,7 @@
                         <textcolor>blue</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$ADDON[service.openelec.settings 608]</label>
+                        <label>$ADDON[service.libreelec.settings 608]</label>
                     </control>
                     <control type="label">
                         <left>140</left>
@@ -320,7 +320,7 @@
                         <height>100</height>
                         <font>font10</font>
                         <textcolor>white</textcolor>
-                        <label>$ADDON[service.openelec.settings 609]</label>
+                        <label>$ADDON[service.libreelec.settings 609]</label>
                     </control>		
                     <control type="textbox">
                         <left>20</left>
@@ -329,14 +329,14 @@
                         <height>200</height>
                         <font>font10</font>
                         <textcolor>white</textcolor>
-                        <label>$ADDON[service.openelec.settings 610]</label>
+                        <label>$ADDON[service.libreelec.settings 610]</label>
                     </control>
                     <control type="image">
                         <left>20</left>
                         <top>100</top>
                         <width>535</width>
                         <height>2</height>
-                        <texture>default/blue_line.png</texture>
+                        <texture>default/green_line.png</texture>
                     </control>	
                     <control type="textbox">
                         <left>20</left>
@@ -346,7 +346,7 @@
                         <font>font10</font>
                         <textcolor>white</textcolor>
                         <align>left</align>
-                        <label>$ADDON[service.openelec.settings 611]</label>
+                        <label>$ADDON[service.libreelec.settings 611]</label>
                     </control>
                 </control>                        
                 <!-- simple list content -->
@@ -608,7 +608,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 601]: [COLOR=white]$INFO[ListItem.Property(Interface)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 601]: [COLOR=white]$INFO[ListItem.Property(Interface)][/COLOR]</label>
                             <visible>!IsEmpty(ListItem.Property(Interface))</visible>
                         </control>
                         <!-- Connection Address -->
@@ -619,7 +619,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 602]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 602]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
                             <visible>StringCompare(ListItem.Property(State), online) | StringCompare(ListItem.Property(State), ready)</visible>
                         </control>
                         <!-- Method -->
@@ -630,7 +630,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 603]: [COLOR=white]$INFO[ListItem.Property(Method)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 603]: [COLOR=white]$INFO[ListItem.Property(Method)][/COLOR]</label>
                         </control>
                         <!-- State -->
                         <control type="label">
@@ -640,7 +640,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 604]: [COLOR=white]$INFO[ListItem.Property(State)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 604]: [COLOR=white]$INFO[ListItem.Property(State)][/COLOR]</label>
                         </control>
                         <!-- Signal strength -->
                         <control type="progress">
@@ -754,7 +754,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 601]: [COLOR=white]$INFO[ListItem.Property(Interface)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 601]: [COLOR=white]$INFO[ListItem.Property(Interface)][/COLOR]</label>
                             <visible>!IsEmpty(ListItem.Property(Interface))</visible>
                         </control>
                         <!-- Connection Address -->
@@ -766,7 +766,7 @@
                             <font>font12</font>
                             <textcolor>blue</textcolor>
                             <visible>StringCompare(ListItem.Property(State), online) | StringCompare(ListItem.Property(State), ready)</visible>
-                            <label>$ADDON[service.openelec.settings 602]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 602]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
                         </control>
                         <!-- Method -->
                         <control type="label">
@@ -776,7 +776,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 603]: [COLOR=white]$INFO[ListItem.Property(Method)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 603]: [COLOR=white]$INFO[ListItem.Property(Method)][/COLOR]</label>
                         </control>
                         <!-- State -->
                         <control type="label">
@@ -786,7 +786,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 604]: [COLOR=white]$INFO[ListItem.Property(State)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 604]: [COLOR=white]$INFO[ListItem.Property(State)][/COLOR]</label>
                         </control>
                         <!-- Signal strength -->
                         <control type="progress">
@@ -1011,7 +1011,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 605]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 605]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
                         </control>
                         <!-- Connected State -->
                         <control type="label">
@@ -1204,7 +1204,7 @@
                             <height>20</height>
                             <font>font12</font>
                             <textcolor>blue</textcolor>
-                            <label>$ADDON[service.openelec.settings 605]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
+                            <label>$ADDON[service.libreelec.settings 605]: [COLOR=white]$INFO[ListItem.Property(Address)][/COLOR]</label>
                         </control>
                         <!-- Connected State -->
                         <control type="label">

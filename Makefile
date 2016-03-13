@@ -24,9 +24,9 @@
 #  OpenELEC Licensing  <license@openelec.tv>  http://www.openelec.tv
 ################################################################################
 
-ADDON_NAME=service.openelec.settings
+ADDON_NAME=service.libreelec.settings
 ADDON_VERSION=0.6.12
-DISTRONAME:=OpenELEC
+DISTRONAME:=LibreELEC
 
 BUILDDIR=build
 DATADIR=/usr/share/kodi

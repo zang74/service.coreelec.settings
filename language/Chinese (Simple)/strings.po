@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: @DISTRONAME@ Configuration
-# Addon id: service.openelec.settings
-# Addon Provider: OpenELEC
+# Addon id: service.libreelec.settings
+# Addon Provider: LibreELEC
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
@@ -53,16 +53,16 @@ msgid "Architecture: "
 msgstr "构架："
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (OpenELEC) is a minimal Linux distribution purpose built for Kodi media center. OpenELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "OpenELEC（Open Embedded Linux Entertainment Center，开放嵌入式 Linux 娱乐中心）是专门针对 Kodi 媒体中心打造的精简 Linux 发行版。OpenELEC 的设计目标是启动快速，并且任何人都能在15分钟内将一台 HTPC 裸机安装配置成高清媒体播放机。"
+msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "LibreELEC（Open Embedded Linux Entertainment Center，开放嵌入式 Linux 娱乐中心）是专门针对 Kodi 媒体中心打造的精简 Linux 发行版。LibreELEC 的设计目标是启动快速，并且任何人都能在15分钟内将一台 HTPC 裸机安装配置成高清媒体播放机。"
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://openelec.tv[CR]Forum: http://openelec.tv/forum[CR]Wiki: http://wiki.openelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #openelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/openelec[CR]Facebook: http://www.facebook.com/OpenELEC[CR]Google+: https://plus.google.com/+openelec"
-msgstr "[B]支持：[/B][CR]网址：http://openelec.tv[CR]论坛：http://openelec.tv/forum[CR]Wiki：http://wiki.openelec.tv[CR][CR][B]社交媒体：[/B][CR]IRC：freenode.net 上的 #openelec（支持 web 方式的聊天服务）[CR]Twitter：https://twitter.com/openelec[CR]Facebook：http://www.facebook.com/OpenELEC[CR]Google+：https://plus.google.com/+openelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]支持：[/B][CR]网址：http://libreelec.tv[CR]论坛：http://libreelec.tv/forum[CR]Wiki：http://wiki.libreelec.tv[CR][CR][B]社交媒体：[/B][CR]IRC：freenode.net 上的 #libreelec（支持 web 方式的聊天服务）[CR]Twitter：https://twitter.com/libreelec[CR]Facebook：http://www.facebook.com/LibreELEC[CR]Google+：https://plus.google.com/+libreelec"
 
 msgctxt "#611"
-msgid "The OpenELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://openelec.tv/donate"
-msgstr "OpenELEC 项目的运作有赖于爱心、奉献和你的捐助支持。你可以通过PayPal、flattr或比特币进行捐助，捐助简单易行，详情见 http://openelec.tv/donate"
+msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
+msgstr "LibreELEC 项目的运作有赖于爱心、奉献和你的捐助支持。你可以通过PayPal、flattr或比特币进行捐助，捐助简单易行，详情见 http://libreelec.tv/donate"
 
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
@@ -706,7 +706,7 @@ msgstr "备份"
 
 msgctxt "#32372"
 msgid "Create System and Kodi Backup"
-msgstr "备份 OpenELEC 和 Kodi 的配置文件"
+msgstr "备份 LibreELEC 和 Kodi 的配置文件"
 
 msgctxt "#32373"
 msgid "Restore Backup"
