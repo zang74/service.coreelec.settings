@@ -53,12 +53,12 @@ msgid "Architecture: "
 msgstr "构架："
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "LibreELEC（Open Embedded Linux Entertainment Center，开放嵌入式 Linux 娱乐中心）是专门针对 Kodi 媒体中心打造的精简 Linux 发行版。LibreELEC 的设计目标是启动快速，并且任何人都能在15分钟内将一台 HTPC 裸机安装配置成高清媒体播放机。"
+msgid "Libre Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "LibreELEC（Libre Embedded Linux Entertainment Center，开放嵌入式 Linux 娱乐中心）是专门针对 Kodi 媒体中心打造的精简 Linux 发行版。LibreELEC 的设计目标是启动快速，并且任何人都能在15分钟内将一台 HTPC 裸机安装配置成高清媒体播放机。"
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
-msgstr "[B]支持：[/B][CR]网址：http://libreelec.tv[CR]论坛：http://libreelec.tv/forum[CR]Wiki：http://wiki.libreelec.tv[CR][CR][B]社交媒体：[/B][CR]IRC：freenode.net 上的 #libreelec（支持 web 方式的聊天服务）[CR]Twitter：https://twitter.com/libreelec[CR]Facebook：http://www.facebook.com/LibreELEC[CR]Google+：https://plus.google.com/+libreelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]支持：[/B][CR]网址：http://libreelec.tv[CR]论坛：http://forum.libreelec.tv/[CR]Wiki：http://wiki.libreelec.tv[CR][CR][B]社交媒体：[/B][CR]IRC：freenode.net 上的 #libreelec（支持 web 方式的聊天服务）[CR]Twitter：https://twitter.com/libreelec[CR]Facebook：http://www.facebook.com/LibreELEC[CR]Google+：https://plus.google.com/+libreelec"
 
 msgctxt "#611"
 msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
