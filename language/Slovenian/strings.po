@@ -53,12 +53,12 @@ msgid "Architecture: "
 msgstr "Arhitektura:"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "LibreELEC (angl. Open Embedded Linux Entertainment Center) je minimalna distribucija GNU/Linux, namensko izdelana za medijsko središče Kodi. Zasnovan je tako, da se hitro zažene, ima dovolj enostaven postopek za pretvorbo golega HTPC v polno prilagojen medijski stoj v manj kot petnajstih minutah."
+msgid "Libre Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "LibreELEC (angl. Libre Embedded Linux Entertainment Center) je minimalna distribucija GNU/Linux, namensko izdelana za medijsko središče Kodi. Zasnovan je tako, da se hitro zažene, ima dovolj enostaven postopek za pretvorbo golega HTPC v polno prilagojen medijski stoj v manj kot petnajstih minutah."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
-msgstr "[B]Podpora:[/B][CR]Splet: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Družabna omrežja:[/B][CR]IRC: #libreelec na freenode.net (na spletišču je na voljo tudi klepet prek spletnega vmesnika)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Podpora:[/B][CR]Splet: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Družabna omrežja:[/B][CR]IRC: #libreelec na freenode.net (na spletišču je na voljo tudi klepet prek spletnega vmesnika)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
 msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"

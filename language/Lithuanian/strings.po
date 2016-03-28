@@ -53,12 +53,12 @@ msgid "Architecture: "
 msgstr "Architektūra:"
 
 msgctxt "#609"
-msgid "Open Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
-msgstr "Open Embedded Linux Entertainment Center (LibreELEC) yra minimali Linux distribucija, specialiai sukurta Kodi media centrui. LibreELEC sukurtas, kad greitai pasileistų su pakankamai paprastu diegimo procesu, tam kad kiekvienas galėtų pliką HTPC paversti pilnai sukonfigūruotu media centru per mažiau nei 15 minučių."
+msgid "Libre Embedded Linux Entertainment Center (LibreELEC) is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgstr "Libre Embedded Linux Entertainment Center (LibreELEC) yra minimali Linux distribucija, specialiai sukurta Kodi media centrui. LibreELEC sukurtas, kad greitai pasileistų su pakankamai paprastu diegimo procesu, tam kad kiekvienas galėtų pliką HTPC paversti pilnai sukonfigūruotu media centru per mažiau nei 15 minučių."
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
-msgstr "[B]Palaikymas:[/B][CR]Žiniatinklis: http://libreelec.tv[CR]Forumas: http://libreelec.tv/forum[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Socialinė žiniasklaida:[/B][CR]IRC: #libreelec on freenode.net (žiniatinklio tikralaikiai pokalbiai taip pat prieinami ir tinklapyje)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
+msgstr "[B]Palaikymas:[/B][CR]Žiniatinklis: http://libreelec.tv[CR]Forumas: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Socialinė žiniasklaida:[/B][CR]IRC: #libreelec on freenode.net (žiniatinklio tikralaikiai pokalbiai taip pat prieinami ir tinklapyje)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
 msgctxt "#611"
 msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
