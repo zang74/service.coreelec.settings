@@ -41,6 +41,7 @@ import subprocess
 import dbus
 import dbus.mainloop.glib
 import defaults
+import shutil
 
 from xml.dom import minidom
 
@@ -804,7 +805,18 @@ else:
 try:
     configFile = '%s/userdata/addon_data/service.libreelec.settings/oe_settings.xml' % XBMC_USER_HOME
     if not os.path.exists('%s/userdata/addon_data/service.libreelec.settings' % XBMC_USER_HOME):
-        os.makedirs('%s/userdata/addon_data/service.libreelec.settings' % XBMC_USER_HOME)
+        if os.path.exists('%s/userdata/addon_data/service.openelec.settings' % XBMC_USER_HOME):
+            shutil.copytree(('%s/userdata/addon_data/service.openelec.settings' % XBMC_USER_HOME),
+                    ('%s/userdata/addon_data/service.libreelec.settings' % XBMC_USER_HOME))
+            with open(configFile,'r+') as f:
+                xml = f.read()
+                xml = xml.replace("<openelec>","<libreelec>")
+                xml = xml.replace("</openelec>","</libreelec>")
+                f.seek(0)
+                f.write(xml)
+                f.truncate()
+        else:
+            os.makedirs('%s/userdata/addon_data/service.libreelec.settings' % XBMC_USER_HOME)
     if not os.path.exists('%s/services' % CONFIG_CACHE):
         os.makedirs('%s/services' % CONFIG_CACHE)
 except:
