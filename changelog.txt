@@ -1,3 +1,6 @@
+2016-04-26 v0.7.3
+  (rebrand) change new LibreELEC branding
+
 2016-04-22 v0.7.2
   (feature) changes to allow skinning
 
