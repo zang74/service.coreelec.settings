@@ -39,14 +39,14 @@ all: $(BUILDDIR)/$(ADDON_NAME)
 addon: $(BUILDDIR)/$(ADDON_NAME)-$(ADDON_VERSION).zip
 
 install: $(BUILDDIR)/$(ADDON_NAME)
-	mkdir -p $(DESTDIR)/$(ADDONDIR)
-	cp -R $(BUILDDIR)/$(ADDON_NAME) $(DESTDIR)/$(ADDONDIR)
+	mkdir -p $(DESTDIR)$(ADDONDIR)
+	cp -R $(BUILDDIR)/$(ADDON_NAME) $(DESTDIR)$(ADDONDIR)
 
 clean:
 	rm -rf $(BUILDDIR)
 
 uninstall:
-	rm -rf $(DESTDIR)/$(ADDONDIR)/$(ADDON_NAME)
+	rm -rf $(DESTDIR)$(ADDONDIR)/$(ADDON_NAME)
 
 $(BUILDDIR)/$(ADDON_NAME): $(BUILDDIR)/$(ADDON_NAME)/resources
 	mkdir -p $(BUILDDIR)/$(ADDON_NAME)
