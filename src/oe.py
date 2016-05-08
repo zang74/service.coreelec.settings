@@ -108,10 +108,11 @@ def _(code):
 
 
 def dbg_log(source, text, level=4):
-    if os.environ.get('DEBUG', 'no') == 'no':
+    if level == 0 and os.environ.get('DEBUG', 'no') == 'no':
         return
     xbmc.log('## LibreELEC Addon ## ' + source + ' ## ' + text, level)
-    xbmc.log(traceback.format_exc())
+    if level == 4:
+        xbmc.log(traceback.format_exc(), level)
 
 
 def notify(title, message, icon='icon'):
