@@ -408,6 +408,10 @@ msgctxt "#32144"
 msgid "Connect"
 msgstr ""
 
+msgctxt "#32145"
+msgid "Pair"
+msgstr ""
+
 msgctxt "#32146"
 msgid "Hidden Network Name"
 msgstr ""
