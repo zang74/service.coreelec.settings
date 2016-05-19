@@ -333,7 +333,7 @@ class system:
             self.oe.winOeMain.build_menu(self.struct)
             self.oe.dbg_log('system::load_menu', 'exit_function', 0)
         except Exception, e:
-            self.oe.dbg_log('system::loadSysMenu', 'ERROR: (' + repr(e) + ')')
+            self.oe.dbg_log('system::load_menu', 'ERROR: (' + repr(e) + ')')
 
     def set_value(self, listItem):
         try:
@@ -595,7 +595,7 @@ class system:
     def reset_xbmc(self, listItem=None):
         try:
             self.oe.dbg_log('system::reset_xbmc', 'enter_function', 0)
-            if self.ask_sure_reset('XBMC') == 1:
+            if self.ask_sure_reset('Soft') == 1:
                 self.oe.set_busy(1)
                 reset_file = open(self.XBMC_RESET_FILE, 'w')
                 reset_file.write('reset')
@@ -612,7 +612,7 @@ class system:
     def reset_oe(self, listItem=None):
         try:
             self.oe.dbg_log('system::reset_oe', 'enter_function', 0)
-            if self.ask_sure_reset('LibreELEC') == 1:
+            if self.ask_sure_reset('Hard') == 1:
                 self.oe.set_busy(1)
                 reset_file = open(self.LIBREELEC_RESET_FILE, 'w')
                 reset_file.write('reset')
@@ -630,13 +630,13 @@ class system:
         try:
             self.oe.dbg_log('system::ask_sure_reset', 'enter_function', 0)
             xbmcDialog = xbmcgui.Dialog()
-            answer = xbmcDialog.yesno(part + ' reset', self.oe._(32326).encode('utf-8'), self.oe._(32328).encode('utf-8'))
+            answer = xbmcDialog.yesno(part + ' Reset', self.oe._(32326).encode('utf-8'), self.oe._(32328).encode('utf-8'))
             if answer == 1:
                 if self.oe.reboot_counter(30, self.oe._(32323)) == 1:
                     return 1
                 else:
                     return 0
-            self.oe.dbg_log('system::reset_oeask_sure_reset', 'exit_function', 0)
+            self.oe.dbg_log('system::ask_sure_reset', 'exit_function', 0)
         except Exception, e:
             self.oe.set_busy(0)
             self.oe.dbg_log('system::ask_sure_reset', 'ERROR: (' + repr(e) + ')', 4)
@@ -657,7 +657,7 @@ class system:
 
             xbmcDialog = xbmcgui.Dialog()
             bckDir = xbmcDialog.browse( 0, 
-                                        self.oe._(32392).encode('utf-8'), 
+                                        self.oe._(32371).encode('utf-8'),
                                         'files', 
                                         '', 
                                         False, 
@@ -700,7 +700,7 @@ class system:
             copy_success = 0
             xbmcDialog = xbmcgui.Dialog()
             restore_file_path = xbmcDialog.browse( 1, 
-                                              self.oe._(32393).encode('utf-8'), 
+                                              self.oe._(32373).encode('utf-8'),
                                               'files', 
                                               '??????????????.tar', 
                                               False, 
