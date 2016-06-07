@@ -229,6 +229,14 @@ msgid "Select an update channel"
 msgstr ""
 
 msgctxt "#761"
+msgid "Enable to allow entering a custom update url"
+msgstr ""
+
+msgctxt "#762"
+msgid "Enter a custom update url (url should be the root of the update files)"
+msgstr ""
+
+msgctxt "#770"
 msgid "Select an available version"
 msgstr ""
 
@@ -274,6 +282,22 @@ msgstr ""
 
 msgctxt "#32015"
 msgid "Update Channel"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Show Custom Channels"
+msgstr ""
+
+msgctxt "#32017"
+msgid "  - Custom Channel 1"
+msgstr ""
+
+msgctxt "#32018"
+msgid "  - Custom Channel 2"
+msgstr ""
+
+msgctxt "#32019"
+msgid "  - Custom Channel 3"
 msgstr ""
 
 msgctxt "#32020"
@@ -482,6 +506,10 @@ msgstr ""
 
 msgctxt "#32190"
 msgid "System Name"
+msgstr ""
+
+msgctxt "#32191"
+msgid "Invalid URL"
 msgstr ""
 
 msgctxt "#32196"
