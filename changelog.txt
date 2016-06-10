@@ -1,3 +1,8 @@
+2016-06-10 v0.8.1
+  (feature) support for changing update channels
+  (fix) prevent null timeserver values
+  (fix) return 3 values for keyboard layout
+
 2016-05-19 v0.8.0
   (update) changes for Estuary skin
   (udpate) enhancements to bluez pairing
