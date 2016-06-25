@@ -1,3 +1,7 @@
+2016-06-25 v0.8.2
+  (feature) add support for development and custom updates
+  (fix) enable "Save" button in network configuration
+
 2016-06-10 v0.8.1
   (feature) support for changing update channels
   (fix) prevent null timeserver values
