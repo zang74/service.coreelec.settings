@@ -1,3 +1,8 @@
+2016-10-07 v0.8.3
+  (add) http://sprunge.us log pastebin function
+  (fix) enable samba service at wizard
+  (fix) About text
+
 2016-06-25 v0.8.2
   (feature) add support for development and custom updates
   (fix) enable "Save" button in network configuration

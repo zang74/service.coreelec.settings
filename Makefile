@@ -25,7 +25,7 @@
 ################################################################################
 
 ADDON_NAME=service.libreelec.settings
-ADDON_VERSION=0.8.2
+ADDON_VERSION=0.8.3
 DISTRONAME:=LibreELEC
 
 BUILDDIR=build
