@@ -550,6 +550,11 @@ class services:
         try:
             self.oe.dbg_log('services::do_wizard', 'enter_function', 0)
             self.oe.winOeMain.set_wizard_title(self.oe._(32311))
+
+            # Enable samba
+            self.struct['samba']['settings']['samba_autostart']['value'] = '1'
+            self.initialize_samba()
+
             if hasattr(self, 'samba'):
                 self.oe.winOeMain.set_wizard_text(self.oe._(32313) + '[CR][CR]' + self.oe._(32312))
             else:
