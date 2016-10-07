@@ -108,6 +108,10 @@ msgctxt "#717"
 msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
 msgstr ""
 
+msgctxt "#718"
+msgid "Send config.txt, cmdline.txt, shutdown.sh, autostart.sh, and kodi.log to http://sprunge.us and display the short URL"
+msgstr ""
+
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr ""
@@ -750,6 +754,14 @@ msgstr ""
 
 msgctxt "#32375"
 msgid "Backup Progress"
+msgstr ""
+
+msgctxt "#32376"
+msgid "Submit Log"
+msgstr ""
+
+msgctxt "#32377"
+msgid "Pastebin system logs and get short URL"
 msgstr ""
 
 msgctxt "#32379"
