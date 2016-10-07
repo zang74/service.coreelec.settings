@@ -273,6 +273,20 @@ class system:
                             },
                         },
                     },
+                'debug': {
+                    'order': 9,
+                    'name': 32376,
+                    'settings': {
+                        'paste': {
+                            'name': 32377,
+                            'value': '0',
+                            'action': 'do_pastebin',
+                            'type': 'button',
+                            'InfoText': 718,
+                            'order': 1,
+                            },
+                        },
+                    },
                 }
 
             self.keyboard_layouts = False
@@ -929,6 +943,34 @@ class system:
             self.oe.dbg_log('system::do_restore', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('system::do_restore', 'ERROR: (' + repr(e) + ')')
+
+    def cat_file(self, tmp, filen):
+        self.oe.execute('echo "======== ' + filen + ' ==============" >> ' + tmp)
+        self.oe.execute('cat ' + filen + ' >> ' + tmp)
+
+    def do_pastebin(self, listItem=None):
+        try:
+            paste_dlg = xbmcgui.DialogProgress()
+            paste_dlg.create('Pasting log files', 'Pasting...', ' ', ' ')
+            self.oe.execute('echo "Paste output" > /storage/.kodi/temp/paste.tmp')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/config.txt')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/cmdline.txt')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/storage/.kodi/temp/kodi.log')
+            self.oe.execute('dmesg > /storage/.kodi/temp/dmesg.txt')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/storage/.kodi/temp/dmesg.txt')
+
+            result = self.oe.execute('paste /storage/.kodi/temp/paste.tmp', 1)
+            if not paste_dlg.iscanceled():
+                paste_dlg.close()
+                link = result.find('http')
+                done_dlg = xbmcgui.Dialog()
+                if link > 0:
+                    done_dlg.ok('Debug pasted', 'Log files pasted to ' + result[link:])
+                    self.oe.dbg_log('system::do_pastebin', result[link:])
+                else:
+                    done_dlg.ok('Failed paste', 'Failed to paste log files, try again')
+        except Exception, e:
+            self.oe.dbg_log('system::do_pastebin', 'ERROR: (' + repr(e) + ')')
 
     def tar_add_folder(self, tar, folder):
         try:
