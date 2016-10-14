@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Πιέστε για να γίνει χειροκίνητος έλεγχος των διακομιστών του @DISTRONAME@ για ενημερωμένη έκδοση"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Αν έχετε μια μικρή οθόνη LCD ή VFD συνδεδεμένη στο @DISTRONAME@ σύστημά σας πρέπει να διαμορφώσετε τον κατάλληλο οδηγό οθόνης"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Θέστε το ως ΕΝΕΡΓΟ και οι συσκευές Bluetooth θα απενεργοποιούνται κατά τις λειτουργίες εξοικονόμησης ενέργειας"
@@ -247,14 +243,6 @@ msgstr "Σύστημα"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Περιβάλλον Εργασίας"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Πρόγραμμα Οδήγησης"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "Πρόγραμμα Οδήγησης LCD/VFD"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Το πρόσθετο ρυθμίσεων δεν είναι ακόμα έτοιμο, δοκιμάστε αργότερα."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Ενεργοποίηση Υποστήριξης Οδηγού LCD"

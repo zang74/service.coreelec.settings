@@ -112,10 +112,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Klikkaa tarkastaaksesi manuaalisesti löytyykö @DISTRONAME@ :n serveriltä uudempaa versiota"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Jos sinulla on pieni LCD tai VFD kytkettyänä sinun @DISTRONAME@ järjestelmään, tulee sinun asettaa oikea näyttöajuri"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Kun tämä asetus on valittuna, Bluetooth-laitteet kytketään pois päältä virransäästötiloissa"
@@ -231,14 +227,6 @@ msgstr "Järjestelmä"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Liittymä"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Ajuri"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD-ajurit"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -720,6 +708,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Asetukset eivät ole vielä valmiita, yritä myöhemmin uudelleen."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Ota käyttöön LCD-ajurituki"

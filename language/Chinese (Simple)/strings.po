@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "点击以手动检查 @DISTRONAME@ 服务器的新版本。"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "如果您的 @DISTRONAME@ 连接有小尺寸 LCD 或是 VFD 显示器，您必须选择正确的驱动。"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "启用在节能模式下禁用蓝牙设备"
@@ -247,14 +243,6 @@ msgstr "系统设置"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "接口"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "驱动"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD 驱动程序"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "系统配置插件尚未就绪，请稍后再试。"
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "启用 LCD 驱动支持"

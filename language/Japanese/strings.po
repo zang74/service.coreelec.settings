@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "クリックすると @DISTRONAME@ サーバーの更新がリリースされているかどうかをチェックします"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "@DISTRONAME@ システムが小さな LCD もしくは VFD を装備している場合は、正しいディスプレー ドライバーを設定しないとその装置は動作しません。"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "有効にすると、省電力モードに入っている間は Bluetooth 機器が無効になります"
@@ -247,14 +243,6 @@ msgstr "システム"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "インターフェース"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "ドライバ"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD ドライバ"
 
 msgctxt "#32009"
 msgid "Keyboard"

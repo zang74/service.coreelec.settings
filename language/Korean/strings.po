@@ -180,6 +180,3 @@ msgctxt "#32385"
 msgid "OBEX Upload Folder"
 msgstr "OBEX 업로드 폴더"
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "LCD 드라이버 지원 사용"

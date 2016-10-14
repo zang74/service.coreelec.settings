@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "יש ללחוץ לשם בדיקה ידנית בשרתי @DISTRONAME@ אם קיימת גרסה מעודכנת"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "אם מחובר מודול LCD או VFD קטן למערכת @DISTRONAME@ אז יש להגדיר את מנהל ההתקן המתאים"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "יש לסמן כפעיל לשם נטרול התקני Bluetooth כאשר מצבי חסכון בחשמל פעילים"
@@ -247,14 +243,6 @@ msgstr "מערכת"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "ממשק"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "מנהל התקן"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "מנהל התקן LCD/VFD"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "הרחבת ההגדרות לא מוכנה, יש לנסות שנית מאוחר יותר."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "הפעל מנהל התקן LCD"

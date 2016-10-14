@@ -44,8 +44,6 @@ class services:
     OPT_SSH_NOPASSWD = None
     AVAHI_DAEMON = None
     CRON_DAEMON = None
-    LCD_DRIVER_DIR = None
-    D_LCD_DRIVER = None
     menu = {'4': {
         'name': 32001,
         'menuLoader': 'load_menu',
@@ -173,33 +171,6 @@ class services:
                         'InfoText': 745,
                         }},
                     },
-                'driver': {
-                    'order': 5,
-                    'name': 32007,
-                    'settings': {
-                        'lcd_enabled': {
-                            'name': 32391,
-                            'value': 'none',
-                            'action': 'set_lcd_driver',
-                            'type': 'bool',
-                            'InfoText': 717,
-                            'order': 1,
-                            },
-                        'lcd': {
-                            'name': 32008,
-                            'value': 'none',
-                            'action': 'set_lcd_driver',
-                            'type': 'multivalue',
-                            'parent': {
-                                'entry': 'lcd_enabled',
-                                'value': ['1'],
-                                },
-                            'values': [],
-                            'InfoText': 717,
-                            'order': 2,
-                            },
-                        },
-                    },
                 'bluez': {
                     'order': 6,
                     'name': 32331,
@@ -293,14 +264,6 @@ class services:
     def load_values(self):
         try:
             self.oe.dbg_log('services::load_values', 'enter_function', 0)
-
-            # LCD
-
-            arrLcd = self.get_lcd_drivers()
-            self.struct['driver']['settings']['lcd']['values'] = arrLcd
-            self.struct['driver']['settings']['lcd_enabled']['value'] = self.oe.get_service_state('lcdd')
-            self.struct['driver']['settings']['lcd']['value'] = self.oe.get_service_option('lcdd', 'LCD_DRIVER', self.D_LCD_DRIVER).replace('"',
-                    '')
 
             # SAMBA
 
@@ -504,41 +467,6 @@ class services:
         except Exception, e:
             self.oe.set_busy(0)
             self.oe.dbg_log('services::init_obex', 'ERROR: (' + repr(e) + ')', 4)
-
-    def set_lcd_driver(self, listItem=None):
-        try:
-            self.oe.dbg_log('services::set_lcd_driver', 'enter_function', 0)
-            self.oe.set_busy(1)
-            state = 0
-            options = {}
-            if not listItem == None:
-                self.set_value(listItem)
-            if self.struct['driver']['settings']['lcd_enabled']['value'] == '1':
-                state = 1
-            if not self.struct['driver']['settings']['lcd']['value'] is None and not self.struct['driver']['settings']['lcd']['value'] == 'none' \
-                and state == 1:
-                options['LCD_DRIVER'] = '"%s"' % self.struct['driver']['settings']['lcd']['value']
-            self.oe.dbg_log('services::set_lcd_driver', repr(options), 0)
-            self.oe.dbg_log('services::set_lcd_driver', repr(state), 0)
-            self.oe.set_service('lcdd', options, state)
-            self.oe.set_busy(0)
-            self.oe.dbg_log('services::set_lcd_driver', 'exit_function', 0)
-        except Exception, e:
-            self.oe.set_busy(0)
-            self.oe.dbg_log('services::set_lcd_driver', 'ERROR: (' + repr(e) + ')')
-
-    def get_lcd_drivers(self):
-        try:
-            self.oe.dbg_log('services::get_lcd_drivers', 'enter_function', 0)
-            arrDrivers = ['none']
-            if os.path.exists(self.LCD_DRIVER_DIR):
-                for driver in glob.glob(self.LCD_DRIVER_DIR + '*'):
-                    arrDrivers.append(os.path.basename(driver).replace('.so', ''))
-            self.oe.dbg_log('services::get_lcd_drivers', 'exit_function', 0)
-            return arrDrivers
-        except Exception, e:
-            self.oe.dbg_log('services::get_lcd_drivers', 'ERROR: (' + repr(e) + ')')
-
     def exit(self):
         try:
             self.oe.dbg_log('services::exit', 'enter_function', 0)

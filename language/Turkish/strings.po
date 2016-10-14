@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "@DISTRONAME@ sunucularındaki güncel sürümü el ile kontrol etmek için tıklayın"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Eğer @DISTRONAME@ sisteminize küçük bir LCD veya VFD bağlı ise doğru görüntü sürücüsünü yapılandırmanız gerekir."
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "AÇIK olarak ayarlarsanız güç tasarrufu modunda Bluetooth aygıtları devre dışı bırakılır."
@@ -247,14 +243,6 @@ msgstr "Sistem"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Arabirim"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Sürücü"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD Sürücüsü"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Ayarlar eklentisi henüz hazır değil, lütfen daha sonra tekrar deneyin."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "LCD Sürücü Desteğini Etkinleştir"

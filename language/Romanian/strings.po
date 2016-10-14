@@ -72,10 +72,6 @@ msgctxt "#32003"
 msgid "Interface"
 msgstr "Interfață"
 
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Driver"
-
 msgctxt "#32009"
 msgid "Keyboard"
 msgstr "Tastatură"

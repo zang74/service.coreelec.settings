@@ -204,14 +204,6 @@ msgctxt "#32003"
 msgid "Interface"
 msgstr "Interface"
 
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Driver"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD Driver"
-
 msgctxt "#32009"
 msgid "Keyboard"
 msgstr "Keyboard"
