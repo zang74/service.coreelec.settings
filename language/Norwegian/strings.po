@@ -208,14 +208,6 @@ msgctxt "#32003"
 msgid "Interface"
 msgstr "Grensesnitt"
 
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Driver"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD-driver"
-
 msgctxt "#32009"
 msgid "Keyboard"
 msgstr "Tastatur"
@@ -680,6 +672,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Innstillingsutvidelse er ikke klar ennå, prøv igjen senere."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Aktiver LCD-driverstøtte"

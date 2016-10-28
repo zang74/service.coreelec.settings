@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Nhấn vào đây để tự kiểm tra @DISTRONAME@ máy chủ cho một bản phát hành cập nhật"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Nếu bạn có một màn hình LCD nhỏ hoặc VFD của bạn hệ thống @DISTRONAME@ , bạn phải cấu hình điều khiển hiển thị chính xác"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Thiết lập Bật để  Bluetooth sẽ bị vô hiệu hóa trong chế độ tiết kiệm điện"
@@ -247,14 +243,6 @@ msgstr "Hệ thống"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Giao diện"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Trình điều khiển"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "Trình điều khiển LCD/VFD"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Cài đặt addon chưa sẵn sàng, vui lòng thử lại sau"
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Kích hoạt hỗ trợ driver LCD"

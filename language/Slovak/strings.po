@@ -160,14 +160,6 @@ msgctxt "#32003"
 msgid "Interface"
 msgstr "Sieťové rozhranie"
 
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Ovládač"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD ovládač"
-
 msgctxt "#32009"
 msgid "Keyboard"
 msgstr "Klávesnica"

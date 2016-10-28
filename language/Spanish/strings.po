@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Pulsar para comprobar manualmente los servidores de @DISTRONAME@ en busca una versión actualizada"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Si tiene un pequeño LCD o VFD conectado a su sistema de @DISTRONAME@ deberás configurar el driver del display adecuado"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Desactivar dispositivos Bluetooth durante el modo ahorro de energía"
@@ -239,14 +235,6 @@ msgstr "Sistema"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Interfase"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Controlador"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "Controlador del LCD/VFD"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -752,6 +740,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "El addon de configuración aún no está listo, por favor, inténtalo de nuevo más tarde."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Habilitar soporte para LCD"

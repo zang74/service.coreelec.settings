@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Kliknite za ručnu provjeru ažuriranja na @DISTRONAME@ poslužiteljima"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Ako imate mali LCD ili VFD spojen na vaš @DISTRONAME@ sustav morate postaviti odgovarajući upravljački program zaslona"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Postavite na UKLJUČENO i Bluetooth uređaji biti će onemogućeni tijekom načina štednje energije"
@@ -247,14 +243,6 @@ msgstr "Sustav"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Sučelje"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Upravljački program"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD upravljački program"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Dodatak postavki još nije spreman, pokušajte ponovno kasnije."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Omogući podršku LCD uređaja"

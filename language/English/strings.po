@@ -104,10 +104,6 @@ msgctxt "#715"
 msgid "Set to ON and an on-screen notification will be displayed when a new update is available"
 msgstr ""
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr ""
-
 msgctxt "#718"
 msgid "Send config.txt, cmdline.txt, shutdown.sh, autostart.sh, and kodi.log to http://sprunge.us and display the short URL"
 msgstr ""
@@ -254,14 +250,6 @@ msgstr ""
 
 msgctxt "#32003"
 msgid "Interface"
-msgstr ""
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr ""
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
 msgstr ""
 
 msgctxt "#32009"
@@ -812,6 +800,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr ""
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr ""

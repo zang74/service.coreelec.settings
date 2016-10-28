@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Paspauskite, jei norite patikrinti ar yra atnaujintas leidimas @DISTRONAME@ serveriuose"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Jei turite prijungtą mažą LCD ar VFD prie savi @DISTRONAME@ sistemos, jums reikia nustatyti teisingas vaizdo tvarkykles"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Nustatykite Įjungta ir Bluetooth įrenginiai bus atjungti, įjungus energijos taupymo režimą"
@@ -247,14 +243,6 @@ msgstr "Sistema"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Sąsaja"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Tvarkyklė"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD tvarkyklė"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Nustatymų priedas dar neparuoštas, pabandykite vėliau dar kartą."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Įjungti LCD tvarkyklių palaikymą"

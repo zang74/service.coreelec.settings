@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Välj för att manuellt fråga @DISTRONAME@-servrarna efter en uppdaterad utgåva"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Om du har en liten LCD- eller VFD-skärm inkopplad till ditt @DISTRONAME@-system måste du konfigurera korrekt drivrutin."
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Om PÅ så kommer blåtandsenheter att avaktiveras i strömsparläge"
@@ -247,14 +243,6 @@ msgstr "System"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Gränssnitt"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Drivrutin"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD-drivrutin"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Inställningstillägget är ännu inte redo, vänligen försök igen senare. "
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Aktivera stöd för LCD"

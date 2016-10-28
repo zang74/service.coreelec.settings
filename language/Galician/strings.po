@@ -160,14 +160,6 @@ msgctxt "#32003"
 msgid "Interface"
 msgstr "Interface"
 
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Controlador"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "Controlador LCD/VFD"
-
 msgctxt "#32009"
 msgid "Keyboard"
 msgstr "Teclado"
@@ -640,6 +632,3 @@ msgctxt "#32389"
 msgid "Disable Standby"
 msgstr "Desactivar Modo en Espera"
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Activar o Soporte para o Controlador LCD"

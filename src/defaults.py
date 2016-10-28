@@ -74,8 +74,6 @@ services = {
     'D_SSH_DISABLE_PW_AUTH': '0',
     'AVAHI_DAEMON': '/usr/sbin/avahi-daemon',
     'CRON_DAEMON': '/sbin/crond',
-    'LCD_DRIVER_DIR': '/usr/lib/lcdproc/',
-    'D_LCD_DRIVER': 'none',
     }
 
 system = {
@@ -112,5 +110,4 @@ _services = {
     'bluez': ['bluetooth.service'],
     'obexd': ['obex.service'],
     'crond': ['cron.service'],
-    'lcdd': ['lcdd.service'],
     }

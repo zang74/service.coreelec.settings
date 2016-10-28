@@ -116,10 +116,6 @@ msgctxt "#716"
 msgid "Click to manually check the @DISTRONAME@ servers for an updated release"
 msgstr "Кликнете ако желаете те да проверите за нова версия на @DISTRONAME@"
 
-msgctxt "#717"
-msgid "If you have an small LCD or VFD attached to your @DISTRONAME@ system you must configure the correct display driver"
-msgstr "Ако сте свързали малък LCD или VFD дисплей към @DISTRONAME@ трябва да изберете подходящия драйвър"
-
 msgctxt "#720"
 msgid "Set to ON and Bluetooth devices will be disabled during power-saving modes"
 msgstr "Включете и Bluetooth устройствата ще бъдат изключвани при активиране на енергоспестяващ режим"
@@ -247,14 +243,6 @@ msgstr "Система"
 msgctxt "#32003"
 msgid "Interface"
 msgstr "Интерфейс"
-
-msgctxt "#32007"
-msgid "Driver"
-msgstr "Драйвър"
-
-msgctxt "#32008"
-msgid "LCD/VFD Driver"
-msgstr "LCD/VFD драйвър"
 
 msgctxt "#32009"
 msgid "Keyboard"
@@ -764,6 +752,3 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Добавката за настройките не е в готовност. Моля, опитайте по-късно."
 
-msgctxt "#32391"
-msgid "Enable LCD Driver Support"
-msgstr "Включи поддръжката на LCD драйвър"
