@@ -1,3 +1,7 @@
+2016-10-29 v0.8.4
+  (remove) lcdproc config (moved to an add-on)
+  (fix) update issue with files on different filesystems
+
 2016-10-07 v0.8.3
   (add) http://sprunge.us log pastebin function
   (fix) enable samba service at wizard
