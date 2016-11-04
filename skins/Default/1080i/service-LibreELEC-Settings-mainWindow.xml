@@ -213,7 +213,6 @@
                         <font>font10</font>
                         <textcolor>white</textcolor>
                         <align>left</align>
-                        <label>$ADDON[service.libreelec.settings 705]</label>
                     </control>
                 </control>
                 <!-- simple list content -->
@@ -1061,6 +1060,17 @@
                         </control>
                     </focusedlayout>
                 </control>
+            </control>
+            <control type="textbox" id="1400">
+                <left>466</left>
+                <top>808</top>
+                <width>1150</width>
+                <height>90</height>
+                <label>$INFO[Window.Property(InfoText)]</label>
+                <align>left</align>
+                <font>font10</font>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
             </control>
             <control type="button" id="1501">
                 <left>1400</left>
