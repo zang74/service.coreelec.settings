@@ -56,10 +56,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]Podpora:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Sociálne siete:[/B][CR]IRC: #libreelec na freenode.net (webový chat je tiež k dispozícii na tejto stránke)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "Projekt LibreELEC je funguje vďaka dobrej vôli, láske a peňažným príspevkom. Ak máte záujem prispieť do projektu, môžete tak urobiť zaslaním peňažného príspevku prostredníctvom služieb PayPal, Flattr alebo Bitcoin. Zaberie to iba zopár minút. http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "Nastavenie mena počítača, typu klávesnice, vykonanie reštartu, aktualizácie, zálohovania alebo obnovy"

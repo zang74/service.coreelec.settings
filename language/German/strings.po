@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]Support:[/B][CR]Web: http://www.libreelec.tv[CR]Forum: http://forum.libreelec.tv[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Be Social! Besuchen Sie unsere Community:[/B][CR]IRC: #libreelec bei freenode.net (auch verfügbar über Web Chat)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec\n  "
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "Wenn Sie sich am [COLOR FFFFFFFF]LibreELEC[/COLOR] Projekt beteiligen möchten, können Sie uns mit einer Spende über PayPal helfen. Spenden ist einfach und dauert nur wenige Minuten. http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "Konfigurieren: Computernamen, Tastaturtyp | System: Zurücksetzen, Aktualisieren, Datensicherung und -wiederherstellung"

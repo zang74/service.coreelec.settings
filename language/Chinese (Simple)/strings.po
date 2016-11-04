@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]支持：[/B][CR]网址：http://libreelec.tv[CR]论坛：http://forum.libreelec.tv/[CR]Wiki：http://wiki.libreelec.tv[CR][CR][B]社交媒体：[/B][CR]IRC：freenode.net 上的 #libreelec（支持 web 方式的聊天服务）[CR]Twitter：https://twitter.com/libreelec[CR]Facebook：http://www.facebook.com/LibreELEC[CR]Google+：https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "LibreELEC 项目的运作有赖于爱心、奉献和你的捐助支持。你可以通过PayPal、flattr或比特币进行捐助，捐助简单易行，详情见 http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "配置主机名、键盘类型，进行系统重置、更新或者备份和恢复。"
