@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]サポート:[/B][CR]ウェブ: http://libreelec.tv[CR]フォーラム: http://forum.libreelec.tv/[CR]: ウィキ: http://wiki.libreelec.tv[CR][CR][B]ソーシャルメディア:[/B][CR]IRC: #libreelec on freenode.net (ウェブからのウェブベースのチャットも利用できます)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "LibreELEC プロジェクトは親切、愛、そして寄付で運営しています。プロジェクトに貢献いただくご意志があれば、PayPal、Flattr またはBitcoin による寄付ができます。寄付は簡単でほんの数分で終わります。 http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "ホスト名やキーボードの種類の設定、システムのリセットや更新、そしてバックアップとリストアを行います。"

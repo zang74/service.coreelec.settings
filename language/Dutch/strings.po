@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]Ondersteuning:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Sociale media:[/B][CR]IRC: #libreelec op freenode.net (webgebaseerde chat is ook beschikbaar vanaf de website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "Het LibreELEC project draait op goede wil, liefde, en uw donaties. Als u wilt bijdragen aan het project, dan kunt u doneren via PayPal, Flattr of Bitcoin. Een donatie doen is makkelijk en neemt een paar minuten in beslag. Ga naar http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "Configureer een hostnaam, toetsenbordtype, voer een reset uit, update, of backups en restores"

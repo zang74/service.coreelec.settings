@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]Támogatás:[/B][CR]Web: http://libreelec.tv[CR]Fórum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Közzöségi oldalak:[/B][CR]IRC: #libreelec on freenode.net (web alapú szintén elérhető a webes felületről)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "Az LibreELEC projekt a jóakaraton, szereteten és az adományokon alapszik. Ha szeretne hozzájárulni a projekthez, ezt megteheti az alábbi formákba: PayPal, Flattr or Bitcoin. Az adakozás egyszerű és néhány perc alatt elvégezhető. http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "Hosztnév, billentyűzettípus beállítása, reset, frissítés, mentés és visszaállítás kezdeményezése "

@@ -60,10 +60,6 @@ msgctxt "#610"
 msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 msgstr "[B]Destek:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Sosyal Medya:[/B][CR]IRC: freenode.net üzerinde #libreelec (web tabanlı sohbet web sitesinden de mevcuttur)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC[CR]Google+: https://plus.google.com/+libreelec"
 
-msgctxt "#611"
-msgid "The LibreELEC project runs on goodwill, love, and your donations. If you would like to contribute to the project you can donate using PayPal, Flattr or Bitcoin. Making a donation is easy and takes only a couple of minutes. http://libreelec.tv/donate"
-msgstr "LibreELEC projesi, iyi niyet, sevgi ve bağışlarınız ile çalışır. Projeye katkıda bulunmak istiyorsanız PayPal, Flattr veya Bitcoin kullanarak bağış yapabilirsiniz. Bağış yapmak kolaydır ve sadece birkaç dakika sürer. http://libreelec.tv/donate"
-
 msgctxt "#700"
 msgid "Configure a hostname, keyboard type, perform a reset, update, or backups and restores"
 msgstr "Ana bilgisayar adı, klavye türü, sıfırlama, güncelleme veya yedekleme ve geri yüklemeyi yapılandır"
