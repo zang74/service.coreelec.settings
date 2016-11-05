@@ -1,3 +1,7 @@
+2016-11-05 v0.8.5
+  (fix) fix the broken infotext
+  (add) add the ability to disable lirc
+
 2016-10-29 v0.8.4
   (remove) lcdproc config (moved to an add-on)
   (fix) update issue with files on different filesystems
