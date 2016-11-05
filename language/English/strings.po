@@ -196,6 +196,10 @@ msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
 msgstr ""
 
+msgctxt "#746"
+msgid "Set to ON to enable the lirc daemon"
+msgstr ""
+
 msgctxt "#750"
 msgid "750"
 msgstr ""
@@ -796,3 +800,10 @@ msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr ""
 
+msgctxt "#32391"
+msgid "Lirc"
+msgstr ""
+
+msgctxt "#32392"
+msgid "Enable Lirc"
+msgstr ""
