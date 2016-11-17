@@ -660,13 +660,20 @@ class system:
     def do_manual_update(self, listItem=None):
         try:
             self.oe.dbg_log('system::do_manual_update', 'enter_function', 0)
+            channel = self.struct['update']['settings']['Channel']['value']
+            regex = re.compile(self.update_json[channel]['prettyname_regex'])
+            longname = '-'.join([self.oe.DISTRIBUTION, self.oe.ARCHITECTURE, self.oe.VERSION])
+            if regex.search(longname):
+                version = regex.findall(longname)[0]
+            else:
+                version = self.oe.VERSION
             if not listItem == None:
                 self.struct['update']['settings']['Build']['value'] = listItem.getProperty('value')
             if self.struct['update']['settings']['Build']['value'] != '':
-                self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.struct['update']['settings']['Build']['value']
+                self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.get_available_builds(self.struct['update']['settings']['Build']['value'])
                 xbmcDialog = xbmcgui.Dialog()
-                answer = xbmcDialog.yesno('LibreELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + self.oe.VERSION,
-                                      self.oe._(32187).encode('utf-8') + ':  ' + re.findall(r'([0-9]+.[0-9].*)', self.struct['update']['settings']['Build']['value'].replace('.tar', '').encode('utf-8'))[0],
+                answer = xbmcDialog.yesno('LibreELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + version.encode('utf-8'),
+                                      self.oe._(32187).encode('utf-8') + ':  ' + self.struct['update']['settings']['Build']['value'].encode('utf-8'),
                                       self.oe._(32180).encode('utf-8'))
                 xbmcDialog = None
                 del xbmcDialog
@@ -714,19 +721,29 @@ class system:
         except Exception, e:
             self.oe.dbg_log('system::build_json', 'ERROR: (' + repr(e) + ')')
 
-    def get_available_builds(self):
+    def get_available_builds(self, shortname=None):
         try:
             self.oe.dbg_log('system::get_available_builds', 'enter_function', 0)
             channel = self.struct['update']['settings']['Channel']['value']
             update_files = []
+            build = None
             if not self.update_json is None:
                 if channel != '':
                     if channel in self.update_json:
+                        regex = re.compile(self.update_json[channel]['prettyname_regex'])
                         if self.oe.ARCHITECTURE in self.update_json[channel]['project']:
                             for i in self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases']:
-                                update_files.append(self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases'][i]['file']['name'])
+                                if shortname is None:
+                                    update_files.append(regex.findall(self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases'][i]['file']['name'])[0].strip('.tar'))
+                                else:
+                                    build = self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases'][i]['file']['name']
+                                    if shortname in build:
+                                        break
             self.oe.dbg_log('system::get_available_builds', 'exit_function', 0)
-            return update_files
+            if build is None:
+                return update_files
+            else:
+                return build
         except Exception, e:
             self.oe.dbg_log('system::get_available_builds', 'ERROR: (' + repr(e) + ')')
 
