@@ -1,3 +1,7 @@
+2016-12-21 v0.8.6
+  (fix) bluetooth standby when screensaver activated
+  (fix) infobool errors
+
 2016-11-05 v0.8.5
   (fix) fix the broken infotext
   (add) add the ability to disable lirc
