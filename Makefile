@@ -50,7 +50,7 @@ uninstall:
 
 $(BUILDDIR)/$(ADDON_NAME): $(BUILDDIR)/$(ADDON_NAME)/resources
 	mkdir -p $(BUILDDIR)/$(ADDON_NAME)
-	cp -R src/*.png src/*.py $(BUILDDIR)/$(ADDON_NAME)
+	cp -R src/*.py $(BUILDDIR)/$(ADDON_NAME)
 	cp COPYING $(BUILDDIR)/$(ADDON_NAME)
 	cp addon.xml $(BUILDDIR)/$(ADDON_NAME)
 	sed -e "s,@ADDONNAME@,$(ADDON_NAME),g" \
