@@ -732,7 +732,7 @@ class system:
                     if channel in self.update_json:
                         regex = re.compile(self.update_json[channel]['prettyname_regex'])
                         if self.oe.ARCHITECTURE in self.update_json[channel]['project']:
-                            for i in self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases']:
+                            for i in sorted(self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases'], key=int, reverse=True):
                                 if shortname is None:
                                     update_files.append(regex.findall(self.update_json[channel]['project'][self.oe.ARCHITECTURE]['releases'][i]['file']['name'])[0].strip('.tar'))
                                 else:
