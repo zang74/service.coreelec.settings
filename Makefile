@@ -28,6 +28,7 @@ ADDON_NAME=service.libreelec.settings
 ADDON_VERSION=0.8.7
 DISTRONAME:=LibreELEC
 
+SHELL=/bin/bash
 BUILDDIR=build
 DATADIR=/usr/share/kodi
 ADDONDIR=$(DATADIR)/addons
