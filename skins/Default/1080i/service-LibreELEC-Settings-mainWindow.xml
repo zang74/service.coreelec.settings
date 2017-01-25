@@ -498,10 +498,10 @@
                         </control>
                         <!-- Signal strength value -->
                         <control type="label">
-                            <left>1190</left>
-                            <top>66</top>
+                            <left>1100</left>
+                            <top>49</top>
                             <width>40</width>
-                            <height>40</height>
+                            <height>20</height>
                             <font>font10</font>
                             <align>right</align>
                             <textcolor>white</textcolor>
@@ -510,8 +510,8 @@
                         </control>
                         <!-- Online Symbol (top right) -->
                         <control type="image">
-                            <left>1238</left>
-                            <top>20</top>
+                            <left>1194</left>
+                            <top>10</top>
                             <width>36</width>
                             <height>36</height>
                             <aspectratio>keep</aspectratio>
@@ -520,8 +520,8 @@
                         </control>
                         <!-- Favorite Symbol (bottom right) -->
                         <control type="image">
-                            <left>1180</left>
-                            <top>50</top>
+                            <left>1210</left>
+                            <top>55</top>
                             <width>20</width>
                             <height>20</height>
                             <aspectratio>keep</aspectratio>
@@ -530,8 +530,8 @@
                         </control>
                         <!-- Secure Symbol (bottom right) -->
                         <control type="image">
-                            <left>1210</left>
-                            <top>50</top>
+                            <left>1140</left>
+                            <top>55</top>
                             <width>20</width>
                             <height>20</height>
                             <aspectratio>keep</aspectratio>
@@ -640,10 +640,10 @@
                         </control>
                         <!-- Signal strength value -->
                         <control type="label">
-                            <left>1190</left>
-                            <top>66</top>
+                            <left>1100</left>
+                            <top>49</top>
                             <width>40</width>
-                            <height>40</height>
+                            <height>10</height>
                             <font>font10</font>
                             <align>right</align>
                             <textcolor>white</textcolor>
@@ -652,8 +652,8 @@
                         </control>
                         <!-- Online Symbol (top right) -->
                         <control type="image">
-                            <left>1238</left>
-                            <top>20</top>
+                            <left>1196</left>
+                            <top>10</top>
                             <width>36</width>
                             <height>36</height>
                             <aspectratio>keep</aspectratio>
@@ -662,8 +662,8 @@
                         </control>
                         <!-- Favorite Symbol (bottom right) -->
                         <control type="image">
-                            <left>1180</left>
-                            <top>50</top>
+                            <left>1210</left>
+                            <top>55</top>
                             <width>20</width>
                             <height>20</height>
                             <aspectratio>keep</aspectratio>
@@ -672,8 +672,8 @@
                         </control>
                         <!-- Secure Symbol (bottom right) -->
                         <control type="image">
-                            <left>1210</left>
-                            <top>50</top>
+                            <left>1140</left>
+                            <top>55</top>
                             <width>20</width>
                             <height>20</height>
                             <aspectratio>keep</aspectratio>
@@ -1201,3 +1201,4 @@
         </control>
     </controls>
 </window>
+
