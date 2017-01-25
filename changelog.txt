@@ -1,3 +1,6 @@
+2017-01-25 v0.8.8
+  (fix) various graphics/text alignment issues
+
 2017-01-04 v0.8.7
   (fix) background in non-Estuary skins
   (fix) order update release names by release order not name
