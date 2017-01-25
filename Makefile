@@ -25,7 +25,7 @@
 ################################################################################
 
 ADDON_NAME=service.libreelec.settings
-ADDON_VERSION=0.8.7
+ADDON_VERSION=0.8.8
 DISTRONAME:=LibreELEC
 
 SHELL=/bin/bash
