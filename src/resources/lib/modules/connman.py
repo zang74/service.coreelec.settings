@@ -35,6 +35,8 @@ import xbmcgui
 import threading
 import oeWindows
 import ConfigParser
+import random
+import string
 
 
 ####################################################################
@@ -554,7 +556,7 @@ class connman:
                         'TetheringPassphrase': {
                             'order': 4,
                             'name': 32107,
-                            'value': 'libreelec',
+                            'value': ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(10)),
                             'action': 'set_technologie',
                             'type': 'text',
                             'dbus': 'String',
