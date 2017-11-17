@@ -278,13 +278,21 @@ class system:
                     'order': 9,
                     'name': 32376,
                     'settings': {
-                        'paste': {
+                        'paste_system': {
                             'name': 32377,
                             'value': '0',
-                            'action': 'do_pastebin',
+                            'action': 'do_send_system_logs',
                             'type': 'button',
                             'InfoText': 718,
                             'order': 1,
+                            },
+                        'paste_crash': {
+                            'name': 32378,
+                            'value': '0',
+                            'action': 'do_send_crash_logs',
+                            'type': 'button',
+                            'InfoText': 719,
+                            'order': 2,
                             },
                         },
                     },
@@ -962,31 +970,83 @@ class system:
         except Exception, e:
             self.oe.dbg_log('system::do_restore', 'ERROR: (' + repr(e) + ')')
 
-    def cat_file(self, tmp, filen):
-        self.oe.execute('echo "======== ' + filen + ' ==============" >> ' + tmp)
-        self.oe.execute('cat ' + filen + ' >> ' + tmp)
+    def cat_file(self, tmp, filen, description=None):
+        if os.path.exists(filen):
+            if description:
+                self.oe.execute('echo "========== %s ==========" >> %s' % (description, tmp))
+            else:
+                self.oe.execute('echo "========== %s ==========" >> %s' % (filen, tmp))
+            self.oe.execute('cat %s >> %s' % (filen, tmp))
 
-    def do_pastebin(self, listItem=None):
+    def do_send_system_logs(self, listItem=None):
         try:
+            self.oe.dbg_log('system::do_send_system_logs', 'enter_function', 0)
+            if self.oe.BOOT_STATUS == 'SAFE':
+               self.do_send_logs('System', '/storage/.kodi.FAILED', 'kodi.log')
+            else:
+               self.do_send_logs('System', '/storage/.kodi', 'kodi.log')
+            self.oe.dbg_log('system::do_send_system_logs', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('system::do_do_send_system_logs', 'ERROR: (' + repr(e) + ')')
+
+    def do_send_crash_logs(self, listItem=None):
+        try:
+            self.oe.dbg_log('system::do_send_crash_logs', 'enter_function', 0)
+            if self.oe.BOOT_STATUS == 'SAFE':
+               self.do_send_logs('Crash', '/storage/.kodi.FAILED', 'kodi_crash.log')
+            else:
+               self.do_send_logs('Crash', '/storage/.kodi', 'kodi_crash.log')
+            self.oe.dbg_log('system::do_send_crash_logs', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('system::do_do_send_crash_logs', 'ERROR: (' + repr(e) + ')')
+
+    def do_send_logs(self, log_type, kodi_root, kodi_log):
+        try:
+            self.oe.dbg_log('system::do_send_logs', 'enter_function', 0)
+
+            self.oe.execute('echo "%s log output for: $(lsb_release)" > /storage/.kodi/temp/paste.tmp' % log_type)
+
+            if self.oe.ARCHITECTURE.endswith('.x86_64'):
+                if os.path.exists('/sys/firmware/efi'):
+                    self.oe.execute('echo "Firmware Boot Mode: EFI" >> /storage/.kodi/temp/paste.tmp')
+                else:
+                    self.oe.execute('echo "Firmware Boot Mode: BIOS" >> /storage/.kodi/temp/paste.tmp')
+
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/config.txt') # RPi
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/cmdline.txt') # RPi
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/syslinux.cfg') # x86 BIOS
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/EFI/BOOT/syslinux.cfg') # x86 EFI
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/extlinux.conf') # x86 legacy
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/extlinux/extlinux.conf') # u-boot
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '%s/temp/%s' % (kodi_root, kodi_log))
+            self.oe.execute('journalctl -a > /storage/.kodi/temp/journalctl.txt')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/storage/.kodi/temp/journalctl.txt', 'journalctl -a')
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '%s/.smb/smb.conf' % kodi_root)
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '%s/.smb/user.conf' % kodi_root)
+            self.cat_file('/storage/.kodi/temp/paste.tmp', '/run/samba/smb.conf')
+            self.do_pastebin()
+            os.remove('/storage/.kodi/temp/journalctl.txt')
+            os.remove('/storage/.kodi/temp/paste.tmp')
+            self.oe.dbg_log('system::do_send_logs', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('system::do_do_send_logs', 'ERROR: (' + repr(e) + ')')
+
+    def do_pastebin(self):
+        try:
+            self.oe.dbg_log('system::do_pastebin', 'enter_function', 0)
             paste_dlg = xbmcgui.DialogProgress()
             paste_dlg.create('Pasting log files', 'Pasting...', ' ', ' ')
-            self.oe.execute('echo "Paste output" > /storage/.kodi/temp/paste.tmp')
-            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/config.txt')
-            self.cat_file('/storage/.kodi/temp/paste.tmp', '/flash/cmdline.txt')
-            self.cat_file('/storage/.kodi/temp/paste.tmp', '/storage/.kodi/temp/kodi.log')
-            self.oe.execute('dmesg > /storage/.kodi/temp/dmesg.txt')
-            self.cat_file('/storage/.kodi/temp/paste.tmp', '/storage/.kodi/temp/dmesg.txt')
-
             result = self.oe.execute('paste /storage/.kodi/temp/paste.tmp', 1)
             if not paste_dlg.iscanceled():
                 paste_dlg.close()
                 link = result.find('http')
                 done_dlg = xbmcgui.Dialog()
                 if link > 0:
-                    done_dlg.ok('Debug pasted', 'Log files pasted to ' + result[link:])
-                    self.oe.dbg_log('system::do_pastebin', result[link:])
+                    self.oe.dbg_log('system::do_pastebin', result[link:], 2)
+                    done_dlg.ok('Paste complete', 'Log files pasted to ' + result[link:])
                 else:
                     done_dlg.ok('Failed paste', 'Failed to paste log files, try again')
+            self.oe.dbg_log('system::do_pastebin', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('system::do_pastebin', 'ERROR: (' + repr(e) + ')')
 

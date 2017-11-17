@@ -101,7 +101,11 @@ msgid "Set to ON and an on-screen notification will be displayed when a new upda
 msgstr ""
 
 msgctxt "#718"
-msgid "Send config.txt, cmdline.txt, shutdown.sh, autostart.sh, and kodi.log to http://sprunge.us and display the short URL"
+msgid "Send boot config files from /flash, kodi.log, kernel log and Samba configs to http://sprunge.us, and display the short URL"
+msgstr ""
+
+msgctxt "#719"
+msgid "Send boot config files from /flash, kodi_crash.log, kernel log and Samba configs to http://sprunge.us, and display the short URL"
 msgstr ""
 
 msgctxt "#720"
@@ -773,7 +777,11 @@ msgid "Submit Log"
 msgstr ""
 
 msgctxt "#32377"
-msgid "Pastebin system logs and get short URL"
+msgid "Upload latest Kodi log and configs, and view the short URL"
+msgstr ""
+
+msgctxt "#32378"
+msgid "Upload latest Kodi crash log and configs, and view the short URL"
 msgstr ""
 
 msgctxt "#32379"
@@ -831,3 +839,12 @@ msgstr ""
 msgctxt "#32392"
 msgid "Enable Lirc"
 msgstr ""
+
+msgctxt "#32393"
+msgid "** SAFE MODE! ** SAFE MODE! ** SAFE MODE! **"
+msgstr ""
+
+msgctxt "#32394"
+msgid "@DISTRONAME@ has temporarily started in safe mode due to repeated Kodi crashes.[CR][CR]You may now investigate the cause of the crashes by enabling ssh or Samba.[CR][CR]Your original Kodi installation can be accessed via \"/storage/.kodi.FAILED\" and the Samba \"Kodi-Failed\" share.[CR][CR]Rebooting will return to your original Kodi installation.[CR][CR]Go to https://forum.libreelec.tv if you require further assistance. When posting to the forum include the link to your crash log which can be viewed by clicking the crash log option in Settings > LibreELEC > System > Submit Log."
+msgstr ""
+
