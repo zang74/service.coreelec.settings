@@ -495,8 +495,12 @@ class wizard(xbmcgui.WindowXMLDialog):
             self.getControl(self.buttons[4]['id']).setVisible(False)
             self.getControl(self.radiobuttons[1]['id']).setVisible(False)
             self.getControl(self.radiobuttons[2]['id']).setVisible(False)
-            self.set_wizard_title(self.oe._(32301).encode('utf-8'))
-            self.set_wizard_text(self.oe._(32302).encode('utf-8'))
+            if self.oe.BOOT_STATUS == "SAFE":
+              self.set_wizard_title("[COLOR red][B]%s[/B][/COLOR]" % self.oe._(32393).encode('utf-8'))
+              self.set_wizard_text(self.oe._(32394).encode('utf-8'))
+            else:
+              self.set_wizard_title(self.oe._(32301).encode('utf-8'))
+              self.set_wizard_text(self.oe._(32302).encode('utf-8'))
             self.showButton(1, 32303)
             self.setFocusId(self.buttons[1]['id'])
         except Exception, e:

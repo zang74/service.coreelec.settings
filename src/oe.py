@@ -816,6 +816,8 @@ if os.path.exists('/etc/machine-id'):
 else:
     SYSTEMID = os.environ.get('SYSTEMID', '')
 
+BOOT_STATUS = load_file('/storage/.config/boot.status')
+
 ############################################################################################
 
 try:
