@@ -2,6 +2,7 @@
 #      This file is part of OpenELEC - http://www.openelec.tv
 #      Copyright (C) 2009-2013 Stephan Raue (stephan@openelec.tv)
 #      Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
+#      Copyright (C) 2017-present Team LibreELEC
 #
 #  This program is dual-licensed; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -648,6 +649,26 @@ class connman:
                                 },
                             'InfoText': 737,
                             },
+                        'netfilter': {
+                            'order': 3,
+                            'name': 32395,
+                            'type': 'bool',
+                            'value': None,
+                            'action': 'init_netfilter',
+                            'InfoText': 771,
+                            },
+                        'netfilter_rules': {
+                            'order': 4,
+                            'name': 32396,
+                            'action': 'init_netfilter',
+                            'type': 'multivalue',
+                            'values': ['home', 'public', 'custom'],
+                            'parent': {
+                                'entry': 'netfilter',
+                                'value': ['1'],
+                                },
+                            'InfoText': 772,
+                            },
                         },
                     'order': 4,
                     },
@@ -706,6 +727,10 @@ class connman:
                         self.struct['advanced']['settings']['wait_for_network_time']['value'] = line.split('=')[-1].lower().strip().replace('"',
                                 '')
                 wait_file.close()
+            # IPTABLES
+            self.struct['advanced']['settings']['netfilter']['value'] = self.oe.get_service_state('iptables')
+            self.struct['advanced']['settings']['netfilter_rules']['value'] = self.oe.get_service_option('iptables', 'RULES', "home")
+
             self.oe.dbg_log('connman::load_values', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('connman::load_values', 'ERROR: (' + repr(e) + ')')
@@ -1113,6 +1138,7 @@ class connman:
         try:
             self.oe.dbg_log('connman::start_service', 'enter_function', 0)
             self.load_values()
+            self.init_netfilter(service=1)
             self.oe.dbg_log('connman::start_service', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('connman::start_service', 'ERROR: (' + repr(e) + ')')
@@ -1146,6 +1172,24 @@ class connman:
             self.oe.dbg_log('connman::set_network_wait', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('system::set_network_wait', 'ERROR: (' + repr(e) + ')')
+
+    def init_netfilter(self, **kwargs):
+        try:
+            self.oe.dbg_log('connman::init_netfilter', 'enter_function', 0)
+            self.oe.set_busy(1)
+            if 'listItem' in kwargs:
+                self.set_value(kwargs['listItem'])
+            state = 1
+            options = {}
+            if self.struct['advanced']['settings']['netfilter']['value'] == '0':
+                state = 0
+            else:
+                options['RULES'] = self.struct['advanced']['settings']['netfilter_rules']['value']
+            self.oe.set_service('iptables', options, state)
+            self.oe.set_busy(0)
+            self.oe.dbg_log('connman::init_netfilter', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('system::init_netfilter', 'ERROR: (' + repr(e) + ')')
 
     def do_wizard(self):
         try:

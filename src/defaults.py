@@ -116,4 +116,5 @@ _services = {
     'obexd': ['obex.service'],
     'crond': ['cron.service'],
     'lircd': ['lircd.service', 'lircd-uinput.service'],
+    'iptables': ['iptables.service'],
     }
