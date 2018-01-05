@@ -256,6 +256,14 @@ msgctxt "#770"
 msgid "Select an available version"
 msgstr ""
 
+msgctxt "#771"
+msgid "Set to ON to enable Network Filter (iptables)"
+msgstr ""
+
+msgctxt "#772"
+msgid "Choose a set of default rules for your Firewall."
+msgstr ""
+
 msgctxt "#32001"
 msgid "Services"
 msgstr ""
@@ -848,3 +856,10 @@ msgctxt "#32394"
 msgid "@DISTRONAME@ has temporarily started in safe mode due to repeated Kodi crashes.[CR][CR]You may now investigate the cause of the crashes by enabling ssh or Samba.[CR][CR]Your original Kodi installation can be accessed via \"/storage/.kodi.FAILED\" and the Samba \"Kodi-Failed\" share.[CR][CR]Rebooting will return to your original Kodi installation.[CR][CR]Go to https://forum.libreelec.tv if you require further assistance. When posting to the forum include the link to your crash log which can be viewed by clicking the crash log option in Settings > LibreELEC > System > Submit Log."
 msgstr ""
 
+msgctxt "#32395"
+msgid "Firewall"
+msgstr ""
+
+msgctxt "#32396"
+msgid "Firewall Rules"
+msgstr ""
