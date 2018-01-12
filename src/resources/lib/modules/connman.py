@@ -492,6 +492,7 @@ class connman:
     ENABLED = False
     CONNMAN_DAEMON = None
     WAIT_CONF_FILE = None
+    NF_CUSTOM_PATH = "/storage/.config/iptables/"
     menu = {
         '2': {
             'name': 32100,
@@ -652,22 +653,10 @@ class connman:
                         'netfilter': {
                             'order': 3,
                             'name': 32395,
-                            'type': 'bool',
-                            'value': None,
+                            'type': 'multivalue',
+                            'values': [],
                             'action': 'init_netfilter',
                             'InfoText': 771,
-                            },
-                        'netfilter_rules': {
-                            'order': 4,
-                            'name': 32396,
-                            'action': 'init_netfilter',
-                            'type': 'multivalue',
-                            'values': ['home', 'public', 'custom'],
-                            'parent': {
-                                'entry': 'netfilter',
-                                'value': ['1'],
-                                },
-                            'InfoText': 772,
                             },
                         },
                     'order': 4,
@@ -728,8 +717,23 @@ class connman:
                                 '')
                 wait_file.close()
             # IPTABLES
-            self.struct['advanced']['settings']['netfilter']['value'] = self.oe.get_service_state('iptables')
-            self.struct['advanced']['settings']['netfilter_rules']['value'] = self.oe.get_service_option('iptables', 'RULES', "home")
+            nf_values = [self.oe._(32397), self.oe._(32398), self.oe._(32399)]
+            nf_custom_rules = [self.NF_CUSTOM_PATH + "rules.v4" , self.NF_CUSTOM_PATH + "rules.v6"]
+	    for custom_rule in nf_custom_rules:
+                if os.path.exists(custom_rule):
+		    nf_values.append(self.oe._(32396))
+                    break
+            self.struct['advanced']['settings']['netfilter']['values'] = nf_values
+            nf_option = self.oe.get_service_option('iptables', 'RULES', 'home')
+            if nf_option == "custom":
+                nf_option_str = self.oe._(32396)
+            elif nf_option == "home":
+                nf_option_str = self.oe._(32398)
+            elif nf_option == "public":
+                nf_option_str = self.oe._(32399)
+	    else:
+                nf_option_str = self.oe._(32397)
+            self.struct['advanced']['settings']['netfilter']['value'] = nf_option_str
 
             self.oe.dbg_log('connman::load_values', 'exit_function', 0)
         except Exception, e:
@@ -1181,10 +1185,14 @@ class connman:
                 self.set_value(kwargs['listItem'])
             state = 1
             options = {}
-            if self.struct['advanced']['settings']['netfilter']['value'] == '0':
+            if self.struct['advanced']['settings']['netfilter']['value'] == self.oe._(32396):
+                options['RULES'] = "custom"
+            elif self.struct['advanced']['settings']['netfilter']['value'] == self.oe._(32398):
+                options['RULES'] = "home"
+            elif self.struct['advanced']['settings']['netfilter']['value'] == self.oe._(32399):
+                options['RULES'] = "public"
+	    else:
                 state = 0
-            else:
-                options['RULES'] = self.struct['advanced']['settings']['netfilter_rules']['value']
             self.oe.set_service('iptables', options, state)
             self.oe.set_busy(0)
             self.oe.dbg_log('connman::init_netfilter', 'exit_function', 0)

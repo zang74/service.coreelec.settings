@@ -257,11 +257,7 @@ msgid "Select an available version"
 msgstr ""
 
 msgctxt "#771"
-msgid "Set to ON to enable Network Filter (iptables)"
-msgstr ""
-
-msgctxt "#772"
-msgid "Choose a set of default rules for your Firewall."
+msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
 msgstr ""
 
 msgctxt "#32001"
@@ -861,5 +857,17 @@ msgid "Firewall"
 msgstr ""
 
 msgctxt "#32396"
-msgid "Firewall Rules"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#32397"
+msgid "Off"
+msgstr ""
+
+msgctxt "#32398"
+msgid "Home"
+msgstr ""
+
+msgctxt "#32399"
+msgid "Public"
 msgstr ""
