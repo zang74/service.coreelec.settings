@@ -212,10 +212,6 @@ msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
 msgstr "Välj PÅ för att aktivera Cron-tjänsten"
 
-msgctxt "#746"
-msgid "Set to ON to enable the lirc daemon"
-msgstr "När inställningen är PÅ aktiveras lirc-tjänsten"
-
 msgctxt "#750"
 msgid "750"
 msgstr "750"
@@ -816,11 +812,3 @@ msgstr "Inaktivera Standby"
 msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Inställnings-tillägget är inte redo, försök igen senare."
-
-msgctxt "#32391"
-msgid "Lirc"
-msgstr "Lirc"
-
-msgctxt "#32392"
-msgid "Enable Lirc"
-msgstr "Aktivera Lirc"

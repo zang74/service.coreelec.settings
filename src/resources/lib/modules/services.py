@@ -47,8 +47,6 @@ class services:
     OPT_SSH_NOPASSWD = None
     AVAHI_DAEMON = None
     CRON_DAEMON = None
-    LIRCD_DAEMON = None
-    LIRCD_UINPUT_DAEMON = None
     menu = {'4': {
         'name': 32001,
         'menuLoader': 'load_menu',
@@ -261,21 +259,6 @@ class services:
                             },
                         },
                     },
-                'lircd': {
-                    'order': 7,
-                    'name': 32391,
-                    'not_supported': [],
-                    'settings': {
-                        'lircd_autostart': {
-                            'order': 1,
-                            'name': 32392,
-                            'value': None,
-                            'action': 'initialize_lircd',
-                            'type': 'bool',
-                            'InfoText': 746,
-                            },
-                        },
-                    },
                 }
 
             self.oe = oeMain
@@ -292,7 +275,6 @@ class services:
             self.initialize_avahi(service=1)
             self.initialize_cron(service=1)
             self.init_bluetooth(service=1)
-            self.initialize_lircd(service=1)
             self.oe.dbg_log('services::start_service', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('services::start_service', 'ERROR: (%s)' % repr(e))
@@ -399,13 +381,6 @@ class services:
                         self.struct['bluez']['settings']['obex_root']['hidden'] = True
                 else:
                     self.struct['bluez']['hidden'] = 'true'
-
-            # LIRCD
-
-            if os.path.isfile(self.LIRCD_DAEMON) and os.path.isfile(self.LIRCD_UINPUT_DAEMON):
-                self.struct['lircd']['settings']['lircd_autostart']['value'] = self.oe.get_service_state('lircd')
-            else:
-                self.struct['lircd']['hidden'] = 'true'
 
             self.oe.dbg_log('services::load_values', 'exit_function', 0)
         except Exception, e:
@@ -551,23 +526,6 @@ class services:
         except Exception, e:
             self.oe.set_busy(0)
             self.oe.dbg_log('services::init_obex', 'ERROR: (' + repr(e) + ')', 4)
-
-    def initialize_lircd(self, **kwargs):
-        try:
-            self.oe.dbg_log('services::inititialize_lircd', 'enter_function', 0)
-            self.oe.set_busy(1)
-            if 'listItem' in kwargs:
-                self.set_value(kwargs['listItem'])
-            state = 1
-            options = {}
-            if self.struct['lircd']['settings']['lircd_autostart']['value'] != '1':
-                state = 0
-            self.oe.set_service('lircd', options, state)
-            self.oe.set_busy(0)
-            self.oe.dbg_log('services::inititialize_lircd', 'exit_function', 0)
-        except Exception, e:
-            self.oe.set_busy(0)
-            self.oe.dbg_log('services::inititialize_lircd', 'ERROR: (' + repr(e) + ')', 4)
 
     def exit(self):
         try:

@@ -214,10 +214,6 @@ msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
 msgstr "Zet AAN om de Cron-daemon in te schakelen"
 
-msgctxt "#746"
-msgid "Set to ON to enable the lirc daemon"
-msgstr "Zet AAN om lirc daemon in te schakelen"
-
 msgctxt "#750"
 msgid "750"
 msgstr "750"
@@ -817,11 +813,3 @@ msgstr "Standby uitschakelen"
 msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "De Instellingen-Addon is nog niet gereed, probeert u het later nog eens."
-
-msgctxt "#32391"
-msgid "Lirc"
-msgstr "Lirc"
-
-msgctxt "#32392"
-msgid "Enable Lirc"
-msgstr "Lirc inschakelen"
