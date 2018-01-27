@@ -214,10 +214,6 @@ msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
 msgstr "Nastavit do polohy povolit pro zapnutí cron daemonu"
 
-msgctxt "#746"
-msgid "Set to ON to enable the lirc daemon"
-msgstr "Nastavit do polohy povolit pro zapnutí lirc daemonu"
-
 msgctxt "#750"
 msgid "750"
 msgstr "750"
@@ -817,11 +813,3 @@ msgstr "zakázat pohotovostní režim"
 msgctxt "#32390"
 msgid "Settings addon is not yet ready, please try again later."
 msgstr "Nastavení doplňku není připraveno, prosím zkuste později."
-
-msgctxt "#32391"
-msgid "Lirc"
-msgstr "LIRC"
-
-msgctxt "#32392"
-msgid "Enable Lirc"
-msgstr "Povolit LIRC"
