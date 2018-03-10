@@ -724,14 +724,15 @@ class connman:
 		    nf_values.append(self.oe._(32396))
                     break
             self.struct['advanced']['settings']['netfilter']['values'] = nf_values
-            nf_option = self.oe.get_service_option('iptables', 'RULES', 'home')
-            if nf_option == "custom":
-                nf_option_str = self.oe._(32396)
-            elif nf_option == "home":
-                nf_option_str = self.oe._(32398)
-            elif nf_option == "public":
-                nf_option_str = self.oe._(32399)
-	    else:
+	    if self.oe.get_service_state('iptables') == '1':
+                nf_option = self.oe.get_service_option('iptables', 'RULES', 'home')
+                if nf_option == "custom":
+                    nf_option_str = self.oe._(32396)
+                elif nf_option == "home":
+                    nf_option_str = self.oe._(32398)
+                elif nf_option == "public":
+                    nf_option_str = self.oe._(32399)
+            else:
                 nf_option_str = self.oe._(32397)
             self.struct['advanced']['settings']['netfilter']['value'] = nf_option_str
 
