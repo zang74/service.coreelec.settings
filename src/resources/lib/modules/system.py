@@ -560,7 +560,13 @@ class system:
             arrLayouts = []
             arrVariants = {}
             arrTypes = []
-            if os.path.exists(self.KEYBOARD_INFO):
+            if os.path.exists(self.NOX_KEYBOARD_INFO):
+                for layout in glob.glob(self.NOX_KEYBOARD_INFO + '/*/*.bmap'):
+                    if os.path.isfile(layout):
+                        arrLayouts.append(layout.split('/')[-1].split('.')[0])
+                arrLayouts.sort()
+                arrTypes = None
+            elif os.path.exists(self.KEYBOARD_INFO):
                 objXmlFile = open(self.KEYBOARD_INFO, 'r')
                 strXmlText = objXmlFile.read()
                 objXmlFile.close()
@@ -603,12 +609,6 @@ class system:
                                         arrTypes.append(subnode_2.firstChild.nodeValue + ':' + value)
                 arrLayouts.sort()
                 arrTypes.sort()
-            elif os.path.exists(self.NOX_KEYBOARD_INFO):
-                for layout in glob.glob(self.NOX_KEYBOARD_INFO + '/*/*.bmap'):
-                    if os.path.isfile(layout):
-                        arrLayouts.append(layout.split('/')[-1].split('.')[0])
-                arrLayouts.sort()
-                arrTypes = None
             else:
                 self.oe.dbg_log('system::get_keyboard_layouts', 'exit_function (no keyboard layouts found)', 0)
                 return (None, None, None)
