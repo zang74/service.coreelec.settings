@@ -259,7 +259,7 @@ def load_file(filename):
 
 def load_url(url):
     try:
-        request = urllib2.Request(url)
+        request = urllib2.Request(url, headers={ 'User-Agent' : USER_AGENT })
         response = urllib2.urlopen(request)
         content = response.read()
         return content.strip()
@@ -809,6 +809,7 @@ else:
     SYSTEMID = os.environ.get('SYSTEMID', '')
 
 BOOT_STATUS = load_file('/storage/.config/boot.status')
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'
 
 ############################################################################################
 
