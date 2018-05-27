@@ -1,6 +1,6 @@
 ################################################################################
-#      This file is part of CoreELEC - http://coreelec.org
-#      Copyright (C) 2018-present CoreELEC (mail (at) coreelec.org)
+#      This file is part of CoreELEC - https://coreelec.org
+#      Copyright (C) 2018-present CoreELEC (team (at) coreelec.org)
 #      Copyright (C) 2009-2013 Stephan Raue (stephan@openelec.tv)
 #      Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
 #
