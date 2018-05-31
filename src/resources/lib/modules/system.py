@@ -55,7 +55,6 @@ class system:
     BACKUP_DIRS = None
     BACKUP_DESTINATION = None
     RESTORE_DIR = None
-    GET_CPU_FLAG = None
     SET_CLOCK_CMD = None
     menu = {'1': {
         'name': 32002,
@@ -341,13 +340,70 @@ class system:
         self.oe.dbg_log('system::exit', 'exit_function', 0)
         pass
 
+    # Identify connected GPU card (card0, card1 etc.)
+    def get_gpu_card(self):
+        for root, dirs, files in os.walk("/sys/class/drm", followlinks=False):
+            for dir in dirs:
+                try:
+                    with open(os.path.join(root, dir, 'status'), 'r') as infile:
+                        for line in [x for x in infile if x.replace('\n', '') == 'connected']:
+                            return dir.split("-")[0]
+                except:
+                    pass
+            break
+
+        return 'card0'
+
+    def get_gpu_type(self):
+        if not self.oe.ARCHITECTURE.endswith('.x86_64'):
+            self.oe.dbg_log('system::get_gpu_type', 'Architecture is %s, assume default SOC GPU' % self.oe.ARCHITECTURE, 0)
+            return 0
+
+        gpu_drivers = {'i915': 1,
+                       'i965': 2,
+                       'nvidia': 3,
+                       'nvidia-legacy': 4,
+                       'amdgpu': 5,
+                       'radeon': 6,
+                       'vmwgfx': 7,
+                       'virtio-pci': 8}
+
+        gpu_props = {}
+        gpu_driver = ""
+
+        gpu_card = self.get_gpu_card()
+        self.oe.dbg_log('system::get_gpu_type', 'Using card: %s' % gpu_card, 0)
+
+        gpu_path = self.oe.execute('/usr/bin/udevadm info --name=/dev/dri/%s --query path 2>/dev/null' % gpu_card, get_result=1).replace('\n','')
+        self.oe.dbg_log('system::get_gpu_type', 'gpu path: %s' % gpu_path, 0)
+
+        if gpu_path:
+            drv_path = os.path.dirname(os.path.dirname(gpu_path))
+            props = self.oe.execute('/usr/bin/udevadm info --path=%s --query=property 2>/dev/null' % drv_path, get_result=1)
+
+            if props:
+                for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
+                    gpu_props[key] = value
+            self.oe.dbg_log('system::get_gpu_type', 'gpu props: %s' % gpu_props, 0)
+            gpu_driver = gpu_props.get("DRIVER", "")
+
+        if not gpu_driver:
+            gpu_driver = self.oe.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=1).replace('\n','')
+
+        if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
+            gpu_driver = 'nvidia-legacy'
+
+        self.oe.dbg_log('system::get_gpu_type', 'gpu driver: %s' % gpu_driver, 0)
+
+        return gpu_drivers.get(gpu_driver, 0)
+
     def load_values(self):
         try:
             self.oe.dbg_log('system::load_values', 'enter_function', 0)
 
-            # CPU x64 flag
-
-            self.cpu_lm_flag = self.oe.execute(self.GET_CPU_FLAG, 1)
+            # GPU type
+            self.gpu_flag = self.get_gpu_type()
+            self.oe.dbg_log('system::load_values', 'loaded gpu_type %d' % self.gpu_flag, 0)
 
             # Keyboard Layout
 
@@ -767,7 +823,7 @@ class system:
                 self.oe.DISTRIBUTION,
                 self.oe.ARCHITECTURE,
                 self.oe.VERSION,
-                self.cpu_lm_flag,
+                self.gpu_flag,
                 )
             self.oe.dbg_log('system::check_updates_v2', 'URL: %s' % url, 0)
             update_json = self.oe.load_url(url)
