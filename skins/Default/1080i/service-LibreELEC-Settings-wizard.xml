@@ -56,14 +56,14 @@
             </control>
             <control type="image">
                 <left>268</left>
-                <top>550</top>
+                <top>576</top>
                 <width>1051</width>
-                <height>131</height>
+                <height>105</height>
                 <texture border="5">default/black-back2.png</texture>
             </control>
             <control type="image">
                 <left>269</left>
-                <top>549</top>
+                <top>575</top>
                 <width>1050</width>
                 <height>3</height>
                 <texture colordiffuse="button_focus" border="2">default/separator-grey.png</texture>
@@ -175,7 +175,7 @@
                     </control>
                     <control type="label" id="1404">
                         <left>300</left>
-                        <top>315</top>
+                        <top>335</top>
                         <width>750</width>
                         <height>20</height>
                         <label />
@@ -185,7 +185,7 @@
                     </control>
                     <control type="image">
                         <left>278</left>
-                        <top>350</top>
+                        <top>370</top>
                         <width>1020</width>
                         <height>200</height>
                         <texture border="22">default/dialog-bg.png</texture>
@@ -208,7 +208,7 @@
                     <!-- Network Menu Content -->
                     <control type="list" id="1200">
                         <left>300</left>
-                        <top>372</top>
+                        <top>392</top>
                         <width>1050</width>
                         <height>150</height>
                         <ondown>1500</ondown>
@@ -410,7 +410,7 @@
             </control>
             <control type="button" id="1500">
                 <left>970</left>
-                <top>576</top>
+                <top>586</top>
                 <width>300</width>
                 <height>75</height>
                 <visible>true</visible>
