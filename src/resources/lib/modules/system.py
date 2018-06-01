@@ -817,14 +817,21 @@ class system:
             if hasattr(self, 'update_in_progress'):
                 self.oe.dbg_log('system::check_updates_v2', 'Update in progress (exit)', 0)
                 return
+            if self.oe.BUILDER_VERSION:
+                version = self.oe.BUILDER_VERSION
+            else:
+                version = self.oe.VERSION
             url = '%s?i=%s&d=%s&pa=%s&v=%s&l=%s' % (
                 self.UPDATE_REQUEST_URL,
                 self.oe.url_quote(self.oe.SYSTEMID),
                 self.oe.url_quote(self.oe.DISTRIBUTION),
                 self.oe.url_quote(self.oe.ARCHITECTURE),
-                self.oe.url_quote(self.oe.VERSION),
+                self.oe.url_quote(version),
                 self.gpu_flag,
                 )
+            if self.oe.BUILDER_NAME:
+               url += '&n=%s' % self.oe.url_quote(self.oe.BUILDER_NAME)
+
             self.oe.dbg_log('system::check_updates_v2', 'URL: %s' % url, 0)
             update_json = self.oe.load_url(url)
             self.oe.dbg_log('system::check_updates_v2', 'RESULT: %s' % repr(update_json), 0)
