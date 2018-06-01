@@ -819,10 +819,10 @@ class system:
                 return
             url = '%s?i=%s&d=%s&pa=%s&v=%s&l=%s' % (
                 self.UPDATE_REQUEST_URL,
-                self.oe.SYSTEMID,
-                self.oe.DISTRIBUTION,
-                self.oe.ARCHITECTURE,
-                self.oe.VERSION,
+                self.oe.url_quote(self.oe.SYSTEMID),
+                self.oe.url_quote(self.oe.DISTRIBUTION),
+                self.oe.url_quote(self.oe.ARCHITECTURE),
+                self.oe.url_quote(self.oe.VERSION),
                 self.gpu_flag,
                 )
             self.oe.dbg_log('system::check_updates_v2', 'URL: %s' % url, 0)

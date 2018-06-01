@@ -264,6 +264,8 @@ def load_file(filename):
     except Exception, e:
         dbg_log('oe::load_file(' + filename + ')', 'ERROR: (' + repr(e) + ')')
 
+def url_quote(var):
+    return urllib2.quote(var, safe="")
 
 def load_url(url):
     try:
