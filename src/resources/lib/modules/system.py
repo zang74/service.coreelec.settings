@@ -145,13 +145,21 @@ class system:
                             'InfoText': 714,
                             'order': 1,
                             },
+                        'SubmitStats': {
+                            'name': 32021,
+                            'value': '1',
+                            'action': 'set_value',
+                            'type': 'bool',
+                            'InfoText': 772,
+                            'order': 2,
+                            },
                         'UpdateNotify': {
                             'name': 32365,
                             'value': '1',
                             'action': 'set_value',
                             'type': 'bool',
                             'InfoText': 715,
-                            'order': 2,
+                            'order': 3,
                             },
                         'ShowCustomChannels': {
                             'name': 32016,
@@ -163,7 +171,7 @@ class system:
                                 'value': ['manual'],
                                 },
                             'InfoText': 761,
-                            'order': 3,
+                            'order': 4,
                             },
                         'CustomChannel1': {
                             'name': 32017,
@@ -175,7 +183,7 @@ class system:
                                 'value': ['1'],
                                 },
                             'InfoText': 762,
-                            'order': 4,
+                            'order': 5,
                             },
                         'CustomChannel2': {
                             'name': 32018,
@@ -187,7 +195,7 @@ class system:
                                 'value': ['1'],
                                 },
                             'InfoText': 762,
-                            'order': 5,
+                            'order': 6,
                             },
                         'CustomChannel3': {
                             'name': 32019,
@@ -199,7 +207,7 @@ class system:
                                 'value': ['1'],
                                 },
                             'InfoText': 762,
-                            'order': 6,
+                            'order': 7,
                             },
                         'Channel': {
                             'name': 32015,
@@ -212,7 +220,7 @@ class system:
                                 },
                             'values': [],
                             'InfoText': 760,
-                            'order': 7,
+                            'order': 8,
                             },
                         'Build': {
                             'name': 32020,
@@ -225,7 +233,7 @@ class system:
                                 },
                             'values': [],
                             'InfoText': 770,
-                            'order': 8,
+                            'order': 9,
                             },
                         },
                     },
@@ -455,6 +463,9 @@ class system:
             value = self.oe.read_setting('system', 'AutoUpdate')
             if not value is None:
                 self.struct['update']['settings']['AutoUpdate']['value'] = value
+            value = self.oe.read_setting('system', 'SubmitStats')
+            if not value is None:
+                self.struct['update']['settings']['SubmitStats']['value'] = value
             value = self.oe.read_setting('system', 'UpdateNotify')
             if not value is None:
                 self.struct['update']['settings']['UpdateNotify']['value'] = value
@@ -817,13 +828,17 @@ class system:
             if hasattr(self, 'update_in_progress'):
                 self.oe.dbg_log('system::check_updates_v2', 'Update in progress (exit)', 0)
                 return
+            if self.struct['update']['settings']['SubmitStats']['value'] == '1':
+                systemid = self.oe.SYSTEMID
+            else:
+                systemid = "NOSTATS"
             if self.oe.BUILDER_VERSION:
                 version = self.oe.BUILDER_VERSION
             else:
                 version = self.oe.VERSION
             url = '%s?i=%s&d=%s&pa=%s&v=%s&l=%s' % (
                 self.UPDATE_REQUEST_URL,
-                self.oe.url_quote(self.oe.SYSTEMID),
+                self.oe.url_quote(systemid),
                 self.oe.url_quote(self.oe.DISTRIBUTION),
                 self.oe.url_quote(self.oe.ARCHITECTURE),
                 self.oe.url_quote(version),
