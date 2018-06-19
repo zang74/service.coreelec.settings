@@ -362,11 +362,7 @@ class system:
 
         return 'card0'
 
-    def get_gpu_type(self):
-        if not self.oe.ARCHITECTURE.endswith('.x86_64'):
-            self.oe.dbg_log('system::get_gpu_type', 'Architecture is %s, assume default SOC GPU' % self.oe.ARCHITECTURE, 0)
-            return 0
-
+    def get_hardware_flags_x86_64(self):
         gpu_drivers = {'i915': 1,
                        'i965': 2,
                        'nvidia': 3,
@@ -380,10 +376,10 @@ class system:
         gpu_driver = ""
 
         gpu_card = self.get_gpu_card()
-        self.oe.dbg_log('system::get_gpu_type', 'Using card: %s' % gpu_card, 0)
+        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'Using card: %s' % gpu_card, 0)
 
         gpu_path = self.oe.execute('/usr/bin/udevadm info --name=/dev/dri/%s --query path 2>/dev/null' % gpu_card, get_result=1).replace('\n','')
-        self.oe.dbg_log('system::get_gpu_type', 'gpu path: %s' % gpu_path, 0)
+        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'gpu path: %s' % gpu_path, 0)
 
         if gpu_path:
             drv_path = os.path.dirname(os.path.dirname(gpu_path))
@@ -401,20 +397,34 @@ class system:
         if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
             gpu_driver = 'nvidia-legacy'
 
-        self.oe.dbg_log('system::get_gpu_type', 'gpu driver: %s' % gpu_driver, 0)
+        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'gpu driver: %s' % gpu_driver, 0)
 
         return gpu_drivers.get(gpu_driver, 0)
+
+    def get_hardware_flags_rpi(self):
+        revision = self.oe.execute('grep "^Revision" /proc/cpuinfo | awk \'{ print $3 }\'',get_result=1).replace('\n','')
+        self.oe.dbg_log('system::get_hardware_flags_rpi', 'Revision code: %s' % revision, 0)
+
+        return int(revision, 16)
+
+    def get_hardware_flags(self):
+        if self.oe.ARCHITECTURE.endswith('.x86_64'):
+            return self.get_hardware_flags_x86_64()
+        elif self.oe.ARCHITECTURE.startswith('RPi'):
+            return self.get_hardware_flags_rpi()
+        else:
+            self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
+            return 0
 
     def load_values(self):
         try:
             self.oe.dbg_log('system::load_values', 'enter_function', 0)
 
-            # GPU type
-            self.gpu_flag = self.get_gpu_type()
-            self.oe.dbg_log('system::load_values', 'loaded gpu_type %d' % self.gpu_flag, 0)
+            # Hardware flags
+            self.hardware_flags = self.get_hardware_flags()
+            self.oe.dbg_log('system::load_values', 'loaded hardware_flag %d' % self.hardware_flags, 0)
 
             # Keyboard Layout
-
             (
                 arrLayouts,
                 arrTypes,
@@ -842,7 +852,7 @@ class system:
                 self.oe.url_quote(self.oe.DISTRIBUTION),
                 self.oe.url_quote(self.oe.ARCHITECTURE),
                 self.oe.url_quote(version),
-                self.gpu_flag,
+                self.hardware_flags,
                 )
             if self.oe.BUILDER_NAME:
                url += '&n=%s' % self.oe.url_quote(self.oe.BUILDER_NAME)
