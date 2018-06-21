@@ -362,16 +362,8 @@ class system:
 
         return 'card0'
 
+    # Return driver name, eg. 'i915', 'i965', 'nvidia', 'nvidia-legacy', 'amdgpu', 'radeon', 'vmwgfx', 'virtio-pci' etc.
     def get_hardware_flags_x86_64(self):
-        gpu_drivers = {'i915': 1,
-                       'i965': 2,
-                       'nvidia': 3,
-                       'nvidia-legacy': 4,
-                       'amdgpu': 5,
-                       'radeon': 6,
-                       'vmwgfx': 7,
-                       'virtio-pci': 8}
-
         gpu_props = {}
         gpu_driver = ""
 
@@ -399,13 +391,13 @@ class system:
 
         self.oe.dbg_log('system::get_hardware_flags_x86_64', 'gpu driver: %s' % gpu_driver, 0)
 
-        return gpu_drivers.get(gpu_driver, 0)
+        return gpu_driver if gpu_driver else "unknown"
 
     def get_hardware_flags_rpi(self):
         revision = self.oe.execute('grep "^Revision" /proc/cpuinfo | awk \'{ print $3 }\'',get_result=1).replace('\n','')
         self.oe.dbg_log('system::get_hardware_flags_rpi', 'Revision code: %s' % revision, 0)
 
-        return int(revision, 16)
+        return '{:08x}'.format(int(revision, 16))
 
     def get_hardware_flags(self):
         if self.oe.ARCHITECTURE.endswith('.x86_64'):
@@ -414,7 +406,7 @@ class system:
             return self.get_hardware_flags_rpi()
         else:
             self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
-            return 0
+            return ""
 
     def load_values(self):
         try:
@@ -422,7 +414,7 @@ class system:
 
             # Hardware flags
             self.hardware_flags = self.get_hardware_flags()
-            self.oe.dbg_log('system::load_values', 'loaded hardware_flag %d' % self.hardware_flags, 0)
+            self.oe.dbg_log('system::load_values', 'loaded hardware_flag %s' % self.hardware_flags, 0)
 
             # Keyboard Layout
             (
@@ -846,16 +838,16 @@ class system:
                 version = self.oe.BUILDER_VERSION
             else:
                 version = self.oe.VERSION
-            url = '%s?i=%s&d=%s&pa=%s&v=%s&l=%s' % (
+            url = '%s?i=%s&d=%s&pa=%s&v=%s&f=%s' % (
                 self.UPDATE_REQUEST_URL,
                 self.oe.url_quote(systemid),
                 self.oe.url_quote(self.oe.DISTRIBUTION),
                 self.oe.url_quote(self.oe.ARCHITECTURE),
                 self.oe.url_quote(version),
-                self.hardware_flags,
+                self.oe.url_quote(self.hardware_flags),
                 )
             if self.oe.BUILDER_NAME:
-               url += '&n=%s' % self.oe.url_quote(self.oe.BUILDER_NAME)
+               url += '&b=%s' % self.oe.url_quote(self.oe.BUILDER_NAME)
 
             self.oe.dbg_log('system::check_updates_v2', 'URL: %s' % url, 0)
             update_json = self.oe.load_url(url)
