@@ -264,6 +264,8 @@ def load_file(filename):
     except Exception, e:
         dbg_log('oe::load_file(' + filename + ')', 'ERROR: (' + repr(e) + ')')
 
+def url_quote(var):
+    return urllib2.quote(var, safe="")
 
 def load_url(url):
     try:
@@ -773,7 +775,7 @@ def parse_os_release():
 
 
 def get_os_release():
-    distribution = version = architecture = build = ''
+    distribution = version = architecture = build = builder_name = builder_version = ''
     os_release_info = parse_os_release()
     if os_release_info is not None:
         if 'NAME' in os_release_info:
@@ -786,11 +788,17 @@ def get_os_release():
             architecture = os_release_info['LIBREELEC_ARCH']
         if 'LIBREELEC_BUILD' in os_release_info:
             build = os_release_info['LIBREELEC_BUILD']
+        if 'BUILDER_NAME' in os_release_info:
+            builder_name = os_release_info['BUILDER_NAME']
+        if 'BUILDER_VERSION' in os_release_info:
+            builder_version = os_release_info['BUILDER_VERSION']
         return (
             distribution,
             version,
             architecture,
             build,
+            builder_name,
+            builder_version
             )
 
 
@@ -805,6 +813,8 @@ DISTRIBUTION = os_release_data[0]
 VERSION = os_release_data[1]
 ARCHITECTURE = os_release_data[2]
 BUILD = os_release_data[3]
+BUILDER_NAME = os_release_data[4]
+BUILDER_VERSION = os_release_data[5]
 DOWNLOAD_DIR = '/storage/downloads'
 XBMC_USER_HOME = os.environ.get('XBMC_USER_HOME', '/storage/.kodi')
 CONFIG_CACHE = os.environ.get('CONFIG_CACHE', '/storage/.cache')

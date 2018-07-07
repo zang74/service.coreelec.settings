@@ -256,6 +256,10 @@ msgctxt "#771"
 msgid "The firewall blocks unwanted network traffic. Home (default) allows traffic from private network ranges (192.168.x.x, 172.16.x.x and 10.x.x.x) only. Public blocks all traffic from all networks. Custom uses rules in /storage/.config/iptables. Off disables the firewall."
 msgstr ""
 
+msgctxt "#772"
+msgid "Checking for a new version will submit the installed Distribution, Project, CPU Arch and Version to the update server. This data is also used to report basic statistics for the project. To continue checking for updates while opting-out of stats reporting, disable this option."
+msgstr ""
+
 msgctxt "#32001"
 msgid "Services"
 msgstr ""
@@ -310,6 +314,10 @@ msgstr ""
 
 msgctxt "#32020"
 msgid "Available Versions"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Submit Statistics"
 msgstr ""
 
 msgctxt "#32100"

@@ -89,14 +89,14 @@
             <control type="image">
                 <description>Dialog Header image</description>
                 <left>442</left>
-                <top>796</top>
+                <top>770</top>
                 <width>1256</width>
                 <height>3</height>
                 <texture colordiffuse="FF12B2E7" border="2">default/separator-grey.png</texture>
             </control>
             <control type="image">
                 <left>0</left>
-                <top>744</top>
+                <top>770</top>
                 <width>400</width>
                 <height>3</height>
                 <texture colordiffuse="FF12B2E7" border="2">dialogs/separator-grey.png</texture>
@@ -104,9 +104,9 @@
             <control type="image">
                 <description>LOGO</description>
                 <left>20</left>
-                <top>750</top>
+                <top>760</top>
                 <width>360</width>
-                <height>160</height>
+                <height>150</height>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[Window.Property(DIST_MEDIA)]/Logo.png</texture>
             </control>
@@ -222,7 +222,7 @@
                     <left>22</left>
                     <top>22</top>
                     <width>1256</width>
-                    <height>630</height>
+                    <height>604</height>
                     <onleft>1000</onleft>
                     <onright>1500</onright>
                     <scrolltime>300</scrolltime>
@@ -399,7 +399,7 @@
                     <left>22</left>
                     <top>22</top>
                     <width>1256</width>
-                    <height>628</height>
+                    <height>602</height>
                     <onleft>1000</onleft>
                     <onright>1500</onright>
                     <pagecontrol>1098</pagecontrol>
@@ -709,7 +709,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <width>1256</width>
-                    <height>628</height>
+                    <height>602</height>
                     <info />
                     <align>center</align>
                     <visible>String.IsEqual(Container(1000).ListItem.Property(listTyp), 1300) + String.IsEqual(Container(1300).NumItems, 0)</visible>
@@ -718,7 +718,7 @@
                     <left>22</left>
                     <top>22</top>
                     <width>1256</width>
-                    <height>640</height>
+                    <height>614</height>
                     <onleft>1000</onleft>
                     <onright>1500</onright>
                     <pagecontrol>1099</pagecontrol>
@@ -1085,9 +1085,9 @@
             </control>
             <control type="textbox" id="1400">
                 <left>466</left>
-                <top>808</top>
+                <top>782</top>
                 <width>1150</width>
-                <height>90</height>
+                <height>116</height>
                 <label>$INFO[Window.Property(InfoText)]</label>
                 <align>left</align>
                 <font>font10</font>
