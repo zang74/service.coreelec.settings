@@ -334,11 +334,7 @@ def extract_file(filename, extract, destination, silent=False):
                 extract_dlg.create('LibreELEC ', _(32186).encode('utf-8'), ' ', ' ')
                 extract_dlg.update(0)
             compressed = tarfile.open(filename)
-            if silent == False:
-                xbmc.executebuiltin('ActivateWindow(busydialog)')
             names = compressed.getnames()
-            if silent == False:
-                xbmc.executebuiltin('Dialog.Close(busydialog)')
             for name in names:
                 for search in extract:
                     if search in name:
@@ -455,11 +451,6 @@ def set_busy(state):
             else:
                 __busy__ = __busy__ - 1
             dbg_log('oe::set_busy', '__busy__ = ' + unicode(__busy__), 0)
-            if __busy__ > 0:
-                if not input_request:
-                    xbmc.executebuiltin('ActivateWindow(busydialog)')
-            else:
-                xbmc.executebuiltin('Dialog.Close(busydialog)')
     except Exception, e:
         dbg_log('oe::set_busy', 'ERROR: (' + repr(e) + ')', 4)
 
@@ -494,7 +485,6 @@ def openWizard():
         winOeMain.doModal()
         winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)  # None
     except Exception, e:
-        xbmc.executebuiltin('Dialog.Close(busydialog)')
         dbg_log('oe::openWizard', 'ERROR: (' + repr(e) + ')')
 
 
@@ -508,7 +498,6 @@ def openConfigurationWindow():
         winOeMain = None
         del winOeMain
     except Exception, e:
-        xbmc.executebuiltin('Dialog.Close(busydialog)')
         dbg_log('oe::openConfigurationWindow', 'ERROR: (' + repr(e) + ')')
 
 def standby_devices():
