@@ -1413,8 +1413,6 @@ class connmanWifiAgent(dbus.service.Object):
 
     def busy(self):
         self.oe.input_request = False
-        if self.oe.__busy__ > 0:
-            xbmc.executebuiltin('ActivateWindow(busydialog)')
 
     @dbus.service.method('net.connman.Agent', in_signature='', out_signature='')
     def Release(self):
@@ -1427,7 +1425,6 @@ class connmanWifiAgent(dbus.service.Object):
         try:
             self.oe.dbg_log('connman::connmanWifiAgent::RequestInput', 'enter_function', 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             response = {}
             if fields.has_key('Name'):
                 xbmcKeyboard = xbmc.Keyboard('', self.oe._(32146).encode('utf-8'))

@@ -79,7 +79,6 @@ system = {
     'UPDATE_REQUEST_URL': 'https://update.coreelec.org/updates.php',
     'UPDATE_DOWNLOAD_URL': 'https://%s/%s/%s',
     'LOCAL_UPDATE_DIR': '/storage/.update/',
-    'GET_CPU_FLAG': "cat /proc/cpuinfo | grep -q 'flags.* lm ' && echo '1' || echo '0'",
     'XBMC_RESET_FILE': '%s/reset_xbmc' % CONFIG_CACHE,
     'COREELEC_RESET_FILE': '%s/reset_oe' % CONFIG_CACHE,
     'KEYBOARD_INFO': '/usr/share/X11/xkb/rules/base.xml',

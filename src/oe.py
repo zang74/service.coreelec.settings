@@ -256,6 +256,8 @@ def load_file(filename):
     except Exception, e:
         dbg_log('oe::load_file(' + filename + ')', 'ERROR: (' + repr(e) + ')')
 
+def url_quote(var):
+    return urllib2.quote(var, safe="")
 
 def load_url(url):
     try:
@@ -324,11 +326,7 @@ def extract_file(filename, extract, destination, silent=False):
                 extract_dlg.create('CoreELEC ', _(32186).encode('utf-8'), ' ', ' ')
                 extract_dlg.update(0)
             compressed = tarfile.open(filename)
-            if silent == False:
-                xbmc.executebuiltin('ActivateWindow(busydialog)')
             names = compressed.getnames()
-            if silent == False:
-                xbmc.executebuiltin('Dialog.Close(busydialog)')
             for name in names:
                 for search in extract:
                     if search in name:
@@ -445,11 +443,6 @@ def set_busy(state):
             else:
                 __busy__ = __busy__ - 1
             dbg_log('oe::set_busy', '__busy__ = ' + unicode(__busy__), 0)
-            if __busy__ > 0:
-                if not input_request:
-                    xbmc.executebuiltin('ActivateWindow(busydialog)')
-            else:
-                xbmc.executebuiltin('Dialog.Close(busydialog)')
     except Exception, e:
         dbg_log('oe::set_busy', 'ERROR: (' + repr(e) + ')', 4)
 
@@ -484,7 +477,6 @@ def openWizard():
         winOeMain.doModal()
         winOeMain = oeWindows.mainWindow('service-CoreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)  # None
     except Exception, e:
-        xbmc.executebuiltin('Dialog.Close(busydialog)')
         dbg_log('oe::openWizard', 'ERROR: (' + repr(e) + ')')
 
 
@@ -498,7 +490,6 @@ def openConfigurationWindow():
         winOeMain = None
         del winOeMain
     except Exception, e:
-        xbmc.executebuiltin('Dialog.Close(busydialog)')
         dbg_log('oe::openConfigurationWindow', 'ERROR: (' + repr(e) + ')')
 
 def standby_devices():
@@ -765,7 +756,7 @@ def parse_os_release():
 
 
 def get_os_release():
-    distribution = version = architecture = build = ''
+    distribution = version = architecture = build = builder_name = builder_version = ''
     os_release_info = parse_os_release()
     if os_release_info is not None:
         if 'NAME' in os_release_info:
@@ -778,11 +769,21 @@ def get_os_release():
             architecture = os_release_info['COREELEC_ARCH']
         if 'COREELEC_BUILD' in os_release_info:
             build = os_release_info['COREELEC_BUILD']
+        if 'COREELEC_ARCH' in os_release_info:
+            architecture = os_release_info['COREELEC_ARCH']
+        if 'COREELEC_BUILD' in os_release_info:
+            build = os_release_info['COREELEC_BUILD']
+        if 'BUILDER_NAME' in os_release_info:
+            builder_name = os_release_info['BUILDER_NAME']
+        if 'BUILDER_VERSION' in os_release_info:
+            builder_version = os_release_info['BUILDER_VERSION']
         return (
             distribution,
             version,
             architecture,
             build,
+            builder_name,
+            builder_version
             )
 
 
@@ -797,6 +798,8 @@ DISTRIBUTION = os_release_data[0]
 VERSION = os_release_data[1]
 ARCHITECTURE = os_release_data[2]
 BUILD = os_release_data[3]
+BUILDER_NAME = os_release_data[4]
+BUILDER_VERSION = os_release_data[5]
 DOWNLOAD_DIR = '/storage/downloads'
 XBMC_USER_HOME = os.environ.get('XBMC_USER_HOME', '/storage/.kodi')
 CONFIG_CACHE = os.environ.get('CONFIG_CACHE', '/storage/.cache')

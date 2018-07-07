@@ -913,8 +913,6 @@ class bluetoothAgent(dbus.service.Object):
 
     def busy(self):
         self.oe.input_request = False
-        if self.oe.__busy__ > 0:
-            xbmc.executebuiltin('ActivateWindow(busydialog)')
 
     @dbus.service.method('org.bluez.Agent1', in_signature='', out_signature='')
     def Release(self):
@@ -931,7 +929,6 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::AuthorizeService::device=', repr(device), 0)
             self.oe.dbg_log('bluetooth::btAgent::AuthorizeService::uuid=', repr(uuid), 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcDialog = xbmcgui.Dialog()
             answer = xbmcDialog.yesno('Bluetooth', 'Authorize service', 'Authorize service %s?' % (uuid))
             self.oe.dbg_log('bluetooth::btAgent::AuthorizeService::answer=', repr(answer), 0)
@@ -950,7 +947,6 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestPinCode', 'enter_function', 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestPinCode::device=', repr(device), 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcKeyboard = xbmc.Keyboard('', 'Enter PIN code')
             xbmcKeyboard.doModal()
             pincode = xbmcKeyboard.getText()
@@ -967,7 +963,6 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestPasskey', 'enter_function', 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestPasskey::device=', repr(device), 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcDialog = xbmcgui.Dialog()
             passkey = int(xbmcDialog.numeric(0, 'Enter passkey (number in 0-999999)', '0'))
             self.oe.dbg_log('bluetooth::btAgent::RequestPasskey::passkey=', repr(passkey), 0)
@@ -1014,7 +1009,6 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::device=', repr(device), 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::passkey=', repr(passkey), 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcDialog = xbmcgui.Dialog()
             answer = xbmcDialog.yesno('Bluetooth', 'Request confirmation', 'Confirm passkey %06u' % (passkey))
             self.oe.dbg_log('bluetooth::btAgent::RequestConfirmation::answer=', repr(answer), 0)
@@ -1033,7 +1027,6 @@ class bluetoothAgent(dbus.service.Object):
             self.oe.dbg_log('bluetooth::btAgent::RequestAuthorization', 'enter_function', 0)
             self.oe.dbg_log('bluetooth::btAgent::RequestAuthorization::device=', repr(device), 0)
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcDialog = xbmcgui.Dialog()
             answer = xbmcDialog.yesno('Bluetooth', 'Request authorization', 'Accept pairing?')
             self.oe.dbg_log('bluetooth::btAgent::RequestAuthorization::answer=', repr(answer), 0)
@@ -1065,8 +1058,6 @@ class obexAgent(dbus.service.Object):
 
     def busy(self):
         self.oe.input_request = False
-        if self.oe.__busy__ > 0:
-            xbmc.executebuiltin('ActivateWindow(busydialog)')
 
     @dbus.service.method('org.bluez.obex.Agent1', in_signature='', out_signature='')
     def Release(self):
@@ -1084,7 +1075,6 @@ class obexAgent(dbus.service.Object):
             transfer = dbus.Interface(self.oe.dbusSystemBus.get_object('org.bluez.obex', path), 'org.freedesktop.DBus.Properties')
             properties = transfer.GetAll('org.bluez.obex.Transfer1')
             self.oe.input_request = True
-            xbmc.executebuiltin('Dialog.Close(busydialog)')
             xbmcDialog = xbmcgui.Dialog()
             answer = xbmcDialog.yesno('Bluetooth', self.oe._(32381), properties['Name'])
             self.oe.dbg_log('bluetooth::obexAgent::AuthorizePush::answer=', repr(answer), 0)
