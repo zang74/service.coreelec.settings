@@ -1299,7 +1299,7 @@ class connman:
                         dbusConnmanManager = None
                     except:
                         dbusConnmanManager = None
-                    self.wifiAgent = None
+                    del self.wifiAgent
                 self.oe.dbg_log('connman::monitor::remove_agent', 'exit_function', 0)
             except Exception, e:
                 self.oe.dbg_log('connman::monitor::remove_agent', 'ERROR: (' + repr(e) + ')', 4)
