@@ -736,7 +736,7 @@ class bluetooth:
                     except:
                         dbusBluezManager = None
                         pass
-                    self.btAgent = None
+                    del self.btAgent
                 self.oe.dbg_log('bluetooth::monitor::remove_agent', 'exit_function', 0)
             except Exception, e:
                 self.oe.dbg_log('bluetooth::monitor::remove_agent', 'ERROR: (' + repr(e) + ')', 4)
@@ -779,7 +779,7 @@ class bluetooth:
                     except:
                         dbusBluezObexManager = None
                         pass
-                    self.obAgent = None
+                    del self.obAgent
                 self.oe.dbg_log('bluetooth::monitor::remove_obex_agent', 'exit_function', 0)
             except Exception, e:
                 self.oe.dbg_log('bluetooth::monitor::remove_obex_agent', 'ERROR: (' + repr(e) + ')', 4)
