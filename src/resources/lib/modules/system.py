@@ -395,7 +395,7 @@ class system:
     def get_hardware_flags(self):
         if self.oe.ARCHITECTURE.endswith('.x86_64'):
             return self.get_hardware_flags_x86_64()
-        elif self.oe.ARCHITECTURE.startswith('RPi'):
+        elif self.oe.ARCHITECTURE.startswith('RPi') or self.oe.ARCHITECTURE.startswith('Slice'):
             return self.get_hardware_flags_rpi()
         else:
             self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
