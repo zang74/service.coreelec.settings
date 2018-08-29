@@ -289,11 +289,23 @@ class system:
 
         return '{:08x}'.format(int(revision, 16) & 0x3ffffff)
 
+    def get_hardware_flags_amlogic(self):
+        if os.path.exists('/usr/bin/dtname'):
+            aml_board = self.oe.execute('/usr/bin/dtname', get_result=1).rstrip('\x00')
+        else:
+            aml_board = "unknown"
+
+        self.oe.dbg_log('system::get_hardware_flags_amlogic', 'Amlogic board: %s' % aml_board, 0)
+
+        return aml_board
+
     def get_hardware_flags(self):
         if self.oe.ARCHITECTURE.endswith('.x86_64'):
             return self.get_hardware_flags_x86_64()
         elif self.oe.ARCHITECTURE.startswith('RPi') or self.oe.ARCHITECTURE.startswith('Slice'):
             return self.get_hardware_flags_rpi()
+        elif self.oe.PROJECT.startswith('Amlogic'):
+            return self.get_hardware_flags_amlogic()
         else:
             self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
             return ""
