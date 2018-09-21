@@ -769,10 +769,6 @@ def get_os_release():
             architecture = os_release_info['COREELEC_ARCH']
         if 'COREELEC_BUILD' in os_release_info:
             build = os_release_info['COREELEC_BUILD']
-        if 'COREELEC_ARCH' in os_release_info:
-            architecture = os_release_info['COREELEC_ARCH']
-        if 'COREELEC_BUILD' in os_release_info:
-            build = os_release_info['COREELEC_BUILD']
         if 'BUILDER_NAME' in os_release_info:
             builder_name = os_release_info['BUILDER_NAME']
         if 'BUILDER_VERSION' in os_release_info:

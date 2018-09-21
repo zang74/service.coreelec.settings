@@ -397,9 +397,17 @@ class system:
             return self.get_hardware_flags_x86_64()
         elif self.oe.ARCHITECTURE.startswith('RPi') or self.oe.ARCHITECTURE.startswith('Slice'):
             return self.get_hardware_flags_rpi()
+        elif self.oe.DISTRIBUTION == 'CoreELEC':
+            return self.get_device_tree()
         else:
             self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
             return ""
+
+    def get_device_tree(self):
+        dtb = self.oe.execute('cat /proc/device-tree/le-dt-id', get_result=1).rstrip('\x00')
+        self.oe.dbg_log('system::get_device_tree', 'dtb: %s' % dtb, 0)
+
+        return dtb if dtb else "unknown"
 
     def load_values(self):
         try:
