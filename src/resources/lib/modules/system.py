@@ -32,7 +32,6 @@ import subprocess
 import shutil
 from xml.dom import minidom
 
-
 class system:
 
     ENABLED = False
@@ -404,10 +403,13 @@ class system:
             return ""
 
     def get_device_tree(self):
-        dtb = self.oe.execute('cat /proc/device-tree/le-dt-id', get_result=1).rstrip('\x00')
+        if os.path.exists('/proc/device-tree/le-dt-id'):
+            dtb = self.oe.load_file('/proc/device-tree/le-dt-id').rstrip('\x00')
+        else:
+            dtb = 'missing-dt-id'
         self.oe.dbg_log('system::get_device_tree', 'dtb: %s' % dtb, 0)
 
-        return dtb if dtb else "unknown"
+        return dtb
 
     def load_values(self):
         try:
