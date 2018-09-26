@@ -397,7 +397,7 @@ class system:
         revision = self.oe.execute('grep "^Revision" /proc/cpuinfo | awk \'{ print $3 }\'',get_result=1).replace('\n','')
         self.oe.dbg_log('system::get_hardware_flags_rpi', 'Revision code: %s' % revision, 0)
 
-        return '{:08x}'.format(int(revision, 16))
+        return '{:08x}'.format(int(revision, 16) & 0x3ffffff)
 
     def get_hardware_flags(self):
         if self.oe.ARCHITECTURE.endswith('.x86_64'):
