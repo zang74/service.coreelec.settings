@@ -33,7 +33,7 @@ import xbmcgui
 import xbmcaddon
 
 
-__scriptid__ = 'service.libreelec.settings-test'
+__scriptid__ = 'service.libreelec.settings'
 __addon__ = xbmcaddon.Addon(id=__scriptid__)
 _ = __addon__.getLocalizedString
 
