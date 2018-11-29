@@ -27,7 +27,15 @@
 
 import os
 import glob
+import subprocess
+import xbmc
+import xbmcgui
+import xbmcaddon
 
+
+__scriptid__ = 'service.libreelec.settings-test'
+__addon__ = xbmcaddon.Addon(id=__scriptid__)
+_ = __addon__.getLocalizedString
 
 class services:
 
@@ -192,6 +200,18 @@ class services:
                                 },
                             'InfoText': 743,
                             },
+                        'ssh_passwd': {
+                            'order': 3,
+                            'name': 32209,
+                            'value': None,
+                            'action': 'do_sshpasswd',
+                            'type': 'button',
+                            'parent': {
+                                'entry': 'ssh_secure',
+                                'value': ['0'],
+                                },
+                            'InfoText': 746,
+                            },
                         },
                     },
                 'avahi': {
@@ -341,6 +361,7 @@ class services:
                 self.struct['ssh']['settings']['ssh_autostart']['value'] = self.oe.get_service_state('sshd')
                 self.struct['ssh']['settings']['ssh_secure']['value'] = self.oe.get_service_option('sshd', 'SSHD_DISABLE_PW_AUTH',
                         self.D_SSH_DISABLE_PW_AUTH).replace('true', '1').replace('false', '0').replace('"', '')
+                self.struct['ssh']['settings']['ssh_passwd']['value'] = 'libreelec'
 
                 # hide ssh settings if Kernel Parameter isset
 
@@ -605,4 +626,34 @@ class services:
         except Exception, e:
             self.oe.dbg_log('services::wizard_set_samba', 'ERROR: (%s)' % repr(e))
 
-
+    def do_sshpasswd(self, **kwargs):
+        try:
+            self.oe.dbg_log('system::do_sshpasswd', 'enter_function', 0)
+            if 'listItem' in kwargs:
+                self.set_value(kwargs['listItem'])
+            state = 1
+            options = {}
+            if self.struct['ssh']['settings']['ssh_autostart']['value'] == '1':
+                options['SSH_PASSWORD'] = '"%s"' % self.struct['ssh']['settings']['ssh_passwd']['value']
+            else:
+                state = 0
+            xbmcDialog = xbmcgui.Dialog()
+            ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            newpwd = xbmcDialog.input(_(746))
+            readout1 = ssh.stdout.readline()
+            ssh.stdin.write(newpwd + '\n')
+            ssh.stdin.flush()
+            readout2 = ssh.stdout.readline()
+            ssh.stdin.write(newpwd + '\n')
+            readout3 = ssh.stdout.readline()
+            if "Bad password" in readout3:
+                xbmcDialog.ok(_(32220), _(32221))
+                self.oe.dbg_log('system::do_sshpasswd', 'exit_function password too weak', 0)
+                return
+            elif "Retype password" in readout3:
+                xbmcDialog.ok(_(32222), _(32223))
+            else:
+                xbmcDialog.ok(_(32224), _(32225))
+            self.oe.dbg_log('system::do_sshpasswd', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('system::do_sshpasswd', 'ERROR: (' + repr(e) + ')')
