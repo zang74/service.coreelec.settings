@@ -628,16 +628,7 @@ class services:
     def do_sshpasswd(self, **kwargs):
         try:
             self.oe.dbg_log('system::do_sshpasswd', 'enter_function', 0)
-            if 'listItem' in kwargs:
-                self.set_value(kwargs['listItem'])
-            state = 1
-            options = {}
-            if self.struct['ssh']['settings']['ssh_autostart']['value'] == '1':
-                options['SSH_PASSWORD'] = '"%s"' % self.struct['ssh']['settings']['ssh_passwd']['value']
-            else:
-                state = 0
             xbmcDialog = xbmcgui.Dialog()
-            ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             newpwd = xbmcDialog.input(_(746))
             if newpwd:
                 ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
