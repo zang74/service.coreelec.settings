@@ -201,7 +201,7 @@ msgid "Set to ON to enable the cron daemon"
 msgstr ""
 
 msgctxt "#746"
-msgid "Set the password for SSH root"
+msgid "Set the password for SSH"
 msgstr ""
 
 msgctxt "#750"
@@ -605,7 +605,7 @@ msgid "Bad password!"
 msgstr ""
 
 msgctxt "#32221"
-msgid "The entered password is too weak.[CR]SSH root password is unchanged."
+msgid "The entered password is too weak.[CR]SSH password is unchanged."
 msgstr ""
 
 msgctxt "#32222"
@@ -613,7 +613,7 @@ msgid "Password changed!"
 msgstr ""
 
 msgctxt "#32223"
-msgid "The SSH password for root has been successfully changed by root."
+msgid "The SSH password has been successfully changed."
 msgstr ""
 
 msgctxt "#32224"
@@ -621,7 +621,7 @@ msgid "Unknown error!"
 msgstr ""
 
 msgctxt "#32225"
-msgid "There was an error during the process.[CR]SSH root password is unchanged."
+msgid "There was an error during the process.[CR]SSH password is unchanged."
 msgstr ""
 
 msgctxt "#32300"

@@ -362,7 +362,7 @@ class services:
                 self.struct['ssh']['settings']['ssh_secure']['value'] = self.oe.get_service_option('sshd', 'SSHD_DISABLE_PW_AUTH',
                         self.D_SSH_DISABLE_PW_AUTH).replace('true', '1').replace('false', '0').replace('"', '')
 
-                # hide ssh settings if Kernel Parameter isset
+                # hide ssh settings if Kernel Parameter is set
 
                 cmd_file = open(self.KERNEL_CMD, 'r')
                 cmd_args = cmd_file.read()
@@ -597,7 +597,7 @@ class services:
             else:
                 self.struct['ssh']['settings']['ssh_autostart']['value'] = '1'
 
-            # ssh button does nothing if Kernel Parameter isset
+            # ssh button does nothing if Kernel Parameter is set
 
             cmd_file = open(self.KERNEL_CMD, 'r')
             cmd_args = cmd_file.read()
@@ -631,13 +631,17 @@ class services:
             xbmcDialog = xbmcgui.Dialog()
             newpwd = xbmcDialog.input(_(746))
             if newpwd:
-                ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                readout1 = ssh.stdout.readline()
-                ssh.stdin.write(newpwd + '\n')
-                ssh.stdin.flush()
-                readout2 = ssh.stdout.readline()
-                ssh.stdin.write(newpwd + '\n')
-                readout3 = ssh.stdout.readline()
+                if newpwd == "libreelec":
+                    self.oe.execute('cp -fp /usr/cache/shadow /storage/.cache/shadow')
+                    readout3 = "Retype password"
+                else:
+                    ssh = subprocess.Popen(["passwd"], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    readout1 = ssh.stdout.readline()
+                    ssh.stdin.write(newpwd + '\n')
+                    ssh.stdin.flush()
+                    readout2 = ssh.stdout.readline()
+                    ssh.stdin.write(newpwd + '\n')
+                    readout3 = ssh.stdout.readline()
                 if "Bad password" in readout3:
                     xbmcDialog.ok(_(32220), _(32221))
                     self.oe.dbg_log('system::do_sshpasswd', 'exit_function password too weak', 0)
