@@ -200,6 +200,10 @@ msgctxt "#745"
 msgid "Set to ON to enable the cron daemon"
 msgstr ""
 
+msgctxt "#746"
+msgid "Set the password for SSH"
+msgstr ""
+
 msgctxt "#750"
 msgid "750"
 msgstr ""
@@ -572,6 +576,10 @@ msgctxt "#32208"
 msgid "Hidden Wlan"
 msgstr ""
 
+msgctxt "#32209"
+msgid "SSH Password"
+msgstr ""
+
 msgctxt "#32212"
 msgid "Cancel"
 msgstr ""
@@ -590,6 +598,30 @@ msgstr ""
 
 msgctxt "#32218"
 msgid "Maximum supported protocol"
+msgstr ""
+
+msgctxt "#32220"
+msgid "Bad password!"
+msgstr ""
+
+msgctxt "#32221"
+msgid "The entered password is too weak.[CR]SSH password is unchanged."
+msgstr ""
+
+msgctxt "#32222"
+msgid "Password changed!"
+msgstr ""
+
+msgctxt "#32223"
+msgid "The SSH password has been successfully changed."
+msgstr ""
+
+msgctxt "#32224"
+msgid "Unknown error!"
+msgstr ""
+
+msgctxt "#32225"
+msgid "There was an error during the process.[CR]SSH password is unchanged."
 msgstr ""
 
 msgctxt "#32300"
