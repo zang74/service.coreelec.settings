@@ -494,17 +494,17 @@ class connman:
     WAIT_CONF_FILE = None
     NF_CUSTOM_PATH = "/storage/.config/iptables/"
     menu = {
-        '2': {
-            'name': 32100,
-            'menuLoader': 'menu_connections',
-            'listTyp': 'netlist',
-            'InfoText': 702,
-            },
         '3': {
             'name': 32101,
             'menuLoader': 'menu_loader',
             'listTyp': 'list',
             'InfoText': 701,
+            },
+        '4': {
+            'name': 32100,
+            'menuLoader': 'menu_connections',
+            'listTyp': 'netlist',
+            'InfoText': 702,
             },
         }
 
@@ -1518,5 +1518,3 @@ class connmanWifiAgent(dbus.service.Object):
         self.oe.dbg_log('connman::connmanWifiAgent::Cancel', 'enter_function', 0)
         self.oe.dbg_log('connman::connmanWifiAgent::Cancel', 'exit_function', 0)
         return
-
-
