@@ -271,6 +271,10 @@ class updates:
         try:
             self.oe.dbg_log('updates::load_values', 'enter_function', 0)
 
+            # Hardware flags
+            self.hardware_flags = self.get_hardware_flags()
+            self.oe.dbg_log('system::load_values', 'loaded hardware_flag %s' % self.hardware_flags, 0)
+
             # AutoUpdate
 
             value = self.oe.read_setting('updates', 'AutoUpdate')
