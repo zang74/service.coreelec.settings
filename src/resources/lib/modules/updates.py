@@ -2,6 +2,7 @@
 #      This file is part of OpenELEC - http://www.openelec.tv
 #      Copyright (C) 2009-2013 Stephan Raue (stephan@openelec.tv)
 #      Copyright (C) 2013 Lutz Fiebach (lufie@openelec.tv)
+#      Copyright (C) 2018-present Team LibreELEC  (https://libreelec.tv)
 #
 #  This program is dual-licensed; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -179,7 +180,6 @@ class updates:
             self.oe.dbg_log('updates::start_service', 'enter_function', 0)
             self.is_service = True
             self.load_values()
-            self.set_hw_clock()
             self.set_auto_update()
             del self.is_service
             self.oe.dbg_log('updates::start_service', 'exit_function', 0)
