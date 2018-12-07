@@ -580,8 +580,20 @@ msgctxt "#32209"
 msgid "SSH Password"
 msgstr ""
 
+msgctxt "#32210"
+msgid "It is recommended to set a new password for SSH"
+msgstr ""
+
 msgctxt "#32212"
 msgid "Cancel"
+msgstr ""
+
+msgctxt "#32213"
+msgid "Use Default"
+msgstr ""
+
+msgctxt "#32214"
+msgid "Set New Password"
 msgstr ""
 
 msgctxt "#32215"
