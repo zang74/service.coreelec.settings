@@ -366,7 +366,7 @@ class services:
                 # hide ssh settings if Kernel Parameter is set
 
                 cmd_file = open(self.KERNEL_CMD, 'r')
-                cmd_args = cmd_file.read()
+                cmd_args = cmd_file.read().split(' ')
                 if 'ssh' in cmd_args:
                     self.struct['ssh']['settings']['ssh_autostart']['value'] = '1'
                     self.struct['ssh']['settings']['ssh_autostart']['hidden'] = 'true'
@@ -601,7 +601,7 @@ class services:
             # ssh button does nothing if Kernel Parameter is set
 
             cmd_file = open(self.KERNEL_CMD, 'r')
-            cmd_args = cmd_file.read()
+            cmd_args = cmd_file.read().split(' ')
             if 'ssh' in cmd_args:
                 self.oe.notify('ssh', 'ssh enabled as boot parameter. can not disable')
             cmd_file.close()
