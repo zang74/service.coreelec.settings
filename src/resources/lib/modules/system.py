@@ -521,7 +521,7 @@ class system:
     def set_hw_clock(self):
         try:
             self.oe.dbg_log('system::set_hw_clock', 'enter_function', 0)
-            self.oe.execute(self.SET_CLOCK_CMD)
+            self.oe.execute('%s 2>/dev/null' % self.SET_CLOCK_CMD)
             self.oe.dbg_log('system::set_hw_clock', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('system::set_hw_clock', 'ERROR: (' + repr(e) + ')', 4)
