@@ -631,13 +631,13 @@ class services:
     def wizard_sshpasswd(self):
         SSHresult = False
         while SSHresult == False:
-            changeSSH = xbmcDialog.yesno(_(32209), _(32210), yeslabel=_(32214), nolabel=_(32213))
+            changeSSH = xbmcDialog.yesno(_(32209), _(32210), yeslabel=_(32213), nolabel=_(32214))
             if changeSSH:
+                SSHresult = True
+            else:
                 changeSSHresult = self.do_sshpasswd()
                 if changeSSHresult:
                     SSHresult = True
-            else:
-                SSHresult = True
         return
 
     def do_sshpasswd(self, **kwargs):

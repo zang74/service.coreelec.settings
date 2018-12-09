@@ -581,7 +581,7 @@ msgid "SSH Password"
 msgstr ""
 
 msgctxt "#32210"
-msgid "It is recommended to set a new password for SSH"
+msgid "The default LibreELEC SSH password is widely known it is considered insecure.[CR]Setting your own password of at least 8 characters (ideally a mixture of upper/lowercase/numeric/symbol characters) is strongly recommended."
 msgstr ""
 
 msgctxt "#32212"
@@ -589,11 +589,11 @@ msgid "Cancel"
 msgstr ""
 
 msgctxt "#32213"
-msgid "Use Default"
+msgid "Keep Existing"
 msgstr ""
 
 msgctxt "#32214"
-msgid "Set New Password"
+msgid "Set Password"
 msgstr ""
 
 msgctxt "#32215"
