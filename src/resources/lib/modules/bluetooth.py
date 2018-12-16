@@ -37,7 +37,7 @@ import oeWindows
 
 class bluetooth:
 
-    menu = {'5': {
+    menu = {'6': {
         'name': 32331,
         'menuLoader': 'menu_connections',
         'listTyp': 'btlist',
@@ -1183,5 +1183,3 @@ class pinkeyTimer(threading.Thread):
             self.oe.dbg_log('bluetooth::pinkeyTimer::run', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('bluetooth::pinkeyTimer::run', 'ERROR: (' + repr(e) + ')', 4)
-
-

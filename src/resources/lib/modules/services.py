@@ -55,7 +55,7 @@ class services:
     OPT_SSH_NOPASSWD = None
     AVAHI_DAEMON = None
     CRON_DAEMON = None
-    menu = {'4': {
+    menu = {'7': {
         'name': 32001,
         'menuLoader': 'load_menu',
         'listTyp': 'list',
