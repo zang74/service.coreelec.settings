@@ -36,6 +36,7 @@ import xbmcaddon
 __scriptid__ = 'service.libreelec.settings'
 __addon__ = xbmcaddon.Addon(id=__scriptid__)
 _ = __addon__.getLocalizedString
+xbmcDialog = xbmcgui.Dialog()
 
 class services:
 
@@ -365,7 +366,7 @@ class services:
                 # hide ssh settings if Kernel Parameter is set
 
                 cmd_file = open(self.KERNEL_CMD, 'r')
-                cmd_args = cmd_file.read()
+                cmd_args = cmd_file.read().split(' ')
                 if 'ssh' in cmd_args:
                     self.struct['ssh']['settings']['ssh_autostart']['value'] = '1'
                     self.struct['ssh']['settings']['ssh_autostart']['hidden'] = 'true'
@@ -600,12 +601,14 @@ class services:
             # ssh button does nothing if Kernel Parameter is set
 
             cmd_file = open(self.KERNEL_CMD, 'r')
-            cmd_args = cmd_file.read()
+            cmd_args = cmd_file.read().split(' ')
             if 'ssh' in cmd_args:
                 self.oe.notify('ssh', 'ssh enabled as boot parameter. can not disable')
             cmd_file.close()
             self.initialize_ssh()
             self.load_values()
+            if self.struct['ssh']['settings']['ssh_autostart']['value'] == '1':
+                self.wizard_sshpasswd()
             self.set_wizard_buttons()
             self.oe.dbg_log('services::wizard_set_ssh', 'exit_function', 0)
         except Exception, e:
@@ -625,10 +628,22 @@ class services:
         except Exception, e:
             self.oe.dbg_log('services::wizard_set_samba', 'ERROR: (%s)' % repr(e))
 
+    def wizard_sshpasswd(self):
+        SSHresult = False
+        while SSHresult == False:
+            changeSSH = xbmcDialog.yesno(_(32209), _(32210), yeslabel=_(32213), nolabel=_(32214))
+            if changeSSH:
+                SSHresult = True
+            else:
+                changeSSHresult = self.do_sshpasswd()
+                if changeSSHresult:
+                    SSHresult = True
+        return
+
     def do_sshpasswd(self, **kwargs):
         try:
             self.oe.dbg_log('system::do_sshpasswd', 'enter_function', 0)
-            xbmcDialog = xbmcgui.Dialog()
+            SSHchange = False
             newpwd = xbmcDialog.input(_(746))
             if newpwd:
                 if newpwd == "libreelec":
@@ -648,10 +663,12 @@ class services:
                     return
                 elif "Retype password" in readout3:
                     xbmcDialog.ok(_(32222), _(32223))
+                    SSHchange = True
                 else:
                     xbmcDialog.ok(_(32224), _(32225))
                 self.oe.dbg_log('system::do_sshpasswd', 'exit_function', 0)
             else:
                 self.oe.dbg_log('system::do_sshpasswd', 'user_cancelled', 0)
+            return SSHchange
         except Exception, e:
             self.oe.dbg_log('system::do_sshpasswd', 'ERROR: (' + repr(e) + ')')
