@@ -45,11 +45,11 @@ msgid "Architecture: "
 msgstr ""
 
 msgctxt "#609"
-msgid "LibreELEC is a minimal Linux distribution purpose built for Kodi media center. LibreELEC is designed to boot fast with an installation process simple enough for anyone to convert a bare HTPC into a fully configured media machine in under 15 minutes."
+msgid "LibreELEC is created by a global team of Linux and Kodi enthusiasts who contribute time and effort to manage the project, write code, and provide support. We have fun making it. We hope you have fun using it!"
 msgstr ""
 
 msgctxt "#610"
-msgid "[B]Support:[/B][CR]Web: http://libreelec.tv[CR]Forum: http://forum.libreelec.tv/[CR]Wiki: http://wiki.libreelec.tv[CR][CR][B]Social Media:[/B][CR]IRC: #libreelec on freenode.net (web-based chat is also available from the website)[CR]Twitter: https://twitter.com/libreelec[CR]Facebook: http://www.facebook.com/LibreELEC"
+msgid "[B]Support[/B] is provided via our forum:[CR]https://forum.libreelec.tv[CR][CR][B]Documentation[/B] can be read in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards project expenses are accepted via PayPal:[CR]donations@libreelec.tv"
 msgstr ""
 
 msgctxt "#700"
@@ -73,7 +73,7 @@ msgid "Configure and pair Bluetooth devices"
 msgstr ""
 
 msgctxt "#705"
-msgid "Useful information like version and architecture details, support and social media links, and how to make a donation to the project"
+msgid "Useful information like version and architecture details, support and documentation links, and how to donate and support the project."
 msgstr ""
 
 msgctxt "#707"
@@ -169,7 +169,7 @@ msgid "Set to ON to delay Kodi startup until the network is available. Use this 
 msgstr ""
 
 msgctxt "#737"
-msgid "737"
+msgid "Time in seconds to wait for an established network connection."
 msgstr ""
 
 msgctxt "#738"
@@ -589,7 +589,7 @@ msgid "SSH Password"
 msgstr ""
 
 msgctxt "#32210"
-msgid "The default LibreELEC SSH password is widely known, and is considered insecure.[CR][CR]Setting your own password is recommended."
+msgid "The default SSH password is widely known and considered insecure.[CR][CR]Setting a personal password is recommended."
 msgstr ""
 
 msgctxt "#32212"
