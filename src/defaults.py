@@ -79,7 +79,7 @@ system = {
 updates = {
     'ENABLED': True,
     'UPDATE_REQUEST_URL': 'https://update.coreelec.org/updates.php',
-    'UPDATE_DOWNLOAD_URL': 'https://%s.coreelec.org/%s',
+    'UPDATE_DOWNLOAD_URL': 'https://%s/%s/%s',
     'LOCAL_UPDATE_DIR': '/storage/.update/',
     }
 
