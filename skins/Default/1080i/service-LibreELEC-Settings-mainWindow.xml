@@ -193,14 +193,14 @@
                         <left>60</left>
                         <top>170</top>
                         <width>900</width>
-                        <height>300</height>
+                        <height>260</height>
                         <font>font10</font>
                         <textcolor>white</textcolor>
                         <label>$ADDON[service.libreelec.settings 609]</label>
                     </control>
                     <control type="textbox">
                         <left>60</left>
-                        <top>340</top>
+                        <top>300</top>
                         <width>1200</width>
                         <height>400</height>
                         <font>font10</font>
