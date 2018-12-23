@@ -300,7 +300,7 @@ class system:
         return aml_board
 
     def get_hardware_flags(self):
-        if self.oe.ARCHITECTURE.endswith('.x86_64'):
+        if self.oe.PROJECT.startswith('Generic'):
             return self.get_hardware_flags_x86_64()
         elif self.oe.PROJECT.startswith('RPi'):
             return self.get_hardware_flags_rpi()
