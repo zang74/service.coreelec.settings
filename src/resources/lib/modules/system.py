@@ -302,7 +302,7 @@ class system:
     def get_hardware_flags(self):
         if self.oe.ARCHITECTURE.endswith('.x86_64'):
             return self.get_hardware_flags_x86_64()
-        elif self.oe.ARCHITECTURE.startswith('RPi') or self.oe.ARCHITECTURE.startswith('Slice'):
+        elif self.oe.PROJECT.startswith('RPi'):
             return self.get_hardware_flags_rpi()
         elif self.oe.PROJECT.startswith('Amlogic'):
             return self.get_hardware_flags_amlogic()
