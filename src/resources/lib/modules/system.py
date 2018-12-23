@@ -307,7 +307,7 @@ class system:
         elif self.oe.PROJECT.startswith('Amlogic'):
             return self.get_hardware_flags_amlogic()
         else:
-            self.oe.dbg_log('system::get_hardware_flags', 'Architecture is %s, no hardware flag available' % self.oe.ARCHITECTURE, 0)
+            self.oe.dbg_log('system::get_hardware_flags', 'Project is %s, no hardware flag available' % self.oe.PROJECT, 0)
             return ""
 
     def load_values(self):
