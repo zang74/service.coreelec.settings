@@ -135,7 +135,7 @@
                     <control type="label">
                         <left>300</left>
                         <top>50</top>
-                        <width>500</width>
+                        <width>700</width>
                         <height>20</height>
                         <textcolor>white</textcolor>
                         <align>left</align>
@@ -155,7 +155,7 @@
                     <control type="label">
                         <left>300</left>
                         <top>90</top>
-                        <width>500</width>
+                        <width>700</width>
                         <height>16</height>
                         <textcolor>white</textcolor>
                         <align>left</align>
@@ -175,7 +175,7 @@
                     <control type="label">
                         <left>300</left>
                         <top>130</top>
-                        <width>500</width>
+                        <width>700</width>
                         <height>16</height>
                         <textcolor>white</textcolor>
                         <align>left</align>
