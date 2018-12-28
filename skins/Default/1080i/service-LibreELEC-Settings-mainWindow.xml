@@ -122,13 +122,6 @@
                     <width>1256</width>
                     <height>3</height>
                     <visible>String.IsEqual(Container(1000).ListItem.Property(listTyp), 1900)</visible>
-                    <control type="image">
-                        <left>980</left>
-                        <top>20</top>
-                        <width>300</width>
-                        <height>300</height>
-                        <texture border="1">default/logo_big.png</texture>
-                    </control>
                     <control type="label">
                         <left>60</left>
                         <top>50</top>
@@ -192,7 +185,7 @@
                     <control type="textbox">
                         <left>60</left>
                         <top>170</top>
-                        <width>900</width>
+                        <width>1200</width>
                         <height>260</height>
                         <font>font10</font>
                         <textcolor>white</textcolor>
@@ -200,7 +193,7 @@
                     </control>
                     <control type="textbox">
                         <left>60</left>
-                        <top>300</top>
+                        <top>265</top>
                         <width>1200</width>
                         <height>400</height>
                         <font>font10</font>
