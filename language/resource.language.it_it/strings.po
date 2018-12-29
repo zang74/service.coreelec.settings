@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it_it\n"
+"Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#600"
@@ -60,7 +60,7 @@ msgid ""
 " in our wiki:[CR]https://libreelec.wiki[CR][CR][B]Code[/B] can be found on "
 "GitHub:[CR]https://github.com/LibreELEC[CR][CR][B]Donations[/B] towards "
 "project expenses are accepted via PayPal:[CR]donations@libreelec.tv"
-msgstr "Il [B]supporto[/B] è fornito attraverso il nostro forum: [CR]https://forum.libreelec.tv[CR][CR]La [B]documentazione[/B] poò essere letta sul nostro wiki: [CR]https://libreelec.wiki[CR][CR]Il [B]codice[/B] si trova su GitHub: [CR]https://github.com/LibreELEC[CR][CR]Delle [B]donazioni[/B] per coprire le spese del progetto sono possibili con PayPal: [CR]donations@libreelec.tv"
+msgstr "Il [B]supporto[/B] è fornito attraverso il nostro forum: [CR]https://forum.libreelec.tv[CR][CR]La [B]documentazione[/B] può essere letta sul nostro wiki: [CR]https://libreelec.wiki[CR][CR]Il [B]codice[/B] si trova su GitHub: [CR]https://github.com/LibreELEC[CR][CR]Delle [B]donazioni[/B] per coprire le spese del progetto sono possibili con PayPal: [CR]donations@libreelec.tv"
 
 msgctxt "#700"
 msgid ""
@@ -103,11 +103,11 @@ msgstr "Imposta il nome host del tuo sistema @DISTRONAME@. Il nome sarà usato c
 
 msgctxt "#711"
 msgid "Configure the 1st keyboard software layout"
-msgstr "Imposta il layout della prima tastiera"
+msgstr "Imposta il layout principale della tastiera"
 
 msgctxt "#712"
 msgid "Configure the 2nd keyboard software layout"
-msgstr "Imposta il layout della seconda tastiera"
+msgstr "Imposta il layout alternativo della tastiera"
 
 msgctxt "#713"
 msgid "Configure the physical keyboard type"
