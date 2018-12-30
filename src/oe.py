@@ -764,7 +764,7 @@ def parse_os_release():
 
 
 def get_os_release():
-    distribution = version = architecture = build = builder_name = builder_version = ''
+    distribution = version = architecture = build = project = device = builder_name = builder_version = ''
     os_release_info = parse_os_release()
     if os_release_info is not None:
         if 'NAME' in os_release_info:
@@ -777,6 +777,10 @@ def get_os_release():
             architecture = os_release_info['LIBREELEC_ARCH']
         if 'LIBREELEC_BUILD' in os_release_info:
             build = os_release_info['LIBREELEC_BUILD']
+        if 'LIBREELEC_PROJECT' in os_release_info:
+            project = os_release_info['LIBREELEC_PROJECT']
+        if 'LIBREELEC_DEVICE' in os_release_info:
+            device = os_release_info['LIBREELEC_DEVICE']
         if 'BUILDER_NAME' in os_release_info:
             builder_name = os_release_info['BUILDER_NAME']
         if 'BUILDER_VERSION' in os_release_info:
@@ -786,6 +790,8 @@ def get_os_release():
             version,
             architecture,
             build,
+            project,
+            device,
             builder_name,
             builder_version
             )
@@ -802,8 +808,10 @@ DISTRIBUTION = os_release_data[0]
 VERSION = os_release_data[1]
 ARCHITECTURE = os_release_data[2]
 BUILD = os_release_data[3]
-BUILDER_NAME = os_release_data[4]
-BUILDER_VERSION = os_release_data[5]
+PROJECT = os_release_data[4]
+DEVICE = os_release_data[5]
+BUILDER_NAME = os_release_data[6]
+BUILDER_VERSION = os_release_data[7]
 DOWNLOAD_DIR = '/storage/downloads'
 XBMC_USER_HOME = os.environ.get('XBMC_USER_HOME', '/storage/.kodi')
 CONFIG_CACHE = os.environ.get('CONFIG_CACHE', '/storage/.cache')
