@@ -9,10 +9,8 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 
-
 __scriptid__ = 'service.libreelec.settings'
 __addon__ = xbmcaddon.Addon(id=__scriptid__)
-_ = __addon__.getLocalizedString
 xbmcDialog = xbmcgui.Dialog()
 
 class services:
@@ -608,7 +606,7 @@ class services:
     def wizard_sshpasswd(self):
         SSHresult = False
         while SSHresult == False:
-            changeSSH = xbmcDialog.yesno(_(32209), _(32210), yeslabel=_(32213), nolabel=_(32214))
+            changeSSH = xbmcDialog.yesno(self.oe._(32209), self.oe._(32210), yeslabel=self.oe._(32213), nolabel=self.oe._(32214))
             if changeSSH:
                 SSHresult = True
             else:
@@ -621,7 +619,7 @@ class services:
         try:
             self.oe.dbg_log('system::do_sshpasswd', 'enter_function', 0)
             SSHchange = False
-            newpwd = xbmcDialog.input(_(746))
+            newpwd = xbmcDialog.input(self.oe._(746))
             if newpwd:
                 if newpwd == "libreelec":
                     self.oe.execute('cp -fp /usr/cache/shadow /storage/.cache/shadow')
@@ -635,14 +633,14 @@ class services:
                     ssh.stdin.write(newpwd + '\n')
                     readout3 = ssh.stdout.readline()
                 if "Bad password" in readout3:
-                    xbmcDialog.ok(_(32220), _(32221))
+                    xbmcDialog.ok(self.oe._(32220), self.oe._(32221))
                     self.oe.dbg_log('system::do_sshpasswd', 'exit_function password too weak', 0)
                     return
                 elif "Retype password" in readout3:
-                    xbmcDialog.ok(_(32222), _(32223))
+                    xbmcDialog.ok(self.oe._(32222), self.oe._(32223))
                     SSHchange = True
                 else:
-                    xbmcDialog.ok(_(32224), _(32225))
+                    xbmcDialog.ok(self.oe._(32224), self.oe._(32225))
                 self.oe.dbg_log('system::do_sshpasswd', 'exit_function', 0)
             else:
                 self.oe.dbg_log('system::do_sshpasswd', 'user_cancelled', 0)

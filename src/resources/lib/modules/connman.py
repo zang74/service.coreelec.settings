@@ -1186,11 +1186,15 @@ class connman:
             self.oe.winOeMain.set_wizard_list_title(self.oe._(32309))
             self.oe.winOeMain.getControl(1391).setLabel('show')
 
+            self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[2]['id'
+                                         ]).controlUp(self.oe.winOeMain.getControl(self.oe.winOeMain.guiNetList))
+            self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[2]['id'
+                                         ]).controlRight(self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[1]['id']))
             self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[1]['id'
                                          ]).controlUp(self.oe.winOeMain.getControl(self.oe.winOeMain.guiNetList))
-
             self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[1]['id'
-                                         ]).controlLeft(self.oe.winOeMain.getControl(self.oe.winOeMain.guiNetList))
+                                         ]).controlLeft(self.oe.winOeMain.getControl(self.oe.winOeMain.buttons[2]['id']))
+
             self.menu_connections(None)
             self.oe.dbg_log('connman::do_wizard', 'exit_function', 0)
         except Exception, e:
