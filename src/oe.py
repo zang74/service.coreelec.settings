@@ -82,7 +82,26 @@ xbmc.log('## LibreELEC Addon ## ' + unicode(__addon__.getAddonInfo('version')))
 
 
 def _(code):
-    return __addon__.getLocalizedString(code)
+    wizardComp = read_setting('libreelec', 'wizard_completed')
+    if wizardComp == "True":
+        codeNew = __addon__.getLocalizedString(code)
+    else:
+        curLang = read_setting("system", "language")
+        if curLang is not None:
+            lang_file = os.path.join(__cwd__, 'resources', 'language', str(curLang), 'strings.po')
+            with open(lang_file) as fp:
+                contents = fp.read().decode('utf-8').split('\n\n')
+                for strings in contents:
+                    if str(code) in strings:
+                        subString = strings.split('msgstr ')[1]
+                        subStringClean = re.sub('"', '', subString)
+                        codeNew = subStringClean
+                        break
+                    else:
+                        codeNew = __addon__.getLocalizedString(code)
+        else:
+            codeNew = __addon__.getLocalizedString(code)
+    return codeNew
 
 
 def dbg_log(source, text, level=4):
