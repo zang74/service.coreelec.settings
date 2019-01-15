@@ -2,9 +2,6 @@
 # Addon Name: @DISTRONAME@ Configuration
 # Addon id: service.libreelec.settings
 # Addon Provider: LibreELEC
-# Translators:
-# Alexander Kulumbeg <kulumbeg@gmail.com>, 2016,2018
-# Namerp, 2018
 msgid ""
 msgstr ""
 "MIME-Version: 1.0\n"
@@ -752,6 +749,10 @@ msgid ""
 "required for @DISTRONAME@ to automatically update itself."
 msgstr "Ak chcete prevziať pozadie, bannery a náhľady pre vaše filmy a televízne relácie a prehrať online obsah z webových stránok, ako je YouTube, musíte pripojiť @DISTRONAME@.[CR][CR]Pri @DISTRONAME@ sa vyžaduje aj internetové pripojenie sa automaticky aktualizuje."
 
+msgctxt "#32307"
+msgid "Previous"
+msgstr ""
+
 msgctxt "#32308"
 msgid "Hostname:"
 msgstr "Meno hosťa:"
@@ -759,6 +760,10 @@ msgstr "Meno hosťa:"
 msgctxt "#32309"
 msgid "The following Networks are currently available:"
 msgstr "K dispozícii sú tieto siete:"
+
+msgctxt "#32310"
+msgid "Language:"
+msgstr ""
 
 msgctxt "#32311"
 msgid "Sharing and Remote Access"
@@ -790,16 +795,17 @@ msgstr "Ďakujeme!"
 
 msgctxt "#32318"
 msgid ""
-"Your @DISTRONAME@ installation is now complete and you'll now enter Kodi "
-"when you can set up your media libraries. For help with this, there is a "
-"guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a "
+"Your @DISTRONAME@ installation is now complete and you are about to enter "
+"Kodi where you can set up your media libraries. For help with this, there is"
+" a guide available at wiki.kodi.tv[CR][CR]@DISTRONAME@ is developed by a "
 "dedicated team of developers who work purely in their spare time. Even as a "
 "volunteer project, we still have to pay for our internet bandwidth and "
-"development resources so if you find @DISTRONAME@ useful, we will always "
+"development resources so if you find @DISTRONAME@ useful we will always "
 "appreciate a donation of any amount.[CR][CR]Finally, we hope you enjoy using"
-" @DISTRONAME@ as much as we've enjoying building it. If you need any more "
-"help, you can find links to get help along with latest news at our website"
-msgstr "Vaša inštalácia @DISTRONAME@ je teraz dokončená a teraz budete môcť zadať Kodi, keď si môžete nastaviť svoje multimediálne knižnice. Pomoc s týmto obsahom obsahuje príručku k dispozícii na wiki.kodi.tv[CR][CR]@DISTRONAME@ je vyvinutý špecializovaným tímom vývojárov, ktorí pracujú čisto vo svojom voľnom čase. Dokonca aj ako dobrovoľnícky projekt, stále musíme platiť za našu šírku internetovej šírky a rozvojové zdroje, takže ak nájdete @DISTRONAME@ užitočné, vždy oceníme darovanie akejkoľvek sumy.[CR][CR]Napokon, dúfame, @DISTRONAME@, rovnako ako sa nám teší budovanie. Ak potrebujete ďalšiu pomoc, nájdete odkazy na pomoc a najnovšie správy na našej webovej stránke"
+" @DISTRONAME@ as much as we've enjoyed building it. If you need any more "
+"help, you can find links to our support forum along with latest news at our "
+"website."
+msgstr ""
 
 msgctxt "#32319"
 msgid "Cron"
