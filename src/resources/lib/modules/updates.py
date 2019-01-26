@@ -350,12 +350,6 @@ class updates:
             self.oe.dbg_log('updates::set_custom_channel', 'enter_function', 0)
             if not listItem == None:
                 self.set_value(listItem)
-            if listItem.getProperty('entry') != 'ShowCustomChannels':
-                if self.get_json(listItem.getProperty('value')) is None:
-                    xbmcDialog = xbmcgui.Dialog()
-                    xbmcDialog.ok('LibreELEC Update', self.oe._(32191).encode('utf-8'))
-                    xbmcDialog = None
-                    del xbmcDialog
             self.update_json = self.build_json()
             self.struct['update']['settings']['Channel']['values'] = self.get_channels()
             if not self.struct['update']['settings']['Channel']['values'] is None:
