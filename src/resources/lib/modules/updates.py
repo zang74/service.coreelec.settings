@@ -131,12 +131,11 @@ class updates:
                             'name': 32020,
                             'value': '',
                             'action': 'do_manual_update',
-                            'type': 'multivalue',
+                            'type': 'button',
                             'parent': {
                                 'entry': 'AutoUpdate',
                                 'value': ['manual'],
                                 },
-                            'values': [],
                             'InfoText': 770,
                             'order': 9,
                             },
@@ -351,12 +350,6 @@ class updates:
             self.oe.dbg_log('updates::set_custom_channel', 'enter_function', 0)
             if not listItem == None:
                 self.set_value(listItem)
-            if listItem.getProperty('entry') != 'ShowCustomChannels':
-                if self.get_json(listItem.getProperty('value')) is None:
-                    xbmcDialog = xbmcgui.Dialog()
-                    xbmcDialog.ok('LibreELEC Update', self.oe._(32191).encode('utf-8'))
-                    xbmcDialog = None
-                    del xbmcDialog
             self.update_json = self.build_json()
             self.struct['update']['settings']['Channel']['values'] = self.get_channels()
             if not self.struct['update']['settings']['Channel']['values'] is None:
@@ -383,27 +376,33 @@ class updates:
     def do_manual_update(self, listItem=None):
         try:
             self.oe.dbg_log('updates::do_manual_update', 'enter_function', 0)
-            channel = self.struct['update']['settings']['Channel']['value']
-            regex = re.compile(self.update_json[channel]['prettyname_regex'])
-            longname = '-'.join([self.oe.DISTRIBUTION, self.oe.ARCHITECTURE, self.oe.VERSION])
-            if regex.search(longname):
-                version = regex.findall(longname)[0]
-            else:
-                version = self.oe.VERSION
-            if not listItem == None:
-                self.struct['update']['settings']['Build']['value'] = listItem.getProperty('value')
-            if self.struct['update']['settings']['Build']['value'] != '':
-                self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.get_available_builds(self.struct['update']['settings']['Build']['value'])
-                xbmcDialog = xbmcgui.Dialog()
-                answer = xbmcDialog.yesno('LibreELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + version.encode('utf-8'),
-                                      self.oe._(32187).encode('utf-8') + ':  ' + self.struct['update']['settings']['Build']['value'].encode('utf-8'),
-                                      self.oe._(32180).encode('utf-8'))
-                xbmcDialog = None
-                del xbmcDialog
-                if answer:
-                    self.update_in_progress = True
-                    self.do_autoupdate()
             self.struct['update']['settings']['Build']['value'] = ''
+            self.update_json = self.build_json()
+            builds = self.get_available_builds()
+            self.struct['update']['settings']['Build']['values'] = builds
+            xbmcDialog = xbmcgui.Dialog()
+            buildSel = xbmcDialog.select(self.oe._(32020).encode('utf-8'), builds)
+            if buildSel > -1:
+                listItem = builds[buildSel]
+                self.struct['update']['settings']['Build']['value'] = listItem
+                channel = self.struct['update']['settings']['Channel']['value']
+                regex = re.compile(self.update_json[channel]['prettyname_regex'])
+                longname = '-'.join([self.oe.DISTRIBUTION, self.oe.ARCHITECTURE, self.oe.VERSION])
+                if regex.search(longname):
+                    version = regex.findall(longname)[0]
+                else:
+                    version = self.oe.VERSION
+                if self.struct['update']['settings']['Build']['value'] != '':
+                    self.update_file = self.update_json[self.struct['update']['settings']['Channel']['value']]['url'] + self.get_available_builds(self.struct['update']['settings']['Build']['value'])
+                    answer = xbmcDialog.yesno('LibreELEC Update', self.oe._(32188).encode('utf-8') + ':  ' + version.encode('utf-8'),
+                                          self.oe._(32187).encode('utf-8') + ':  ' + self.struct['update']['settings']['Build']['value'].encode('utf-8'),
+                                          self.oe._(32180).encode('utf-8'))
+                    xbmcDialog = None
+                    del xbmcDialog
+                    if answer:
+                        self.update_in_progress = True
+                        self.do_autoupdate()
+                self.struct['update']['settings']['Build']['value'] = ''
             self.oe.dbg_log('updates::do_manual_update', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('updates::do_manual_update', 'ERROR: (' + repr(e) + ')')
