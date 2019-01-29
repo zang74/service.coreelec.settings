@@ -662,7 +662,7 @@ class system:
             self.oe.dbg_log('system::do_send_logs', 'enter_function', 0)
 
             self.oe.execute('echo "%s log output for: $(lsb_release)" > /storage/.kodi/temp/paste.tmp' % log_type)
-            self.oe.execute('echo "Device Tree: %s" >> /storage/.kodi/temp/paste.tmp' % self.get_hardware_flags_device_tree())
+            self.oe.execute('echo "Device Tree: %s" >> /storage/.kodi/temp/paste.tmp' % self.get_hardware_flags_amlogic())
             if self.oe.BUILDER_VERSION:
                 version = self.oe.BUILDER_VERSION
             else:
