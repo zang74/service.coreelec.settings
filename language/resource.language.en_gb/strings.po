@@ -117,7 +117,7 @@ msgid "Set to ON and Bluetooth devices will be disabled during power-saving mode
 msgstr ""
 
 msgctxt "#722"
-msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backups"
+msgid "Create a tar archive containing all @DISTRONAME@ and Kodi configuration settings, databases and thumbnail content. Backup files will be stored in /storage/backup/"
 msgstr ""
 
 msgctxt "#723"
