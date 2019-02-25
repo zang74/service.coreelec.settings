@@ -696,12 +696,12 @@ class connman:
             # IPTABLES
             nf_values = [self.oe._(32397), self.oe._(32398), self.oe._(32399)]
             nf_custom_rules = [self.NF_CUSTOM_PATH + "rules.v4" , self.NF_CUSTOM_PATH + "rules.v6"]
-	    for custom_rule in nf_custom_rules:
+            for custom_rule in nf_custom_rules:
                 if os.path.exists(custom_rule):
-		    nf_values.append(self.oe._(32396))
+                    nf_values.append(self.oe._(32396))
                     break
             self.struct['advanced']['settings']['netfilter']['values'] = nf_values
-	    if self.oe.get_service_state('iptables') == '1':
+            if self.oe.get_service_state('iptables') == '1':
                 nf_option = self.oe.get_service_option('iptables', 'RULES', 'home')
                 if nf_option == "custom":
                     nf_option_str = self.oe._(32396)
@@ -1169,7 +1169,7 @@ class connman:
                 options['RULES'] = "home"
             elif self.struct['advanced']['settings']['netfilter']['value'] == self.oe._(32399):
                 options['RULES'] = "public"
-	    else:
+            else:
                 state = 0
             self.oe.set_service('iptables', options, state)
             self.oe.set_busy(0)
