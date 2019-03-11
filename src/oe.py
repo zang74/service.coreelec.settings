@@ -20,6 +20,7 @@ import dbus
 import dbus.mainloop.glib
 import defaults
 import shutil
+import hashlib, binascii
 
 from xml.dom import minidom
 
@@ -29,6 +30,7 @@ __addon__ = xbmcaddon.Addon(id=__scriptid__)
 __cwd__ = __addon__.getAddonInfo('path')
 __oe__ = sys.modules[globals()['__name__']]
 __media__ = '%s/resources/skins/Default/media' % __cwd__
+xbmcDialog = xbmcgui.Dialog()
 
 is_service = False
 conf_lock = False
@@ -488,12 +490,44 @@ def openWizard():
 def openConfigurationWindow():
     global winOeMain, __cwd__, __oe__, dictModules
     try:
-        winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)
-        winOeMain.doModal()
-        for strModule in dictModules:
-            dictModules[strModule].exit()
-        winOeMain = None
-        del winOeMain
+        PINmatch = False
+        PINnext = 1000
+        PINenable = read_setting('system', 'pinlock_enable')
+        if PINenable == "0":
+            PINmatch = True
+        PINfail = read_setting('system', 'pinlock_timeFail')
+        if PINfail:
+            nowTime = time.time()
+            PINnext = (nowTime - float(PINfail))
+        if PINnext >= 300:
+            PINtry = 4
+            while PINmatch == False:
+                if PINtry > 0:
+                    PINlock = xbmcDialog.input(_(32233), type=xbmcgui.INPUT_NUMERIC)
+                    storedPIN = read_setting('system', 'pinlock_pin')
+                    PINmatch = verify_password(storedPIN, PINlock)
+                    if PINmatch == False:
+                        PINtry -= 1
+                        if PINtry > 0:
+                            xbmcDialog.ok(_(32234), str(PINtry) + _(32235))
+                else:
+                    timeFail = time.time()
+                    write_setting('system', 'pinlock_timeFail', str(timeFail))
+                    xbmcDialog.ok(_(32234), _(32236))
+                    break
+            if PINmatch == True:
+                winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)
+                winOeMain.doModal()
+                for strModule in dictModules:
+                    dictModules[strModule].exit()
+                winOeMain = None
+                del winOeMain
+            else:
+                pass
+        else:
+            timeLeft = "{0:.2f}".format((300 - PINnext)/60)
+            xbmcDialog.ok(_(32237), timeLeft + _(32238))
+
     except Exception, e:
         dbg_log('oe::openConfigurationWindow', 'ERROR: (' + repr(e) + ')')
 
@@ -792,6 +826,23 @@ def get_os_release():
             builder_name,
             builder_version
             )
+
+def hash_password(password):
+    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),
+                                salt, 100000)
+    pwdhash = binascii.hexlify(pwdhash)
+    return (salt + pwdhash).decode('ascii')
+
+def verify_password(stored_password, provided_password):
+    salt = stored_password[:64]
+    stored_password = stored_password[64:]
+    pwdhash = hashlib.pbkdf2_hmac('sha512',
+                                  provided_password.encode('utf-8'),
+                                  salt.encode('ascii'),
+                                  100000)
+    pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+    return pwdhash == stored_password
 
 
 minidom.Element.writexml = fixed_writexml
