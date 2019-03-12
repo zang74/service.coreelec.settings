@@ -16,6 +16,7 @@ import subprocess
 import shutil
 from xml.dom import minidom
 
+xbmcDialog = xbmcgui.Dialog()
 
 class system:
 
