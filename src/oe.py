@@ -493,40 +493,41 @@ def openConfigurationWindow():
         PINmatch = False
         PINnext = 1000
         PINenable = read_setting('system', 'pinlock_enable')
-        if PINenable == "0":
+        if PINenable == "0" or PINenable == None:
             PINmatch = True
-        PINfail = read_setting('system', 'pinlock_timeFail')
-        if PINfail:
-            nowTime = time.time()
-            PINnext = (nowTime - float(PINfail))
-        if PINnext >= 300:
-            PINtry = 4
-            while PINmatch == False:
-                if PINtry > 0:
-                    PINlock = xbmcDialog.input(_(32233), type=xbmcgui.INPUT_NUMERIC)
-                    storedPIN = read_setting('system', 'pinlock_pin')
-                    PINmatch = verify_password(storedPIN, PINlock)
-                    if PINmatch == False:
-                        PINtry -= 1
-                        if PINtry > 0:
-                            xbmcDialog.ok(_(32234), str(PINtry) + _(32235))
-                else:
-                    timeFail = time.time()
-                    write_setting('system', 'pinlock_timeFail', str(timeFail))
-                    xbmcDialog.ok(_(32234), _(32236))
-                    break
-            if PINmatch == True:
-                winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)
-                winOeMain.doModal()
-                for strModule in dictModules:
-                    dictModules[strModule].exit()
-                winOeMain = None
-                del winOeMain
+        if PINenable == "1":
+            PINfail = read_setting('system', 'pinlock_timeFail')
+            if PINfail:
+                nowTime = time.time()
+                PINnext = (nowTime - float(PINfail))
+            if PINnext >= 300:
+                PINtry = 4
+                while PINmatch == False:
+                    if PINtry > 0:
+                        PINlock = xbmcDialog.input(_(32233), type=xbmcgui.INPUT_NUMERIC)
+                        storedPIN = read_setting('system', 'pinlock_pin')
+                        PINmatch = verify_password(storedPIN, PINlock)
+                        if PINmatch == False:
+                            PINtry -= 1
+                            if PINtry > 0:
+                                xbmcDialog.ok(_(32234), str(PINtry) + _(32235))
+                    else:
+                        timeFail = time.time()
+                        write_setting('system', 'pinlock_timeFail', str(timeFail))
+                        xbmcDialog.ok(_(32234), _(32236))
+                        break
             else:
-                pass
+                timeLeft = "{0:.2f}".format((300 - PINnext)/60)
+                xbmcDialog.ok(_(32237), timeLeft + _(32238))
+        if PINmatch == True:
+            winOeMain = oeWindows.mainWindow('service-LibreELEC-Settings-mainWindow.xml', __cwd__, 'Default', oeMain=__oe__)
+            winOeMain.doModal()
+            for strModule in dictModules:
+                dictModules[strModule].exit()
+            winOeMain = None
+            del winOeMain
         else:
-            timeLeft = "{0:.2f}".format((300 - PINnext)/60)
-            xbmcDialog.ok(_(32237), timeLeft + _(32238))
+            pass
 
     except Exception, e:
         dbg_log('oe::openConfigurationWindow', 'ERROR: (' + repr(e) + ')')
