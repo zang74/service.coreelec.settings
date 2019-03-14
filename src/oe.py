@@ -505,12 +505,15 @@ def openConfigurationWindow():
                 while PINmatch == False:
                     if PINtry > 0:
                         PINlock = xbmcDialog.input(_(32233), type=xbmcgui.INPUT_NUMERIC)
-                        storedPIN = read_setting('system', 'pinlock_pin')
-                        PINmatch = verify_password(storedPIN, PINlock)
-                        if PINmatch == False:
-                            PINtry -= 1
-                            if PINtry > 0:
-                                xbmcDialog.ok(_(32234), str(PINtry) + _(32235))
+                        if PINlock == '':
+                            break
+                        else:
+                            storedPIN = read_setting('system', 'pinlock_pin')
+                            PINmatch = verify_password(storedPIN, PINlock)
+                            if PINmatch == False:
+                                PINtry -= 1
+                                if PINtry > 0:
+                                    xbmcDialog.ok(_(32234), str(PINtry) + _(32235))
                     else:
                         timeFail = time.time()
                         write_setting('system', 'pinlock_timeFail', str(timeFail))

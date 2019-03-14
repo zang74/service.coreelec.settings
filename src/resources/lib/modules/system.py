@@ -832,6 +832,8 @@ class system:
                 self.set_value(listItem)
             if (self.oe.read_setting('system', 'pinlock_enable') == "1") and (self.oe.read_setting('system', 'pinlock_pin') == None):
                 self.set_pinlock()
+            if (self.oe.read_setting('system', 'pinlock_enable') == "0"):
+                self.oe.write_setting('system', 'pinlock_pin', '')
             self.oe.dbg_log('system::init_pinlock', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('ssystem::init_pinlock', 'ERROR: (%s)' % repr(e), 4)
