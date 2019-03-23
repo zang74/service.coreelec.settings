@@ -1115,7 +1115,6 @@ class discoveryThread(threading.Thread):
             while not self.stopped and not xbmc.abortRequested:
                 current_time = time.time()
                 if current_time > self.last_run + 5:
-                    self.clear_list()
                     self.oe.dictModules['bluetooth'].menu_connections(None)
                     self.last_run = current_time
                 if not self.main_menu.getSelectedItem().getProperty('modul') == 'bluetooth':
