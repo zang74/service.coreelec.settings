@@ -1048,7 +1048,8 @@ class connman:
                 self.connect_network()
             else:
                 err_message = error.get_dbus_message()
-                self.oe.notify('Network Error', err_message)
+                if not 'Did not receive a reply' in err_message:
+                    self.oe.notify('Network Error', err_message)
                 self.oe.dbg_log('connman::dbus_error_handler', 'ERROR: (' + err_message + ')', 4)
             self.oe.dbg_log('connman::dbus_error_handler', 'exit_function', 0)
         except Exception, e:
