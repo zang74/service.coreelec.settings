@@ -234,23 +234,23 @@ class updates:
 
         return '{:08x}'.format(int(revision, 16))
 
-    def get_hardware_flags_amlogic(self):
+    def get_hardware_flags_dtname(self):
         if os.path.exists('/usr/bin/dtname'):
-            aml_board = self.oe.execute('/usr/bin/dtname', get_result=1).rstrip('\x00')
+            dtname = self.oe.execute('/usr/bin/dtname', get_result=1).rstrip('\x00')
         else:
-            aml_board = "unknown"
+            dtname = "unknown"
 
-        self.oe.dbg_log('system::get_hardware_flags_amlogic', 'Amlogic board: %s' % aml_board, 0)
+        self.oe.dbg_log('system::get_hardware_flags_dtname', 'ARM board: %s' % dtname, 0)
 
-        return aml_board
+        return dtname
 
     def get_hardware_flags(self):
-        if self.oe.PROJECT.startswith('Generic'):
+        if self.oe.PROJECT == "Generic":
             return self.get_hardware_flags_x86_64()
-        elif self.oe.PROJECT.startswith('RPi'):
+        elif self.oe.PROJECT == "RPi":
             return self.get_hardware_flags_rpi()
-        elif self.oe.PROJECT.startswith('Amlogic'):
-            return self.get_hardware_flags_amlogic()
+        elif self.oe.PROJECT in ['Allwinner', 'Amlogic', 'Rockchip']:
+            return self.get_hardware_flags_dtname()
         else:
             self.oe.dbg_log('updates::get_hardware_flags', 'Project is %s, no hardware flag available' % self.oe.PROJECT, 0)
             return ""
