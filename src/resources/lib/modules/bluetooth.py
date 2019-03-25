@@ -414,7 +414,7 @@ class bluetooth:
                 self.discovery_thread.start()
             else:
                 if self.discovery_thread.stopped:
-                    self.discovery_thread = None
+                    del self.discovery_thread
                     self.start_discovery()
                     self.discovery_thread = discoveryThread(self.oe)
                     self.discovery_thread.start()
@@ -455,17 +455,11 @@ class bluetooth:
 
             rebuildList = 0
             self.dbusDevices = self.get_devices()
-            if len(self.dbusDevices) != len(self.listItems):
+            for dbusDevice in self.dbusDevices:
                 rebuildList = 1
                 self.oe.winOeMain.getControl(int(self.oe.listObject['btlist'])).reset()
                 self.clear_list()
-            else:
-                for dbusDevice in self.dbusDevices:
-                    if dbusDevice not in self.listItems:
-                        rebuildList = 1
-                        self.oe.winOeMain.getControl(int(self.oe.listObject['btlist'])).reset()
-                        self.clear_list()
-                        break
+                break
             for dbusDevice in self.dbusDevices:
                 dictProperties = {}
                 apName = ''
@@ -792,7 +786,7 @@ class bluetooth:
                 self.oe.dbg_log('bluetooth::monitor::InterfacesRemoved::interfaces', repr(interfaces), 0)
                 if 'org.bluez.Adapter1' in interfaces:
                     self.parent.dbusBluezAdapter = None
-                if self.parent.visible:
+                if self.parent.visible and not hasattr(self.parent, 'discovery_thread'):
                     self.parent.menu_connections()
                 self.oe.dbg_log('bluetooth::monitor::InterfacesRemoved', 'exit_function', 0)
             except Exception, e:
@@ -1115,9 +1109,10 @@ class discoveryThread(threading.Thread):
             while not self.stopped and not xbmc.abortRequested:
                 current_time = time.time()
                 if current_time > self.last_run + 5:
-                    self.oe.dictModules['bluetooth'].menu_connections(None)
+                    if self.main_menu.getSelectedItem().getProperty('modul') != 'bluetooth' or not hasattr(self.oe.dictModules['bluetooth'], 'discovery_thread'):
+                        self.oe.dictModules['bluetooth'].menu_connections(None)
                     self.last_run = current_time
-                if not self.main_menu.getSelectedItem().getProperty('modul') == 'bluetooth':
+                if self.main_menu.getSelectedItem().getProperty('modul') != 'bluetooth':
                     self.stop()
                 time.sleep(1)
             self.oe.dbg_log('bluetooth::discoveryThread::run', 'exit_function', 0)
