@@ -1292,11 +1292,12 @@ class connman:
         def initialize_agent(self):
             try:
                 self.oe.dbg_log('connman::monitor::initialize_agent', 'enter_function', 0)
-                dbusConnmanManager = dbus.Interface(self.oe.dbusSystemBus.get_object('net.connman', '/'), 'net.connman.Manager')
-                self.wifiAgent = connmanWifiAgent(self.oe.dbusSystemBus, self.wifiAgentPath)
-                self.wifiAgent.oe = self.oe
-                dbusConnmanManager.RegisterAgent(self.wifiAgentPath)
-                dbusConnmanManager = None
+                if not hasattr(self, 'wifiAgent'):
+                    dbusConnmanManager = dbus.Interface(self.oe.dbusSystemBus.get_object('net.connman', '/'), 'net.connman.Manager')
+                    self.wifiAgent = connmanWifiAgent(self.oe.dbusSystemBus, self.wifiAgentPath)
+                    self.wifiAgent.oe = self.oe
+                    dbusConnmanManager.RegisterAgent(self.wifiAgentPath)
+                    dbusConnmanManager = None
                 self.oe.dbg_log('connman::monitor::initialize_agent', 'exit_function', 0)
             except Exception, e:
                 self.oe.dbg_log('connman::monitor::initialize_agent', 'ERROR: (' + repr(e) + ')', 4)
