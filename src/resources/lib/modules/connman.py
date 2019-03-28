@@ -472,6 +472,7 @@ class connman:
     NF_CUSTOM_PATH = "/storage/.config/iptables/"
     connect_attempt = 0
     log_error = 1
+    net_disconnected = 0
     notify_error = 1
     menu = {
         '3': {
@@ -1048,7 +1049,10 @@ class connman:
             self.oe.set_busy(0)
             err_name = error.get_dbus_name()
             if 'InProgress' in err_name:
-                self.disconnect_network()
+                if self.net_disconnected != 1:
+                    self.disconnect_network()
+                else
+                    self.net_disconnected = 0
                 self.connect_network()
             else:
                 err_message = error.get_dbus_message()
@@ -1085,6 +1089,7 @@ class connman:
             self.oe.dbg_log('connman::disconnect_network', 'enter_function', 0)
             self.oe.set_busy(1)
             self.connect_attempt = 0
+            self.net_disconnected = 1
             if listItem == None:
                 listItem = self.oe.winOeMain.getControl(self.oe.listObject['netlist']).getSelectedItem()
             service_object = self.oe.dbusSystemBus.get_object('net.connman', listItem.getProperty('entry'))
