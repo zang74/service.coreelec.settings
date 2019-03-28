@@ -470,6 +470,9 @@ class connman:
     CONNMAN_DAEMON = None
     WAIT_CONF_FILE = None
     NF_CUSTOM_PATH = "/storage/.config/iptables/"
+    connect_attempt = 0
+    log_error = 1
+    notify_error = 1
     menu = {
         '3': {
             'name': 32101,
@@ -1017,6 +1020,7 @@ class connman:
         try:
             self.oe.dbg_log('connman::connect_network', 'enter_function', 0)
             self.oe.set_busy(1)
+            self.connect_attempt += 1
             if listItem == None:
                 listItem = self.oe.winOeMain.getControl(self.oe.listObject['netlist']).getSelectedItem()
             service_object = self.oe.dbusSystemBus.get_object('net.connman', listItem.getProperty('entry'))
@@ -1048,9 +1052,29 @@ class connman:
                 self.connect_network()
             else:
                 err_message = error.get_dbus_message()
-                if not 'Did not receive a reply' in err_message:
+                if 'Operation aborted' in err_message or 'Input/output error' in err_message:
+                    if self.connect_attempt == 1:
+                        self.log_error = 0
+                        self.notify_error = 0
+                        time.sleep(5)
+                        self.connect_network()
+                    else:
+                        self.log_error = 1
+                        self.notify_error = 1
+                elif 'Did not receive a reply' in err_message:
+                    self.log_error = 1
+                    self.notify_error = 0
+                else:
+                    self.log_error = 1
+                    self.notify_error = 1
+                if self.notify_error == 1:
                     self.oe.notify('Network Error', err_message)
-                self.oe.dbg_log('connman::dbus_error_handler', 'ERROR: (' + err_message + ')', 4)
+                else:
+                    self.notify_error = 1
+                if self.log_error == 1:
+                    self.oe.dbg_log('connman::dbus_error_handler', 'ERROR: (' + err_message + ')', 4)
+                else:
+                    self.log_error = 1
             self.oe.dbg_log('connman::dbus_error_handler', 'exit_function', 0)
         except Exception, e:
             self.oe.set_busy(0)
@@ -1060,6 +1084,7 @@ class connman:
         try:
             self.oe.dbg_log('connman::disconnect_network', 'enter_function', 0)
             self.oe.set_busy(1)
+            self.connect_attempt = 0
             if listItem == None:
                 listItem = self.oe.winOeMain.getControl(self.oe.listObject['netlist']).getSelectedItem()
             service_object = self.oe.dbusSystemBus.get_object('net.connman', listItem.getProperty('entry'))
@@ -1076,6 +1101,7 @@ class connman:
         try:
             self.oe.dbg_log('connman::delete_network', 'enter_function', 0)
             self.oe.set_busy(1)
+            self.connect_attempt = 0
             if listItem == None:
                 listItem = self.oe.winOeMain.getControl(self.oe.listObject['netlist']).getSelectedItem()
             service_path = listItem.getProperty('entry')
