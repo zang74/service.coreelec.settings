@@ -377,7 +377,10 @@ class updates:
         try:
             self.oe.dbg_log('updates::do_manual_update', 'enter_function', 0)
             self.struct['update']['settings']['Build']['value'] = ''
-            self.update_json = self.build_json()
+            update_json = self.build_json(notify_error=True)
+            if update_json is None:
+                return
+            self.update_json = update_json
             builds = self.get_available_builds()
             self.struct['update']['settings']['Build']['values'] = builds
             xbmcDialog = xbmcgui.Dialog()
@@ -424,7 +427,7 @@ class updates:
         except Exception, e:
             self.oe.dbg_log('updates::get_json', 'ERROR: (' + repr(e) + ')')
 
-    def build_json(self):
+    def build_json(self, notify_error=False):
         try:
             self.oe.dbg_log('updates::build_json', 'enter_function', 0)
             update_json = self.get_json()
@@ -438,6 +441,11 @@ class updates:
                         if not custom_update_json is None:
                             for channel in custom_update_json:
                                 update_json[channel] = custom_update_json[channel]
+                        elif notify_error:
+                            ok_window = xbmcgui.Dialog()
+                            answer = ok_window.ok(self.oe._(32191).encode('utf-8'), 'Custom URL is not valid, or currently inaccessible.\n\n%s' % custom_url)
+                            if not answer:
+                                return
             self.oe.dbg_log('updates::build_json', 'exit_function', 0)
             return update_json
         except Exception, e:
