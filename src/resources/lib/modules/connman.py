@@ -1051,7 +1051,7 @@ class connman:
             if 'InProgress' in err_name:
                 if self.net_disconnected != 1:
                     self.disconnect_network()
-                else
+                else:
                     self.net_disconnected = 0
                 self.connect_network()
             else:
