@@ -235,23 +235,13 @@ class updates:
 
         return '{:08x}'.format(int(revision, 16))
 
-    def get_hardware_flags_amlogic(self):
-        if os.path.exists('/proc/device-tree/le-dt-id'):
-            aml_board = self.oe.execute('cat /proc/device-tree/le-dt-id', get_result=1).rstrip('\x00')
-        else:
-            aml_board = "unknown"
-
-        self.oe.dbg_log('system::get_hardware_flags_amlogic', 'Device Tree: %s' % aml_board, 0)
-
-        return aml_board
-
     def get_hardware_flags(self):
         if self.oe.PROJECT == "Generic":
             return self.get_hardware_flags_x86_64()
         elif self.oe.PROJECT == "RPi":
             return self.get_hardware_flags_rpi()
         elif self.oe.PROJECT.startswith('Amlogic'):
-            return self.get_hardware_flags_amlogic()
+            return self.oe.get_dt_id()
         else:
             self.oe.dbg_log('updates::get_hardware_flags', 'Project is %s, no hardware flag available' % self.oe.PROJECT, 0)
             return ""

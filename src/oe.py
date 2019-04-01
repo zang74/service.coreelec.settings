@@ -781,6 +781,17 @@ def fixed_writexml(self, writer, indent='', addindent='', newl=''):
     else:
         writer.write('/>%s' % newl)
 
+def get_dt_id():
+    if os.path.exists('/proc/device-tree/coreelec-dt-id'):
+        dt = execute('cat /proc/device-tree/coreelec-dt-id', get_result=1).rstrip('\x00')
+    elif os.path.exists('/proc/device-tree/le-dt-id'):
+        dt = execute('cat /proc/device-tree/le-dt-id', get_result=1).rstrip('\x00')
+    else:
+        dt = "unknown"
+
+    dbg_log('oe::get_dt_id', 'Device Tree: %s' % dt, 0)
+
+    return dt
 
 def parse_os_release():
     os_release_fields = re.compile(r'(?!#)(?P<key>.+)=(?P<quote>[\'\"]?)(?P<value>.+)(?P=quote)$')
