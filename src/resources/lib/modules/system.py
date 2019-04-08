@@ -16,6 +16,7 @@ import subprocess
 import shutil
 from xml.dom import minidom
 
+xbmcDialog = xbmcgui.Dialog()
 
 class system:
 
@@ -106,6 +107,33 @@ class system:
                             },
                         },
                     },
+                'pinlock': {
+                    'order': 3,
+                    'name': 32192,
+                    'settings': {
+                        'pinlock_enable': {
+                            'order': 1,
+                            'name': 32193,
+                            'value': '0',
+                            'action': 'init_pinlock',
+                            'type': 'bool',
+                            'InfoText': 747,
+                            },
+                        'pinlock_pin': {
+                            'order': 2,
+                            'name': 32194,
+                            'value': '',
+                            'action': 'set_pinlock',
+                            'type': 'button',
+                            'InfoText': 748,
+                            'parent': {
+                                'entry': 'pinlock_enable',
+                                'value': ['1'],
+                                },
+                            },
+                        },
+                    },
+
                 'backup': {
                     'order': 7,
                     'name': 32371,
@@ -338,6 +366,13 @@ class system:
                 self.struct['ident']['settings']['hostname']['value'] = value
             else:
                 self.struct['ident']['settings']['hostname']['value'] = self.oe.DISTRIBUTION
+
+            # PIN Lock
+            value = self.oe.read_setting('system', 'pinlock_enable')
+            if not value is None:
+                self.struct['pinlock']['settings']['pinlock_enable']['value'] = value
+
+
         except Exception, e:
             self.oe.dbg_log('system::load_values', 'ERROR: (' + repr(e) + ')')
 
@@ -789,6 +824,42 @@ class system:
                 continue
             elif os.path.isdir(itempath):
                 self.get_folder_size(itempath)
+
+    def init_pinlock(self, listItem=None):
+        try:
+            self.oe.dbg_log('system::init_pinlock', 'enter_function', 0)
+            if not listItem == None:
+                self.set_value(listItem)
+            if (self.oe.read_setting('system', 'pinlock_enable') == "1") and (self.oe.read_setting('system', 'pinlock_pin') == None):
+                self.set_pinlock()
+            if (self.oe.read_setting('system', 'pinlock_enable') == "0"):
+                self.oe.write_setting('system', 'pinlock_pin', '')
+            self.oe.dbg_log('system::init_pinlock', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('ssystem::init_pinlock', 'ERROR: (%s)' % repr(e), 4)
+
+    def set_pinlock(self, listItem=None):
+        try:
+            self.oe.dbg_log('system::set_pinlock', 'enter_function', 0)
+            oldpin = self.oe.read_setting('system', 'pinlock_pin')
+            newpin = xbmcDialog.input(self.oe._(32226), type=xbmcgui.INPUT_NUMERIC)
+            if len(newpin) == 4 :
+               newpinConfirm = xbmcDialog.input(self.oe._(32227), type=xbmcgui.INPUT_NUMERIC)
+               if newpin != newpinConfirm:
+                   xbmcDialog.ok(self.oe._(32228), self.oe._(32229))
+               else:
+                   encodePin = self.oe.hash_password(newpin)
+                   self.oe.write_setting('system', 'pinlock_pin', encodePin)
+                   xbmcDialog.ok(self.oe._(32230), self.oe._(32231), newpin)
+                   oldpin = newpin
+            else:
+                xbmcDialog.ok(self.oe._(32232), self.oe._(32229))
+            if oldpin == None:
+                self.struct['pinlock']['settings']['pinlock_enable']['value'] = '0'
+                self.oe.write_setting('system', 'pinlock_enable', '0')
+            self.oe.dbg_log('system::set_pinlock', 'exit_function', 0)
+        except Exception, e:
+            self.oe.dbg_log('ssystem::set_pinlock', 'ERROR: (%s)' % repr(e), 4)
 
     def do_wizard(self):
         try:
