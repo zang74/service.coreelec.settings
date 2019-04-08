@@ -43,18 +43,13 @@ $(BUILDDIR)/$(ADDON_NAME)/resources: $(BUILDDIR)/$(ADDON_NAME)/resources/skins \
 	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources
 	cp -R src/resources/* $(BUILDDIR)/$(ADDON_NAME)/resources
 
-$(BUILDDIR)/$(ADDON_NAME)/resources/skins: $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/default \
-                                           $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/icons
+$(BUILDDIR)/$(ADDON_NAME)/resources/skins: $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media
 	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default
 	cp -R skins/Default/* $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default
 
-$(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/default:
-	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/default
-	cp textures/$(DISTRONAME)/*.{png,jpg} $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/default
-
-$(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/icons:
-	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/icons
-	cp icons/*.png $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media/icons
+$(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media:
+	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media
+	cp textures/$(DISTRONAME)/*.{png,jpg} $(BUILDDIR)/$(ADDON_NAME)/resources/skins/Default/media
 
 $(BUILDDIR)/$(ADDON_NAME)/resources/language:
 	mkdir -p $(BUILDDIR)/$(ADDON_NAME)/resources/language

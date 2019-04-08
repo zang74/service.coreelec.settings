@@ -72,9 +72,6 @@ class mainWindow(xbmcgui.WindowXMLDialog):
             self.setProperty('distri', self.oe.DISTRIBUTION)
             self.setProperty('version', self.oe.VERSION)
             self.setProperty('build', self.oe.BUILD)
-            self.setProperty('DIST_MEDIA', 'default')
-            if os.path.exists(self.oe.__media__ + self.oe.DISTRIBUTION):
-                self.setProperty('DIST_MEDIA', self.oe.DISTRIBUTION)
             self.oe.winOeMain = self
             for strModule in sorted(self.oe.dictModules, key=lambda x: self.oe.dictModules[x].menu.keys()):
                 module = self.oe.dictModules[strModule]
@@ -474,9 +471,6 @@ class wizard(xbmcgui.WindowXMLDialog):
             self.setProperty('distri', self.oe.DISTRIBUTION)
             self.setProperty('version', self.oe.VERSION)
             self.setProperty('build', self.oe.BUILD)
-            self.setProperty('DIST_MEDIA', 'default')
-            if os.path.exists(self.oe.__media__ + self.oe.DISTRIBUTION):
-                self.setProperty('DIST_MEDIA', self.oe.DISTRIBUTION)
             self.oe.dictModules['system'].do_init()
             self.getControl(self.wizWinTitle).setLabel(self.oe._(32300).encode('utf-8'))
             self.getControl(self.buttons[3]['id']).setVisible(False)

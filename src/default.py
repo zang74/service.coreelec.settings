@@ -9,7 +9,7 @@ import xbmcaddon
 __scriptid__ = 'service.libreelec.settings'
 __addon__ = xbmcaddon.Addon(id=__scriptid__)
 __cwd__ = __addon__.getAddonInfo('path')
-__media__ = '%s/resources/skins/Default/media/' % __cwd__
+__media__ = '%s/resources/skins/Default/media' % __cwd__
 _ = __addon__.getLocalizedString
 
 try:
@@ -18,4 +18,4 @@ try:
     sock.send('openConfigurationWindow')
     sock.close()
 except Exception, e:
-    xbmc.executebuiltin('Notification("LibreELEC", "%s", 5000, "%sicons/icon.png")' % (_(32390).encode('utf-8'), __media__))
+    xbmc.executebuiltin('Notification("LibreELEC", "%s", 5000, "%s/icon.png")' % (_(32390).encode('utf-8'), __media__))

@@ -117,7 +117,7 @@ def dbg_log(source, text, level=4):
 def notify(title, message, icon='icon'):
     try:
         dbg_log('oe::notify', 'enter_function', 0)
-        msg = 'Notification("%s", "%s", 5000, "%s/icons/%s.png")' % (
+        msg = 'Notification("%s", "%s", 5000, "%s/%s.png")' % (
             title,
             message[0:64],
             __media__,
