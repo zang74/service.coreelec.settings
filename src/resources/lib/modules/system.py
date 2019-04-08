@@ -243,85 +243,9 @@ class system:
         self.oe.dbg_log('system::exit', 'exit_function', 0)
         pass
 
-    # Identify connected GPU card (card0, card1 etc.)
-    def get_gpu_card(self):
-        for root, dirs, files in os.walk("/sys/class/drm", followlinks=False):
-            for dir in dirs:
-                try:
-                    with open(os.path.join(root, dir, 'status'), 'r') as infile:
-                        for line in [x for x in infile if x.replace('\n', '') == 'connected']:
-                            return dir.split("-")[0]
-                except:
-                    pass
-            break
-
-        return 'card0'
-
-    # Return driver name, eg. 'i915', 'i965', 'nvidia', 'nvidia-legacy', 'amdgpu', 'radeon', 'vmwgfx', 'virtio-pci' etc.
-    def get_hardware_flags_x86_64(self):
-        gpu_props = {}
-        gpu_driver = ""
-
-        gpu_card = self.get_gpu_card()
-        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'Using card: %s' % gpu_card, 0)
-
-        gpu_path = self.oe.execute('/usr/bin/udevadm info --name=/dev/dri/%s --query path 2>/dev/null' % gpu_card, get_result=1).replace('\n','')
-        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'gpu path: %s' % gpu_path, 0)
-
-        if gpu_path:
-            drv_path = os.path.dirname(os.path.dirname(gpu_path))
-            props = self.oe.execute('/usr/bin/udevadm info --path=%s --query=property 2>/dev/null' % drv_path, get_result=1)
-
-            if props:
-                for key, value in [x.strip().split('=') for x in props.strip().split('\n')]:
-                    gpu_props[key] = value
-            self.oe.dbg_log('system::get_gpu_type', 'gpu props: %s' % gpu_props, 0)
-            gpu_driver = gpu_props.get("DRIVER", "")
-
-        if not gpu_driver:
-            gpu_driver = self.oe.execute('lspci -k | grep -m1 -A999 "VGA compatible controller" | grep -m1 "Kernel driver in use" | cut -d" " -f5', get_result=1).replace('\n','')
-
-        if gpu_driver == 'nvidia' and os.path.realpath('/var/lib/nvidia_drv.so').endswith('nvidia-legacy_drv.so'):
-            gpu_driver = 'nvidia-legacy'
-
-        self.oe.dbg_log('system::get_hardware_flags_x86_64', 'gpu driver: %s' % gpu_driver, 0)
-
-        return gpu_driver if gpu_driver else "unknown"
-
-    def get_hardware_flags_rpi(self):
-        revision = self.oe.execute('grep "^Revision" /proc/cpuinfo | awk \'{ print $3 }\'',get_result=1).replace('\n','')
-        self.oe.dbg_log('system::get_hardware_flags_rpi', 'Revision code: %s' % revision, 0)
-
-        return '{:08x}'.format(int(revision, 16) & 0x3ffffff)
-
-    def get_hardware_flags_amlogic(self):
-        if os.path.exists('/usr/bin/dtname'):
-            aml_board = self.oe.execute('/usr/bin/dtname', get_result=1).rstrip('\x00')
-        else:
-            aml_board = "unknown"
-
-        self.oe.dbg_log('system::get_hardware_flags_amlogic', 'Amlogic board: %s' % aml_board, 0)
-
-        return aml_board
-
-    def get_hardware_flags(self):
-        if self.oe.PROJECT.startswith('Generic'):
-            return self.get_hardware_flags_x86_64()
-        elif self.oe.PROJECT.startswith('RPi'):
-            return self.get_hardware_flags_rpi()
-        elif self.oe.PROJECT.startswith('Amlogic'):
-            return self.get_hardware_flags_amlogic()
-        else:
-            self.oe.dbg_log('system::get_hardware_flags', 'Project is %s, no hardware flag available' % self.oe.PROJECT, 0)
-            return ""
-
     def load_values(self):
         try:
             self.oe.dbg_log('system::load_values', 'enter_function', 0)
-
-            # Hardware flags
-            self.hardware_flags = self.get_hardware_flags()
-            self.oe.dbg_log('system::load_values', 'loaded hardware_flag %s' % self.hardware_flags, 0)
 
             # Keyboard Layout
             (
