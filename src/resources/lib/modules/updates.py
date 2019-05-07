@@ -59,14 +59,6 @@ class updates:
                             'InfoText': 772,
                             'order': 2,
                             },
-                        'UpdateNotify': {
-                            'name': 32365,
-                            'value': '1',
-                            'action': 'set_value',
-                            'type': 'bool',
-                            'InfoText': 715,
-                            'order': 3,
-                            },
                         'ShowCustomChannels': {
                             'name': 32016,
                             'value': '0',
@@ -262,9 +254,6 @@ class updates:
             value = self.oe.read_setting('updates', 'SubmitStats')
             if not value is None:
                 self.struct['update']['settings']['SubmitStats']['value'] = value
-            value = self.oe.read_setting('updates', 'UpdateNotify')
-            if not value is None:
-                self.struct['update']['settings']['UpdateNotify']['value'] = value
             if os.path.isfile('%s/SYSTEM' % self.LOCAL_UPDATE_DIR):
                 self.update_in_progress = True
 
@@ -298,7 +287,6 @@ class updates:
                 self.update_disabled = True
                 self.struct['update']['hidden'] = 'true'
                 self.struct['update']['settings']['AutoUpdate']['value'] = 'manual'
-                self.struct['update']['settings']['UpdateNotify']['value'] = '0'
             self.oe.dbg_log('updates::load_values', 'exit_function', 0)
         except Exception, e:
             self.oe.dbg_log('updates::load_values', 'ERROR: (' + repr(e) + ')')
@@ -511,8 +499,7 @@ class updates:
                 self.last_update_check = time.time()
                 if 'update' in update_json['data'] and 'folder' in update_json['data']:
                     self.update_file = self.UPDATE_DOWNLOAD_URL % (update_json['data']['host'], update_json['data']['folder'], update_json['data']['update'])
-                    if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
-                        self.oe.notify(self.oe._(32363).encode('utf-8'), self.oe._(32364).encode('utf-8'))
+                    self.oe.notify(self.oe._(32363).encode('utf-8'), self.oe._(32364).encode('utf-8'))
                     if self.struct['update']['settings']['AutoUpdate']['value'] == 'auto' and force == False:
                         self.update_in_progress = True
                     elif self.oe.BUILDER_VERSION.startswith('nightly'):
@@ -531,8 +518,7 @@ class updates:
                 downloaded = self.oe.download_file(self.update_file, self.oe.TEMP + 'update_file', silent)
                 if not downloaded is None:
                     self.update_file = self.update_file.split('/')[-1]
-                    if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
-                        self.oe.notify(self.oe._(32363), self.oe._(32366))
+                    self.oe.notify(self.oe._(32363), self.oe._(32366))
                     shutil.move(self.oe.TEMP + 'update_file', self.LOCAL_UPDATE_DIR + self.update_file)
                     subprocess.call('sync', shell=True, stdin=None, stdout=None, stderr=None)
                     if silent == False:
