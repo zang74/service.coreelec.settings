@@ -515,6 +515,8 @@ class updates:
                         self.oe.notify(self.oe._(32363).encode('utf-8'), self.oe._(32364).encode('utf-8'))
                     if self.struct['update']['settings']['AutoUpdate']['value'] == 'auto' and force == False:
                         self.update_in_progress = True
+                    elif self.oe.BUILDER_VERSION.startswith('nightly'):
+                        self.update_in_progress = True
                         self.do_autoupdate(None, True)
             self.oe.dbg_log('updates::check_updates_v2', 'exit_function', 0)
         except Exception, e:
