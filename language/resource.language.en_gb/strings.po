@@ -97,7 +97,7 @@ msgid "Configure the physical keyboard type"
 msgstr ""
 
 msgctxt "#714"
-msgid "@DISTRONAME@ can be configured for automatic or manual updates. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
+msgid "@DISTRONAME@ can be configured for automatic or manual updates. Official CoreELEC Nightly builds may disregard automatic update settings. Automatic updates are available on stable releases and stable release candidates. Automatic update self-disables on beta and development builds"
 msgstr ""
 
 msgctxt "#715"
@@ -257,7 +257,6 @@ msgid "Select an update channel"
 msgstr ""
 
 msgctxt "#761"
-msgid "Enable to allow entering a custom update url"
 msgstr ""
 
 msgctxt "#762"
